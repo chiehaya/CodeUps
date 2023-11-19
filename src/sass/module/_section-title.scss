@@ -1,0 +1,28 @@
+@use "global" as *;
+
+.section-title {
+    font-family: $gotu-font-family;
+    color: $font-color;
+    font-size: rem(32);
+    font-weight: $normal;
+    line-height: 1;
+    display: block;
+    text-align: center;
+    @include mq(md){
+        font-size: rem(40);
+    }
+}
+
+.section-title::first-letter {
+    color: $accent-color;
+}
+
+.section-title span {
+    font-family: $base-font-family;
+    color: $accent-color;
+    font-weight: $regular;
+    margin-top: rem(10);
+    display: block;
+    font-size: rem(12);
+    line-height: 1;
+}

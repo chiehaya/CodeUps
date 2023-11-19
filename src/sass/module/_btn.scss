@@ -1,0 +1,81 @@
+@use "global" as *;
+
+.btn {
+    font-family: $gotu-font-family;
+    font-size: rem(14);
+    display: inline-block;
+    padding: rem(16) rem(88) rem(16) rem(40);
+    background-color: $accent-color;
+    border: 1px solid $accent-color;
+    color: $base-color;
+    letter-spacing: 0;
+    line-height: 1;
+    transition: .3s;
+	cursor: pointer;
+    position: relative;
+}
+
+.btn span {
+    display: block;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: $base-color;
+    width: rem(40);
+    height: rem(1);
+    top: 50%;
+    right: rem(40);
+    transform: translateY(-50%);
+    transition: .3s;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: $base-color;
+    width: rem(10);
+    height: rem(1);
+    right: rem(39);
+    top: 40%;
+    transform: rotate(45deg);
+    transition: .3s;
+} 
+
+.btn span::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: $base-color;
+    border: 1px solid $accent-color;
+    width: rem(202);
+    height: rem(48);
+    bottom: rem(-4);
+    left: rem(4);
+    z-index: -1;
+}
+
+.btn:hover {
+    @include mq(md){
+        color: $accent-color;
+        background-color: $base-color;
+        opacity: 1;
+    }
+}
+
+.btn:hover::before {
+    @include mq(md){
+        background-color: $accent-color;
+        opacity: 1;
+    }
+}
+
+.btn:hover::after {
+    @include mq(md){
+        background-color: $accent-color;
+        opacity: 1;
+    }
+}

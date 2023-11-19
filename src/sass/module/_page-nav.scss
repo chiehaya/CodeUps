@@ -1,0 +1,48 @@
+@use "global" as *;
+
+.page-nav {
+    display: flex;
+    justify-content: center;
+    gap: rem(29);
+    @include mq(md){
+    }
+}
+
+.page-nav__flex-sp {
+    width: rem(166);
+}
+
+.page-nav__item a {
+    display: block;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    color: $base-color;
+}
+
+.page-nav__item {
+    padding-top: rem(40);
+}
+
+.page-nav__title {
+    font-weight: $bold;
+}
+
+.page-nav__title a span{
+    position: relative;
+    display: inline-block;
+}
+
+.page-nav__title a span::before {
+    content: url(../../assets/images/common/page-nav01.png);
+    position: absolute;
+    display: block;  
+    left: rem(-22);
+}
+
+.page-nav__link {
+    padding-top: rem(24);
+}
+
+
+
+
