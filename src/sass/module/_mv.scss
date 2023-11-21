@@ -25,6 +25,12 @@
     line-height: 1;
 }
 
+.mv__title-wrap--green {
+    @include mq(md){
+        color: $accent-color;
+    }
+}
+
 .mv__main-title {
     font-family: $lato-font-family;
     font-weight: $regular;

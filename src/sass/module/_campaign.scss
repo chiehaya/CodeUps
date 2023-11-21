@@ -93,12 +93,14 @@
 }
 
 .swiper-controller {
-    align-items: center;
-    display: flex;
-    gap: rem(80);
-    position: absolute;
-    width: rem(200);
-    top: rem(10);
-    right: rem(116);
+    @include mq(md){
+        align-items: center;
+        display: flex;
+        gap: rem(80);
+        position: absolute;
+        width: rem(200);
+        top: rem(10);
+        right: rem(116);
+    }
 }
 

@@ -3,6 +3,7 @@
 .layout-information {
     margin-top: rem(70);
     @include mq(md){
-        margin-top: rem(140);
+        max-width: rem(1440);
+        margin: rem(60) auto 0;
     }
 }

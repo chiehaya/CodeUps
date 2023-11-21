@@ -26,3 +26,21 @@
     font-size: rem(12);
     line-height: 1;
 }
+
+.section-title--white,.section-title--white::first-letter,.section-title--white span {
+    @include mq(md){
+        color: $base-color;
+    }
+}
+
+.section-title--big {
+    font-size: rem(80);
+    @include mq(md){
+    font-size: rem(80);
+
+    }
+}
+
+.section-title--big span {
+    margin-top: 0;
+}

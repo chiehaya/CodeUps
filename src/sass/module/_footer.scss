@@ -1,0 +1,41 @@
+@use "global" as *;
+
+.footer {
+    background-color: $accent-color;
+}
+
+.footer__inner {
+
+}
+
+.footer__head {
+
+}
+
+.footer__logo {
+    width: rem(120);
+    @include mq(md){
+        width: rem(200);
+    }
+}
+
+.footer__sns {
+    margin-top: rem(16);
+}
+
+.footer__facebook,.footer__instagram {
+    width: rem(24);
+    display: inline-block;
+}
+
+.footer__copy {
+    color: $base-color;
+    font-family: $gotu-font-family;
+    font-size: rem(11);
+    text-align: center;
+    margin-top: rem(40);
+    @include mq(md){
+        font-size: rem(14);
+        margin-top: rem(80);
+    }
+}

@@ -1,0 +1,70 @@
+@use "global" as *;
+
+.loader {
+    display: none;
+    @include mq(md){
+        display: block;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        min-height: rem(400);
+        z-index: 10000;
+        background-color: #fff;
+    }
+}
+
+.loader__imgs {
+    @include mq(md){
+        display: flex;
+        height: inherit;
+    }
+}
+
+.loader__img-left img {
+    @include mq(md){
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.loader__img-right img{
+    @include mq(md){
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.loader__img-left {
+    aspect-ratio: 720 / 768;
+    max-width: 100%;
+    width: 100%;
+    opacity: 0;
+    transition-duration: 1500ms;
+    transition-property: opacity, transform;
+    transform: translate(0, -500px);
+}
+
+
+.loader__img-right.is-fade-up {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.loader__img-left.is-fade-up {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.loader__img-right {
+    aspect-ratio: 720 / 768;
+    max-width: 100%;
+    width: 100%;
+    opacity: 0;
+    transition-duration: 1500ms;
+    transition-property: opacity, transform;
+    transform: translate(0, -580px);
+}

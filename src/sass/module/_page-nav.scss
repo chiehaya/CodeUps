@@ -2,14 +2,28 @@
 
 .page-nav {
     display: flex;
-    justify-content: center;
-    gap: rem(29);
+    justify-content: space-evenly;
+    gap: rem(18);
+    padding-left: rem(15);
     @include mq(md){
+        justify-content: center;
+        padding-left: rem(29);
     }
 }
 
 .page-nav__flex-sp {
     width: rem(166);
+    @include mq(md){
+        display: flex;
+        gap: rem(120);
+        width: 50%;
+    }
+}
+
+.page-nav__flex {
+    @include mq(md){
+        
+    }
 }
 
 .page-nav__item a {
@@ -36,7 +50,8 @@
     content: url(../../assets/images/common/page-nav01.png);
     position: absolute;
     display: block;  
-    left: rem(-22);
+    top: rem(-2);
+    left: rem(-26);
 }
 
 .page-nav__link {

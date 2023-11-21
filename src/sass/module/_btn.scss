@@ -4,7 +4,8 @@
     font-family: $gotu-font-family;
     font-size: rem(14);
     display: inline-block;
-    padding: rem(16) rem(88) rem(16) rem(40);
+    width: rem(202);
+    height: rem(54);
     background-color: $accent-color;
     border: 1px solid $accent-color;
     color: $base-color;
@@ -17,9 +18,12 @@
 
 .btn span {
     display: block;
+    height: inherit;
+    width: inherit;
+    padding: rem(18) rem(67) rem(18) rem(11);
 }
 
-.btn::before {
+.btn span::before {
     content: "";
     position: absolute;
     display: block;
@@ -32,7 +36,7 @@
     transition: .3s;
 }
 
-.btn::after {
+.btn span::after {
     content: "";
     position: absolute;
     display: block;
@@ -45,15 +49,15 @@
     transition: .3s;
 } 
 
-.btn span::after {
+.btn::before {
     content: "";
     position: absolute;
     display: block;
-    background-color: $base-color;
+    background-color: transparent;
     border: 1px solid $accent-color;
     width: rem(202);
-    height: rem(48);
-    bottom: rem(-4);
+    height: rem(54);
+    bottom: rem(-5);
     left: rem(4);
     z-index: -1;
 }
@@ -66,14 +70,14 @@
     }
 }
 
-.btn:hover::before {
+.btn span:hover::before {
     @include mq(md){
         background-color: $accent-color;
         opacity: 1;
     }
 }
 
-.btn:hover::after {
+.btn span:hover::after {
     @include mq(md){
         background-color: $accent-color;
         opacity: 1;

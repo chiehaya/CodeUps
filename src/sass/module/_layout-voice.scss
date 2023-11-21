@@ -1,0 +1,11 @@
+@use "global" as *;
+
+.layout-voice {
+    padding-top: rem(80);
+    padding-bottom: rem(80);
+    @include mq(md){
+        padding-top: rem(40);
+        padding-bottom: rem(40);
+        overflow: hidden;
+    }
+}

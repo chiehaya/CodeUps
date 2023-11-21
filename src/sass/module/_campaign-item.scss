@@ -31,19 +31,6 @@
     }
 }
 
-.campaign-item__category {
-    font-size: rem(12);
-    line-height: 1;
-    padding: rem(8) rem(14);
-    color: $accent-color;
-    border: 1px solid $accent-color;
-    display: inline-block;
-    @include mq(md){
-    font-size: rem(14);
-    padding: rem(10) rem(16);
-    }
-}
-
 .campaign-item__title {
     margin-top: rem(10);
     line-height: 1;

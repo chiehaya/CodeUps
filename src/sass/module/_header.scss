@@ -5,6 +5,13 @@
     background-color: rgba($color: #0D2936, $alpha: .68);
     @include mq(md){
         height: rem(90);
+        display: none;
+    }
+}
+
+.header.is-show {
+    @include mq(md){
+        display: block;
     }
 }
 
