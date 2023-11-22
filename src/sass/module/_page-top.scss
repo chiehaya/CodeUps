@@ -34,6 +34,7 @@
     top: 50%;
     transform: translateY(-50%);
     right: 50%;
+    border-radius: 10px;
     @include mq(md){
     height: rem(40);
     }

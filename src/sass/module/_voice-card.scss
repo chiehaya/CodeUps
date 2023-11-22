@@ -39,10 +39,6 @@
     line-height: 1.5;
 }
 
-.voice-card__category {
-
-}
-
 .voice-card__title {
     line-height: 1.4;
     margin-top: rem(6);
@@ -87,8 +83,4 @@
     @include mq(md){
         margin-top: rem(41);
     }
-}
-
-.voice-card__text {
-    
 }

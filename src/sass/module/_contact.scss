@@ -1,9 +1,5 @@
 @use "global" as *;
 
-.contact {
-
-}
-
 .contact__inner {
     position: relative;
     padding: rem(50) 0;
@@ -97,10 +93,6 @@
         width: 50%;
         padding-left: rem(13);
     }
-}
-
-.contact__title {
-
 }
 
 .contact__message {

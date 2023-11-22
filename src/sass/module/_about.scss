@@ -1,18 +1,9 @@
 @use "global" as *;
 
-.about {
-}       
-
 .about__inner {
     @include mq(md){
         padding: 0 rem(40);
     }
-}
-
-
-
-.about__title {
-
 }
 
 .about__images {
@@ -95,10 +86,6 @@
         width: 40%;
         padding-top: rem(14);
     }
-}
-
-.about__message {
-    
 }
 
 .about__wrapper {

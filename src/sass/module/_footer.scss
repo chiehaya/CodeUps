@@ -4,10 +4,6 @@
     background-color: $accent-color;
 }
 
-.footer__inner {
-
-}
-
 .footer__head {
     @include mq(md){
         display: flex;
