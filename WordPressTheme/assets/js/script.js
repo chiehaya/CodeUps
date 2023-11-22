@@ -48,7 +48,7 @@ jQuery(function ($) {
     },
     breakpoints: {
       1025: {
-        spaceBetween: 32
+        spaceBetween: 40
       }
     }
   });
@@ -96,16 +96,24 @@ jQuery(function ($) {
     scrollHeight = $(document).height();
     scrollPosition = $(window).height() + $(window).scrollTop();
     footHeight = $("footer").innerHeight();
-    if (scrollHeight - scrollPosition <= footHeight) {
-      // ページトップボタンがフッター手前に来たらpositionとfixedからabsoluteに変更
+    if ($(window).width() >= 768) {
+      if (scrollHeight - scrollPosition <= footHeight) {
+        // 画面幅が768ピクセル以上の場合の条件
+        $(".page-top").css({
+          position: "absolute",
+          bottom: footHeight + 18 // 768ピクセル以上の場合の値
+        });
+      } else {
+        $(".page-top").css({
+          position: "fixed",
+          bottom: "35px" // 768ピクセル以上の場合の値
+        });
+      }
+    } else {
+      // 画面幅が768ピクセル未満の場合の条件
       $(".page-top").css({
         position: "absolute",
-        bottom: footHeight + 10
-      });
-    } else {
-      $(".page-top").css({
-        position: "fixed",
-        bottom: "35px"
+        bottom: footHeight + 15 // 768ピクセル未満の場合の値
       });
     }
   });

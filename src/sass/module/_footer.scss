@@ -9,7 +9,22 @@
 }
 
 .footer__head {
+    @include mq(md){
+        display: flex;
+        align-items: baseline;
+        gap: rem(40);
+    }
+}
 
+.footer__nav {
+    margin-top: rem(37);
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    @include mq(md){
+        width: initial;
+        margin-left: 0;
+        margin-top: rem(22);
+    }
 }
 
 .footer__logo {
@@ -21,21 +36,38 @@
 
 .footer__sns {
     margin-top: rem(16);
+    @include mq(md){
+        margin-top: 0;
+    }
 }
 
 .footer__facebook,.footer__instagram {
     width: rem(24);
     display: inline-block;
+    @include mq(md){
+        width: rem(32);
+    }
+}
+
+.footer__instagram {
+    margin-left: rem(10);
+    @include mq(md){
+        margin-left: rem(12);
+    }
 }
 
 .footer__copy {
     color: $base-color;
     font-family: $gotu-font-family;
-    font-size: rem(11);
+    font-size: rem(12);
     text-align: center;
     margin-top: rem(40);
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
     @include mq(md){
         font-size: rem(14);
         margin-top: rem(80);
+        width: initial;
+        margin-left: 0;
     }
 }

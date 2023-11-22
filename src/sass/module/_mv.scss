@@ -17,12 +17,15 @@
     position: absolute;
     z-index: 2;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translateY(-50%);
     width: 100%;
     color: $base-color;
-    text-align: center;
     line-height: 1;
+    text-align: center;
+    padding-left: rem(20);
+    @include mq(md){
+        padding-left: rem(42);
+    }
 }
 
 .mv__title-wrap--green {
@@ -36,7 +39,7 @@
     font-weight: $regular;
     text-transform: uppercase;
     font-size: rem(40);
-    letter-spacing: 0.74em;
+    letter-spacing: 0.54em;
     @include mq(md){
         font-size: rem(80);
     }
@@ -46,6 +49,11 @@
     font-size: rem(20);
     margin-top: rem(10);
     font-family: $gotu-font-family;
+    padding-right: rem(23);
+    @include mq(md){
+        margin-top: rem(15);
+        padding-right: rem(45);
+    }
 }
 
 .mv__swiper,

@@ -1,11 +1,7 @@
 @use "global" as *;
 
-.campaign {
-
-}
-
 .campaign__inner {
-    padding-left: rem(15);
+    
     @include mq(md){
         padding: 0;
         position: relative;
@@ -22,9 +18,13 @@
 .campaign__list {
     overflow: hidden;
     position: relative;
+    padding-left: rem(15);
+    margin-top: rem(7);
     @include mq(md){
         max-width: rem(1260);
         margin-left: auto;
+        padding-left: 0;
+        margin-top: rem(3);
     }
 }
 
@@ -42,65 +42,11 @@
 }
 
 .campaign__btn {
-    margin-top: rem(40);
+    margin-top: rem(31);
     text-align: center;
+    padding-right: rem(4);
     @include mq(md){
-        margin-top:rem(80) ;
-    }
-}
-
-.swiper-button-prev,.swiper-button-next{
-    border: 1px solid $accent-color;
-    border-radius: 50%;
-    width: rem(80);
-    height: rem(80);
-}
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-    top: 50%;
-    transform: translateY(-50%);
-    content: "";
-    margin: auto;
-    position: absolute;
-    width: rem(40);
-}
-
-
-.swiper-button-prev::after,.swiper-button-next::after {
-  border-bottom: 1px solid $accent-color;
-}
-
-.swiper-button-prev:before,
-.swiper-button-next:before {
-    top: 45%;
-    content: "";
-    margin: auto;
-    position: absolute;
-    width: rem(12);
-}
-
-.swiper-button-prev:before {
-    border-bottom: 1px solid $accent-color;
-    transform: translateY(-50%) rotate(-45deg);
-    left: rem(17);
-}
-
-.swiper-button-next:before {
-    border-bottom: 1px solid $accent-color;
-    transform: translateY(-50%) rotate(45deg);
-    right: rem(17);
-}
-
-.swiper-controller {
-    @include mq(md){
-        align-items: center;
-        display: flex;
-        gap: rem(80);
-        position: absolute;
-        width: rem(200);
-        top: rem(10);
-        right: rem(116);
+        margin-top:rem(55) ;
     }
 }
 

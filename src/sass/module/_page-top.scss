@@ -18,6 +18,12 @@
     }
 }
 
+.page-top a {
+    display: block;
+    width: inherit;
+    height: inherit;
+}
+
 .page-top a::after {
     content: "";
     position: absolute;
@@ -44,9 +50,9 @@
     right: 41%;
     transform: rotate(45deg);
     @include mq(md){
-        width: rem(20);
-        height: rem(20);
-        top: rem(23);
-        right: 39%;
+        width: rem(9);
+        height: rem(9);
+        top: rem(21);
+        right: 46%;
     }
 }

@@ -20,7 +20,7 @@
     display: block;
     height: inherit;
     width: inherit;
-    padding: rem(18) rem(67) rem(18) rem(11);
+    padding: rem(18) rem(64) rem(18) rem(11);
 }
 
 .btn span::before {
@@ -34,6 +34,7 @@
     right: rem(40);
     transform: translateY(-50%);
     transition: .3s;
+    border-radius: 10px;
 }
 
 .btn span::after {
@@ -44,9 +45,10 @@
     width: rem(10);
     height: rem(1);
     right: rem(39);
-    top: 40%;
+    top: 43%;
     transform: rotate(45deg);
     transition: .3s;
+    border-radius: 10px;
 } 
 
 .btn::before {

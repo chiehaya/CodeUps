@@ -13,7 +13,7 @@
 }
 
 .card__body {
-    margin-top: rem(24);
+    margin-top: rem(19);
 }
 
 .card__date {
@@ -25,10 +25,11 @@
 .card__title {
     border-bottom: 1px solid $accent-color;
     line-height: 1.5;
-    padding-bottom: rem(4);
+    padding-bottom: rem(2.4);
 }
 
 .card__text {
     margin-top: rem(16);
     line-height: 1.5;
+    letter-spacing: 0.01em;
 }

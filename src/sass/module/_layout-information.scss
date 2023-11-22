@@ -1,9 +1,9 @@
 @use "global" as *;
 
 .layout-information {
-    margin-top: rem(70);
+    margin-top: rem(73);
     @include mq(md){
         max-width: rem(1440);
-        margin: rem(60) auto 0;
+        margin: rem(75) auto 0;
     }
 }

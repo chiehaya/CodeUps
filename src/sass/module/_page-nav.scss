@@ -3,11 +3,12 @@
 .page-nav {
     display: flex;
     justify-content: space-evenly;
-    gap: rem(18);
-    padding-left: rem(15);
+    gap: rem(30);
+    padding-left: rem(36);
     @include mq(md){
         justify-content: center;
-        padding-left: rem(29);
+        padding-left: rem(22);
+        gap: rem(53);
     }
 }
 
@@ -15,8 +16,22 @@
     width: rem(166);
     @include mq(md){
         display: flex;
-        gap: rem(120);
+        gap: rem(137);
         width: 50%;
+    }
+}
+
+.page-nav__flex-sp:nth-child(1) .page-nav__flex:nth-child(2) {
+    margin-top: rem(43);
+    @include mq(md){
+        margin-top: 0;
+    }
+}
+
+.page-nav__flex-sp:nth-child(2) .page-nav__flex:nth-child(2) {
+    margin-top: rem(43);
+    @include mq(md){
+        margin-top: 0;
     }
 }
 
@@ -26,15 +41,21 @@
     }
 }
 
+.page-nav__flex .page-nav__item:not(:first-child) {
+    padding-top: rem(42);
+}
+
 .page-nav__item a {
     display: block;
     letter-spacing: 0.05em;
     line-height: 1;
     color: $base-color;
+    letter-spacing: 0.04em;
+    transition: .3s;
 }
 
-.page-nav__item {
-    padding-top: rem(40);
+.page-nav__item a:hover {
+    opacity: 0.8;
 }
 
 .page-nav__title {
@@ -44,6 +65,7 @@
 .page-nav__title a span{
     position: relative;
     display: inline-block;
+    letter-spacing: 0.01em;
 }
 
 .page-nav__title a span::before {
@@ -51,11 +73,11 @@
     position: absolute;
     display: block;  
     top: rem(-2);
-    left: rem(-26);
+    left: rem(-20);
 }
 
 .page-nav__link {
-    padding-top: rem(24);
+    padding-top: rem(26);
 }
 
 

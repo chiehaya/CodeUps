@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .layout-blog {
-    margin-top: rem(80);
+    margin-top: rem(84);
     @include mq(md){
         max-width: rem(1440);
         margin: 0 auto;

@@ -4,23 +4,23 @@
     padding: rem(15) rem(16) rem(24) rem(16);
     box-shadow: rem(2) rem(3) rem(3) rem(3) rgba(0, 0, 0, .05);
     @include mq(md){
-        padding: rem(24);
+        padding: rem(26) rem(24) rem(24) rem(24);
     }
 }
 
 .voice-card__head {
     display: flex;
     gap: rem(13);
-    align-items: center;
+    align-items: flex-end;
     @include mq(md){
         gap: rem(16);
-        align-items: flex-end;
     }
 }
 
 .voice-card__description {
     width: 50%;
     border-bottom: 1px solid $accent-color;
+    padding-bottom: rem(4);
     @include mq(md){
         width: 58.4%;
     }
@@ -44,12 +44,12 @@
 }
 
 .voice-card__title {
-    line-height: 1.35;
-    margin-top: rem(4);
+    line-height: 1.4;
+    margin-top: rem(6);
     font-weight: $medium;
     @include mq(md){
         font-size: rem(24);
-        margin-top: rem(8);
+        margin-top: rem(10);
     }
 }
 
@@ -84,6 +84,9 @@
 .voice-card__body {
     margin-top: rem(15);
     line-height: 1.5;
+    @include mq(md){
+        margin-top: rem(41);
+    }
 }
 
 .voice-card__text {
