@@ -3,6 +3,7 @@
 .header {
     height: rem(80);
     background-color: rgba($color: #0D2936, $alpha: .68);
+    transition: .3s;
     @include mq(md){
         height: rem(90);
         display: none;
@@ -13,6 +14,10 @@
     @include mq(md){
         display: block;
     }
+}
+
+.header.is-fixed {
+    background-color: #9A9A9A;
 }
 
 .header__inner {

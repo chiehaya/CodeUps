@@ -570,6 +570,11 @@ a {
 .header {
 	background-color: rgba(13, 41, 54, 0.68);
 	height: 5rem;
+	transition: 0.3s;
+}
+
+.header.is-fixed {
+	background-color: #9A9A9A;
 }
 
 .header__inner {

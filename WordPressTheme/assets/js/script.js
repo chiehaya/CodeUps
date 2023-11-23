@@ -53,6 +53,18 @@ jQuery(function ($) {
     }
   });
 
+  // header固定
+  $(window).on('scroll', function () {
+    var top = $(this).scrollTop();
+    var mainView = $('.js-mv').outerHeight();
+    var header = $('.js-header').outerHeight();
+    if (mainView - header <= top) {
+      $('.js-header').addClass('is-fixed');
+    } else {
+      $('.js-header').removeClass('is-fixed');
+    }
+  });
+
   // 画像アニメーション
   var box = $('.js-colorbox'),
     speed = 700;

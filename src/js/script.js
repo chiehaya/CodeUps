@@ -53,6 +53,21 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         },
     });
 
+    // header固定
+        $(window).on('scroll',function(){
+            let top = $(this).scrollTop();
+            let mainView = $('.js-mv').outerHeight();
+            let header = $('.js-header').outerHeight();
+            if ((mainView - header) <= top) {
+                $('.js-header').addClass('is-fixed');
+            }
+            else {
+                $('.js-header').removeClass('is-fixed');
+            }
+        });
+        
+
+
     // 画像アニメーション
     var box = $('.js-colorbox'),
     speed = 700;  
