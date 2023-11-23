@@ -17,10 +17,18 @@
 
 .about__image-1 {
     width: 37.1%;
+    max-width: 100%;
     z-index: -1;
+    aspect-ratio: 128 /194;
     @include mq(md){
         display: none;
     }
+}
+
+.about__image-1 img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
 }
 
 .about__image-2 {
@@ -28,10 +36,18 @@
     bottom: 0;
     right: 0;
     width: 81.4%;
+    max-width: 100%;
     z-index: -10;
+    aspect-ratio: 281 /186;
     @include mq(md){
         display: none;
     }
+}
+
+.about__image-2 img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
 }
 
 .about__container {
@@ -56,10 +72,18 @@
         display: block;
         position: absolute;
         width: 37.1%;
+        max-width: 100%;
         top: 0;
         left: 0;
         z-index: -100;
+        aspect-ratio: 400 / 606;
     }
+}
+
+.about__pc-img1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .about__pc-img2 {
@@ -68,11 +92,20 @@
         display: block;
         position: absolute;
         width: 81.4%;
+        max-width: 100%;
         top: rem(80);
         right: 0;
         z-index: -120;
+        aspect-ratio: 880 / 581;
     }
 }
+
+.about__pc-img2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 .about__head {
     color: $accent-color;

@@ -33,7 +33,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
             $(".js-drawer").fadeOut();
         $(".js-hamburger").removeClass("is-open");
     }
-// swiper
+    // swiper
     const campaign_swiper = new Swiper(".campaign__list .js-campaign-swiper", {
         slidesPerView: 'auto',
         spaceBetween: 16,
@@ -53,20 +53,16 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         },
     });
 
+    // 画像アニメーション
     var box = $('.js-colorbox'),
     speed = 700;  
- 
-//.colorboxの付いた全ての要素に対して下記の処理を行う
     box.each(function(){
     $(this).append('<div class="is-color"></div>')
     var color = $(this).find($('.is-color')),
     image = $(this).find('img');
     var counter = 0;
-    
-
     image.css('opacity','0');
     color.css('width','0%');
-    //inviewを使って背景色が画面に現れたら処理をする
     color.on('inview', function(){
         if(counter == 0){
         $(this).delay(200).animate({'width':'100%'},speed,function(){
@@ -78,7 +74,9 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         }
     });
 });
-const pageTop = $(".js-page-top");
+
+    // ページトップへ戻るボタン 
+    const pageTop = $(".js-page-top");
     pageTop.hide();
     var scrollHeight;
     var scrollPosition;
@@ -95,42 +93,33 @@ const pageTop = $(".js-page-top");
     footHeight = $("footer").innerHeight();
     if ($(window).width() >= 768) {
         if (scrollHeight - scrollPosition <= footHeight) {
-            // 画面幅が768ピクセル以上の場合の条件
             $(".page-top").css({
                 position: "absolute",
-                bottom: footHeight + 18, // 768ピクセル以上の場合の値
+                bottom: footHeight + 18, 
             });
-        } else {
+            } else {
             $(".page-top").css({
                 position: "fixed",
-                bottom: "35px", // 768ピクセル以上の場合の値
+                bottom: "35px", 
             });
         }
     } else {
-        // 画面幅が768ピクセル未満の場合の条件
-        $(".page-top").css({
-            position: "absolute",
-            bottom: footHeight + 15, // 768ピクセル未満の場合の値
-        });
+        if (scrollHeight - scrollPosition <= footHeight) {
+            $(".page-top").css({
+                position: "absolute",
+                bottom: footHeight + 15, 
+            });
+            } else {
+            $(".page-top").css({
+                position: "fixed",
+                bottom: "35px", 
+            });
+        }
     }
 });
 
-    // 定義した変数がページをロードしてからどのくらいの時間で実行するかを設定する
-        function loadRight() {
-            $('.loader__img-right').addClass("is-fade-up");
-        }
-        function loadLeft() {
-            $('.loader__img-left').addClass("is-fade-up");
-        }
-        function end_title() {
-            $('.loader__title-wrap').fadeOut(800);
-        }
-        function end_load() {
-            $('.loader').fadeOut(800);
-        }
-        function start_header() {
-            $(".header").addClass("is-show");
-        }
+    // 画面幅が768px以下の場合に実行する関数
+    function executeOnSmallScreen() {
         function swiper() {
             const mv_swiper = new Swiper(".js-mv-swiper", {
                 loop: true,
@@ -145,28 +134,86 @@ const pageTop = $(".js-page-top");
                 },
             });
         }
-            $(window).on('load', function () {
+
+        $(window).on('load', function () {
+            setTimeout(function () {
+                swiper();
+            }, 0);
+        });
+    }
+
+    // 画面幅が768pxより大きい場合に実行する関数
+    function executeOnLargeScreen() {
+        // 定義した変数がページをロードしてからどのくらいの時間で実行するかを設定する
+        function loadRight() {
+            $('.loader__img-right').addClass("is-fade-up");
+        }
+
+        function loadLeft() {
+            $('.loader__img-left').addClass("is-fade-up");
+        }
+
+        function end_title() {
+            $('.loader__title-wrap').fadeOut(800);
+        }
+
+        function end_load() {
+            $('.loader').fadeOut(800);
+        }
+
+        function start_header() {
+            $(".header").addClass("is-show");
+        }
+
+        function swiper() {
+            const mv_swiper = new Swiper(".js-mv-swiper", {
+                loop: true,
+                speed: 2000,
+                effect: "fade",
+                fadeEffect: {
+                    crossFade: true,
+                },
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+            });
+        }
+
+        $(window).on('load', function () {
             setTimeout(function () {
                 loadLeft();
-            }, 1000)
+            }, 1000);
 
             setTimeout(function () {
                 loadRight();
-            }, 1200)
+            }, 1200);
+
             setTimeout(function () {
                 end_title();
-            }, 1200)
+            }, 1200);
+
             setTimeout(function () {
                 end_load();
-            }, 2000)
+            }, 2000);
+
             setTimeout(function () {
                 start_header();
-            }, 5000)
+            }, 5000);
+
             setTimeout(function () {
                 swiper();
             }, 4000);
-            
-        })
+        });
+    }
+
+    // 画面幅によって実行する関数を選択
+    if (window.innerWidth > 768) {
+        executeOnLargeScreen();
+    } else {
+        executeOnSmallScreen();
+    }
+
         
     
 });

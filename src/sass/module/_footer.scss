@@ -45,6 +45,10 @@
     }
 }
 
+.footer__facebook a:hover,.footer__instagram a:hover {
+    opacity: .8;
+}
+
 .footer__instagram {
     margin-left: rem(10);
     @include mq(md){
