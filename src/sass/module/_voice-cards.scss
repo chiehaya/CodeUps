@@ -1,6 +1,5 @@
 @use "global" as *;
 
-
 .voice-cards {
     @include mq(md){
         display: flex;

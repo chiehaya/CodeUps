@@ -33,6 +33,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
             $(".js-drawer").fadeOut();
         $(".js-hamburger").removeClass("is-open");
     }
+
     // swiper
     const campaign_swiper = new Swiper(".campaign__list .js-campaign-swiper", {
         slidesPerView: 'auto',
@@ -66,8 +67,6 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
             }
         });
         
-
-
     // 画像アニメーション
     var box = $('.js-colorbox'),
     speed = 700;  
@@ -159,27 +158,21 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
     // 画面幅が768pxより大きい場合に実行する関数
     function executeOnLargeScreen() {
-        // 定義した変数がページをロードしてからどのくらいの時間で実行するかを設定する
         function loadRight() {
             $('.loader__img-right').addClass("is-fade-up");
         }
-
         function loadLeft() {
             $('.loader__img-left').addClass("is-fade-up");
         }
-
         function end_title() {
             $('.loader__title-wrap').fadeOut(800);
         }
-
         function end_load() {
             $('.loader').fadeOut(800);
         }
-
         function start_header() {
             $(".header").addClass("is-show");
         }
-
         function swiper() {
             const mv_swiper = new Swiper(".js-mv-swiper", {
                 loop: true,
@@ -199,23 +192,18 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
             setTimeout(function () {
                 loadLeft();
             }, 1000);
-
             setTimeout(function () {
                 loadRight();
             }, 1200);
-
             setTimeout(function () {
                 end_title();
             }, 1200);
-
             setTimeout(function () {
                 end_load();
             }, 2000);
-
             setTimeout(function () {
                 start_header();
             }, 5000);
-
             setTimeout(function () {
                 swiper();
             }, 4000);
@@ -229,6 +217,4 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         executeOnSmallScreen();
     }
 
-        
-    
 });

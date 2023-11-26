@@ -1,6 +1,7 @@
 body {
 	color: #0D2936;
 	font-family: "Noto Sans JP", sans-serif;
+	position: relative;
 }
 
 .u-desktop {
@@ -230,6 +231,10 @@ a {
 	display: none;
 }
 
+.blog__img {
+	display: none;
+}
+
 .blog__decoration {
 	display: none;
 }
@@ -245,7 +250,7 @@ a {
 }
 
 .blog__items a:hover {
-	scale: 1.02;
+	transform: scale(1.02);
 }
 
 .blog__btn {
@@ -1429,6 +1434,7 @@ html {
 }
 
 .blog__img {
+	display: block;
 	height: 60%;
 	left: 0;
 	position: absolute;

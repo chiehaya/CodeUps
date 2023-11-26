@@ -4,16 +4,12 @@
     @include mq(md){
         position: relative;
     }
-    // @include mq(md){
-    //     background-image: url(../../assets/images/common/blog-bg.jpg);
-    //     background-repeat: no-repeat;
-    //     background-size: contain;
-    //     background-position: top;
-    // }
 }
 
 .blog__img {
+    display: none;
     @include mq(md){
+        display: block;
         position: absolute;
         top: 0;
         left: 0;
@@ -66,7 +62,7 @@
 
 
 .blog__items a:hover {
-    scale: 1.02;
+    transform: scale(1.02);
 }
 
 .blog__btn {

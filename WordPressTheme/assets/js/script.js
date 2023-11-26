@@ -33,6 +33,7 @@ jQuery(function ($) {
     $(".js-drawer").fadeOut();
     $(".js-hamburger").removeClass("is-open");
   }
+
   // swiper
   var campaign_swiper = new Swiper(".campaign__list .js-campaign-swiper", {
     slidesPerView: 'auto',
@@ -161,7 +162,6 @@ jQuery(function ($) {
 
   // 画面幅が768pxより大きい場合に実行する関数
   function executeOnLargeScreen() {
-    // 定義した変数がページをロードしてからどのくらいの時間で実行するかを設定する
     function loadRight() {
       $('.loader__img-right').addClass("is-fade-up");
     }
