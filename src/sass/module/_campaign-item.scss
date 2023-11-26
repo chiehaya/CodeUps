@@ -4,6 +4,7 @@
     width: rem(280);
     background-color: $base-color;
     box-shadow: rem(2) rem(3) rem(3) rem(3) rgba(0, 0, 0, .05);
+    height: 100%;
     @include mq(md){
         width: rem(334);
     }
@@ -32,7 +33,7 @@
 }
 
 .campaign-item__title {
-    margin-top: rem(10);
+    margin-top: rem(8);
     line-height: 1;
     font-weight: $medium;
     font-size: rem(16);
@@ -86,7 +87,7 @@
     position: absolute;
     display: block;
     background-color: #C94800;
-    width: 100%;
+    width: 86%;
     height: rem(3);
     top: 50%;
     transform: translateY(-50%);
@@ -103,3 +104,4 @@
         font-size: rem(40);
     }
 }
+

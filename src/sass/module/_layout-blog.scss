@@ -3,8 +3,6 @@
 .layout-blog {
     margin-top: rem(84);
     @include mq(md){
-        max-width: rem(1440);
         margin: 0 auto;
-        overflow: hidden;
     }
 }

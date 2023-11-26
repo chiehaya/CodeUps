@@ -16,11 +16,18 @@
     position: relative;
 }
 
+.btn:hover {
+    @include mq(md){
+        opacity: 1;
+    }
+}
+
 .btn span {
     display: block;
-    height: inherit;
-    width: inherit;
-    padding: rem(18) rem(64) rem(18) rem(11);
+    height: 110%;
+    width: 105%;
+    padding: rem(19) rem(70) rem(19) rem(11);
+    position: relative;
 }
 
 .btn span::before {
@@ -30,8 +37,8 @@
     background-color: $base-color;
     width: rem(40);
     height: rem(1);
-    top: 50%;
-    right: rem(40);
+    top: 48%;
+    right: rem(50);
     transform: translateY(-50%);
     transition: .3s;
     border-radius: 10px;
@@ -44,14 +51,14 @@
     background-color: $base-color;
     width: rem(10);
     height: rem(1);
-    right: rem(39);
-    top: 43%;
+    right: rem(49);
+    top: 41%;
     transform: rotate(45deg);
     transition: .3s;
     border-radius: 10px;
 } 
 
-.btn::before {
+.btn::after {
     content: "";
     position: absolute;
     display: block;
@@ -64,11 +71,32 @@
     z-index: -1;
 }
 
-.btn:hover {
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: $base-color;
+    transform: scale(0,1);
+    transform-origin: left top;
+    transition: .3s;
+    transition-property: transform;
+}
+
+.btn:hover span {
     @include mq(md){
         color: $accent-color;
-        background-color: $base-color;
         opacity: 1;
+    }
+}
+
+
+.btn:hover::before {
+    @include mq(md){
+        transform: scale(1,1);
     }
 }
 

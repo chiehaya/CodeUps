@@ -19,12 +19,14 @@
     @include mq(md){
         display: flex;
         height: inherit;
+        width: inherit;
     }
 }
 
 .loader__img-left img {
     @include mq(md){
         object-fit: cover;
+        object-position: right;
         width: 100%;
         height: 100%;
     }
@@ -33,6 +35,7 @@
 .loader__img-right img{
     @include mq(md){
         object-fit: cover;
+        object-position: left;
         width: 100%;
         height: 100%;
     }
@@ -41,7 +44,7 @@
 .loader__img-left {
     aspect-ratio: 720 / 768;
     max-width: 100%;
-    width: 100%;
+    width: 50%;
     opacity: 0;
     transition-duration: 1500ms;
     transition-property: opacity, transform;
@@ -61,7 +64,7 @@
 
 .loader__img-right {
     aspect-ratio: 720 / 768;
-    max-width: 100%;
+    max-width: 50%;
     width: 100%;
     opacity: 0;
     transition-duration: 1500ms;

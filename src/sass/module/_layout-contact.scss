@@ -2,7 +2,6 @@
 
 .layout-contact {
     margin-top: rem(30);
-    overflow: hidden;
     @include mq(md){
         margin-top: rem(90);
     }

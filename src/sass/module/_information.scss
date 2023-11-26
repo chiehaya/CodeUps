@@ -30,7 +30,7 @@
     position: relative;
     @include mq(md){
     aspect-ratio: 540 / 356;
-    max-width: 50%;
+    width: 49.9%;
     }
 }
 
@@ -55,6 +55,7 @@
     margin-top: rem(24);
     @include mq(md){
         margin-top: 0;
+        width: 45.6%;
     }
 }
 

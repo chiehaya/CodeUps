@@ -29,7 +29,6 @@
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script defer src="./assets/js/jquery.inview.min.js"></script>
-    <script defer src="./assets/js/jquery.inview.min.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script defer src="./assets/js/script.js"></script>
   </head>
@@ -244,7 +243,7 @@
     </div>
 
     <section class="campaign layout-campaign">
-      <div class="campaign__inner">
+      <div class="campaign__inner inner">
         <h3 class="campaign__title section-title">Campaign
           <span>キャンペーン</span>
         </h3>
@@ -252,76 +251,130 @@
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
         </div>
-        <div class="campaign__list">
-          <div class="campaign__swiper swiper js-campaign-swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="campaign-swiper__item campaign-item">
-                  <div class="campaign-item__img">
-                    <img src="./assets/images/common/campaign01.jpg" alt="キャンペーン">
+        <div class="campaign__container">
+          <div class="campaign__list">
+            <div class="campaign__swiper swiper js-campaign-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide campaign-swiper__item campaign-item">
+                    <div class="campaign-item__img">
+                      <img src="./assets/images/common/campaign01.jpg" alt="キャンペーン">
+                    </div>
+                    <div class="campaign-item__content">
+                      <p class="campaign-item__category category">ライセンス講習</p>
+                      <p class="campaign-item__title">ライセンス取得</p>
+                      <div class="campaign-item__wrapper">
+                        <p class="campaign-item__text">全部コミコミ(お一人様)</p>
+                        <div class="campaign-item__price">
+                          <p class="campaign-item__listing-price">¥56,000</p>
+                          <p class="campaign-item__discount-price">¥46,000</p>
+                        </div>
+                    </div>
                   </div>
-                  <div class="campaign-item__content">
-                    <p class="campaign-item__category category">ライセンス講習</p>
-                    <p class="campaign-item__title">ライセンス取得</p>
-                    <div class="campaign-item__wrapper">
-                      <p class="campaign-item__text">全部コミコミ(お一人様)</p>
-                      <div class="campaign-item__price">
-                        <p class="campaign-item__listing-price">¥56,000</p>
-                        <p class="campaign-item__discount-price">¥46,000</p>
+                </div>
+                <div class="swiper-slide">
+                  <div class="campaign-list__item campaign-item">
+                    <div class="campaign-item__img">
+                      <img src="./assets/images/common/campaign02.jpg" alt="キャンペーン">
+                    </div>
+                    <div class="campaign-item__content">
+                      <p class="campaign-item__category category">体験ダイビング</p>
+                      <p class="campaign-item__title">貸切体験ダイビング</p>
+                      <div class="campaign-item__wrapper">
+                        <p class="campaign-item__text">全部コミコミ(お一人様)</p>
+                        <div class="campaign-item__price">
+                          <p class="campaign-item__listing-price">¥24,000</p>
+                          <p class="campaign-item__discount-price">¥18,000</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="campaign-list__item campaign-item">
-                  <div class="campaign-item__img">
-                    <img src="./assets/images/common/campaign02.jpg" alt="キャンペーン">
-                  </div>
-                  <div class="campaign-item__content">
-                    <p class="campaign-item__category category">体験ダイビング</p>
-                    <p class="campaign-item__title">貸切体験ダイビング</p>
-                    <div class="campaign-item__wrapper">
-                      <p class="campaign-item__text">全部コミコミ(お一人様)</p>
-                      <div class="campaign-item__price">
-                        <p class="campaign-item__listing-price">¥24,000</p>
-                        <p class="campaign-item__discount-price">¥18,000</p>
+                <div class="swiper-slide">
+                  <div class="campaign-list__item campaign-item">
+                    <div class="campaign-item__img">
+                      <img src="./assets/images/common/campaign03.jpg" alt="キャンペーン">
+                    </div>
+                    <div class="campaign-item__content">
+                      <p class="campaign-item__category category">体験ダイビング</p>
+                      <p class="campaign-item__title">ナイトダイビング</p>
+                      <div class="campaign-item__wrapper">
+                        <p class="campaign-item__text">全部コミコミ(お一人様)</p>
+                        <div class="campaign-item__price">
+                          <p class="campaign-item__listing-price">¥10,000</p>
+                          <p class="campaign-item__discount-price">¥8,000</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="campaign-list__item campaign-item">
-                  <div class="campaign-item__img">
-                    <img src="./assets/images/common/campaign03.jpg" alt="キャンペーン">
-                  </div>
-                  <div class="campaign-item__content">
-                    <p class="campaign-item__category category">体験ダイビング</p>
-                    <p class="campaign-item__title">ナイトダイビング</p>
-                    <div class="campaign-item__wrapper">
-                      <p class="campaign-item__text">全部コミコミ(お一人様)</p>
-                      <div class="campaign-item__price">
-                        <p class="campaign-item__listing-price">¥10,000</p>
-                        <p class="campaign-item__discount-price">¥8,000</p>
+                <div class="swiper-slide">
+                  <div class="campaign-list__item campaign-item">
+                    <div class="campaign-item__img">
+                      <img src="./assets/images/common/campaign04.jpg" alt="キャンペーン">
+                    </div>
+                    <div class="campaign-item__content">
+                      <p class="campaign-item__category category">ファンダイビング</p>
+                      <p class="campaign-item__title">貸切ファンダイビング</p>
+                      <div class="campaign-item__wrapper">
+                        <p class="campaign-item__text">全部コミコミ(お一人様)</p>
+                        <div class="campaign-item__price">
+                          <p class="campaign-item__listing-price">¥20,000</p>
+                          <p class="campaign-item__discount-price">¥16,000</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="campaign-list__item campaign-item">
-                  <div class="campaign-item__img">
-                    <img src="./assets/images/common/campaign04.jpg" alt="キャンペーン">
+                <div class="swiper-slide">
+                  <div class="campaign-list__item campaign-item">
+                    <div class="campaign-item__img">
+                      <img src="./assets/images/common/campaign02.jpg" alt="キャンペーン">
+                    </div>
+                    <div class="campaign-item__content">
+                      <p class="campaign-item__category category">体験ダイビング</p>
+                      <p class="campaign-item__title">貸切体験ダイビング</p>
+                      <div class="campaign-item__wrapper">
+                        <p class="campaign-item__text">全部コミコミ(お一人様)</p>
+                        <div class="campaign-item__price">
+                          <p class="campaign-item__listing-price">¥24,000</p>
+                          <p class="campaign-item__discount-price">¥18,000</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="campaign-item__content">
-                    <p class="campaign-item__category category">ファンダイビング</p>
-                    <p class="campaign-item__title">貸切ファンダイビング</p>
-                    <div class="campaign-item__wrapper">
-                      <p class="campaign-item__text">全部コミコミ(お一人様)</p>
-                      <div class="campaign-item__price">
-                        <p class="campaign-item__listing-price">¥20,000</p>
-                        <p class="campaign-item__discount-price">¥16,000</p>
+                </div>
+                <div class="swiper-slide">
+                  <div class="campaign-list__item campaign-item">
+                    <div class="campaign-item__img">
+                      <img src="./assets/images/common/campaign03.jpg" alt="キャンペーン">
+                    </div>
+                    <div class="campaign-item__content">
+                      <p class="campaign-item__category category">体験ダイビング</p>
+                      <p class="campaign-item__title">ナイトダイビング</p>
+                      <div class="campaign-item__wrapper">
+                        <p class="campaign-item__text">全部コミコミ(お一人様)</p>
+                        <div class="campaign-item__price">
+                          <p class="campaign-item__listing-price">¥10,000</p>
+                          <p class="campaign-item__discount-price">¥8,000</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="campaign-list__item campaign-item">
+                    <div class="campaign-item__img">
+                      <img src="./assets/images/common/campaign04.jpg" alt="キャンペーン">
+                    </div>
+                    <div class="campaign-item__content">
+                      <p class="campaign-item__category category">ファンダイビング</p>
+                      <p class="campaign-item__title">貸切ファンダイビング</p>
+                      <div class="campaign-item__wrapper">
+                        <p class="campaign-item__text">全部コミコミ(お一人様)</p>
+                        <div class="campaign-item__price">
+                          <p class="campaign-item__listing-price">¥20,000</p>
+                          <p class="campaign-item__discount-price">¥16,000</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -329,19 +382,22 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="campaign__btn">
-          <a href="#" class="btn">
-            <span>
-              View more
-            </span>
-          </a>
+          <div class="campaign__btn">
+            <a href="#" class="btn">
+              <span>
+                View more
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="about layout-about">
       <div class="about__inner inner">
+        <div class="about__decoration">
+          <img src="./assets/images/common/about03.png" alt="装飾">
+        </div>
         <h3 class=" about__title section-title">
           About us
           <span>私たちについて</span>
@@ -361,9 +417,7 @@
           <div class="about__pc-img2">
             <img src="./assets/images/common/about02.jpg" alt="about us">
           </div>
-          <div class="about__decoration">
-            <img src="./assets/images/common/about03.png" alt="装飾">
-          </div>
+         
           <div class="about__head">
             <p class="about__message">
               Dive into<br>the Ocean
@@ -413,6 +467,9 @@
     </section>
 
     <section class="blog layout-blog">
+      <div class="blog__img">
+        <img src="./assets/images/common/blog-bg.jpg" alt="">
+      </div>
       <div class="blog__inner inner">
         <div class="blog__decoration">
           <img src="./assets/images/common/blog04.png" alt="装飾">

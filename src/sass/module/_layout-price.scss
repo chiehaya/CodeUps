@@ -2,8 +2,6 @@
 
 .layout-price {
     @include mq(md){
-        max-width: rem(1440);
-        margin: auto;
-        overflow: hidden;
+        // margin: auto;
     }
 }

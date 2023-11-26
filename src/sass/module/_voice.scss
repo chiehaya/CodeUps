@@ -19,13 +19,13 @@
 .voice__decoration1 {
     width: rem(301);
     top: 0;
-    left: rem(-54);
+    left: max(calc(50% - 49vw),-55px);
 }
 
 .voice__decoration2 {
     width: rem(71);
     bottom: 0;
-    right: rem(24);
+    right: rem(25);
 }
 
 .voice__contents {

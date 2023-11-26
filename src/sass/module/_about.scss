@@ -3,6 +3,7 @@
 .about__inner {
     @include mq(md){
         padding: 0 rem(40);
+        position: relative;
     }
 }
 
@@ -60,8 +61,7 @@
         justify-content: flex-end;
         max-width: rem(1080);
         width: 100%;
-        gap: rem(24);
-        position: relative;
+        position : relative;
         margin-top: rem(43);
     }
 }
@@ -116,7 +116,7 @@
         color: $base-color;
         font-size: rem(80);
         line-height: 1.25;
-        width: 40%;
+        width: 42.4%;
         padding-top: rem(14);
     }
 }
@@ -152,7 +152,7 @@
         display: block;
         position: absolute;
         bottom: 0;
-        right: rem(-96);
+        right: max(50% - 49vw, -72px);
         width: rem(194);
     }
 }

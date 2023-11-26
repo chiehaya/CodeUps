@@ -1,7 +1,6 @@
 body {
 	color: #0D2936;
 	font-family: "Noto Sans JP", sans-serif;
-	position: relative;
 }
 
 .u-desktop {
@@ -231,21 +230,26 @@ a {
 	display: none;
 }
 
-.blog__inner.inner {
-	padding-left: 1.25rem;
-	padding-right: 1.25rem;
-}
-
 .blog__decoration {
 	display: none;
 }
 
 .blog__items {
 	margin-top: 1.8125rem;
+	padding-left: 0.4375rem;
+	padding-right: 0.4375rem;
+}
+
+.blog__items a {
+	transition: 0.3s;
+}
+
+.blog__items a:hover {
+	scale: 1.02;
 }
 
 .blog__btn {
-	margin-top: 2.375rem;
+	margin-top: 2.5rem;
 	padding-right: 0.3125rem;
 	text-align: center;
 }
@@ -268,9 +272,10 @@ a {
 
 .btn span {
 	display: block;
-	height: inherit;
-	padding: 1.125rem 4rem 1.125rem 0.6875rem;
-	width: inherit;
+	height: 110%;
+	padding: 1.1875rem 4.375rem 1.1875rem 0.6875rem;
+	position: relative;
+	width: 105%;
 }
 
 .btn span::before {
@@ -280,8 +285,8 @@ a {
 	display: block;
 	height: 0.0625rem;
 	position: absolute;
-	right: 2.5rem;
-	top: 50%;
+	right: 3.125rem;
+	top: 48%;
 	transform: translateY(-50%);
 	transition: 0.3s;
 	width: 2.5rem;
@@ -294,14 +299,14 @@ a {
 	display: block;
 	height: 0.0625rem;
 	position: absolute;
-	right: 2.4375rem;
-	top: 43%;
+	right: 3.0625rem;
+	top: 41%;
 	transform: rotate(45deg);
 	transition: 0.3s;
 	width: 0.625rem;
 }
 
-.btn::before {
+.btn::after {
 	background-color: transparent;
 	border: 1px solid #408F95;
 	bottom: -0.3125rem;
@@ -314,9 +319,25 @@ a {
 	z-index: -1;
 }
 
+.btn::before {
+	background: #FFFFFF;
+	content: "";
+	display: block;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	transform: scale(0, 1);
+	transform-origin: left top;
+	transition: 0.3s;
+	transition-property: transform;
+	width: 100%;
+}
+
 .campaign-item {
 	background-color: #FFFFFF;
 	box-shadow: 0.125rem 0.1875rem 0.1875rem 0.1875rem rgba(0, 0, 0, 0.05);
+	height: 100%;
 	width: 17.5rem;
 }
 
@@ -340,7 +361,7 @@ a {
 	font-size: 1rem;
 	font-weight: 500;
 	line-height: 1;
-	margin-top: 0.625rem;
+	margin-top: 0.5rem;
 }
 
 .campaign-item__wrapper {
@@ -377,7 +398,7 @@ a {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	width: 100%;
+	width: 86%;
 }
 
 .campaign-item__discount-price {
@@ -387,28 +408,33 @@ a {
 	font-weight: 700;
 }
 
-.campaign__swiper {
-	margin-top: 1.5rem;
+.campaign__container {
+	margin-left: calc(50% - 50vw);
+	overflow: hidden;
+	padding-bottom: 0.3125rem;
+	width: 100vw;
 }
 
 .campaign__list {
+	display: flex;
+	margin-top: 1.5rem;
+}
+
+.campaign__swiper {
+	display: flex;
 	margin-top: 0.4375rem;
-	overflow: hidden;
+	max-width: 67.5rem;
+	overflow: visible;
 	padding-left: 0.9375rem;
 	position: relative;
 }
 
-.campaign__swiper {
-	overflow: visible;
-}
-
 .campaign__swiper .swiper-slide {
-	height: 23.4375rem;
 	width: 17.5rem;
 }
 
 .campaign__btn {
-	margin-top: 1.9375rem;
+	margin-top: 2.625rem;
 	padding-right: 0.25rem;
 	text-align: center;
 }
@@ -421,7 +447,14 @@ a {
 }
 
 .card__img {
-	aspect-ratio: 301/201;
+	aspect-ratio: 301/202;
+	width: 100%;
+}
+
+.card__img img {
+	-o-object-fit: cover;
+	height: 100%;
+	object-fit: cover;
 	width: 100%;
 }
 
@@ -449,7 +482,7 @@ a {
 }
 
 .cards__item + .cards__item {
-	margin-top: 2.3125rem;
+	margin-top: 2.4375rem;
 }
 
 .category {
@@ -804,13 +837,14 @@ a {
 .inner {
 	margin-left: auto;
 	margin-right: auto;
+	max-width: 37.5rem;
 	padding-left: 15px;
 	padding-right: 15px;
 	width: 100%;
 }
 
 .layout-about {
-	margin-top: 5.4375rem;
+	margin-top: 5.125rem;
 }
 
 .layout-blog {
@@ -823,7 +857,6 @@ a {
 
 .layout-contact {
 	margin-top: 1.875rem;
-	overflow: hidden;
 }
 
 .layout-footer {
@@ -860,7 +893,7 @@ a {
 	transform: translate(0, -500px);
 	transition-duration: 1500ms;
 	transition-property: opacity, transform;
-	width: 100%;
+	width: 50%;
 }
 
 .loader__img-right.is-fade-up {
@@ -875,7 +908,7 @@ a {
 
 .loader__img-right {
 	aspect-ratio: 720/768;
-	max-width: 100%;
+	max-width: 50%;
 	opacity: 0;
 	transform: translate(0, -580px);
 	transition-duration: 1500ms;
@@ -1112,6 +1145,7 @@ a {
 	align-items: center;
 	display: flex;
 	font-size: 0.875rem;
+	gap: 1.875rem;
 	justify-content: space-between;
 	margin-top: 0.6875rem;
 }
@@ -1121,7 +1155,7 @@ a {
 	padding-right: 0.3125rem;
 	position: relative;
 	text-align: center;
-	z-index: 10;
+	z-index: 1;
 }
 
 .section-title {
@@ -1273,14 +1307,14 @@ a {
 }
 
 .voice__decoration1 {
-	left: -3.375rem;
+	left: max(50% - 49vw, -55px);
 	top: 0;
 	width: 18.8125rem;
 }
 
 .voice__decoration2 {
 	bottom: 0;
-	right: 1.5rem;
+	right: 1.5625rem;
 	width: 4.4375rem;
 }
 
@@ -1310,6 +1344,7 @@ html {
 
 .about__inner {
 	padding: 0 2.5rem;
+	position: relative;
 }
 
 .about__images {
@@ -1326,7 +1361,6 @@ html {
 
 .about__container {
 	display: flex;
-	gap: 1.5rem;
 	justify-content: flex-end;
 	margin-top: 2.6875rem;
 	max-width: 67.5rem;
@@ -1364,7 +1398,7 @@ html {
 	font-size: 5rem;
 	line-height: 1.25;
 	padding-top: 0.875rem;
-	width: 40%;
+	width: 42.4%;
 }
 
 .about__wrapper {
@@ -1386,15 +1420,28 @@ html {
 	bottom: 0;
 	display: block;
 	position: absolute;
-	right: -6rem;
+	right: max(50% - 49vw, -72px);
 	width: 12.125rem;
 }
 
 .blog {
-	background-image: url(../../assets/images/common/blog-bg.jpg);
-	background-position: top;
-	background-repeat: no-repeat;
-	background-size: contain;
+	position: relative;
+}
+
+.blog__img {
+	height: 60%;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+}
+
+.blog__img img {
+	-o-object-fit: cover;
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
 }
 
 .blog__inner {
@@ -1403,14 +1450,9 @@ html {
 	position: relative;
 }
 
-.blog__inner.inner {
-	padding-left: 1.5625rem;
-	padding-right: 1.5625rem;
-}
-
 .blog__decoration {
 	display: block;
-	left: -3.4375rem;
+	left: max(50% - 49vw, -55px);
 	position: absolute;
 	top: 1.4375rem;
 	width: 27.3125rem;
@@ -1418,6 +1460,7 @@ html {
 
 .blog__items {
 	margin-top: 5.0625rem;
+	padding: 0;
 }
 
 .blog__btn {
@@ -1426,9 +1469,16 @@ html {
 }
 
 .btn:hover {
-	background-color: #FFFFFF;
+	opacity: 1;
+}
+
+.btn:hover span {
 	color: #408F95;
 	opacity: 1;
+}
+
+.btn:hover::before {
+	transform: scale(1, 1);
 }
 
 .btn span:hover::before {
@@ -1483,24 +1533,22 @@ html {
 	position: relative;
 }
 
-.campaign__swiper {
+.campaign__list {
 	margin-top: 2.5rem;
 }
 
-.campaign__list {
+.campaign__swiper {
 	margin-left: auto;
 	margin-top: 0.1875rem;
-	max-width: 78.75rem;
 	padding-left: 0;
 }
 
 .campaign__swiper .swiper-slide {
-	height: 29.375rem;
 	width: 20.8125rem;
 }
 
 .campaign__btn {
-	margin-top: 3.4375rem;
+	margin-top: 4.875rem;
 }
 
 .cards {
@@ -1522,7 +1570,7 @@ html {
 }
 
 .contact__decoration {
-	right: -6.5625rem;
+	right: max(50% - 49vw, -106px);
 	top: 0.9375rem;
 	width: 18.8125rem;
 }
@@ -1653,11 +1701,12 @@ html {
 
 .information__img {
 	aspect-ratio: 540/356;
-	max-width: 50%;
+	width: 49.9%;
 }
 
 .information__contents {
 	margin-top: 0;
+	width: 45.6%;
 }
 
 .information__topic {
@@ -1675,14 +1724,11 @@ html {
 }
 
 .layout-about {
-	margin-top: 9rem;
-	overflow: hidden;
+	margin-top: 8.75rem;
 }
 
 .layout-blog {
 	margin: 0 auto;
-	max-width: 90rem;
-	overflow: hidden;
 }
 
 .layout-campaign {
@@ -1701,17 +1747,9 @@ html {
 
 .layout-information {
 	margin: 4.6875rem auto 0;
-	max-width: 90rem;
-}
-
-.layout-price {
-	margin: auto;
-	max-width: 90rem;
-	overflow: hidden;
 }
 
 .layout-voice {
-	overflow: hidden;
 	padding-bottom: 4.375rem;
 	padding-top: 0.8125rem;
 }
@@ -1731,19 +1769,24 @@ html {
 .loader__imgs {
 	display: flex;
 	height: inherit;
+	width: inherit;
 }
 
 .loader__img-left img {
 	-o-object-fit: cover;
+	-o-object-position: right;
 	height: 100%;
 	object-fit: cover;
+	object-position: right;
 	width: 100%;
 }
 
 .loader__img-right img {
 	-o-object-fit: cover;
+	-o-object-position: left;
 	height: 100%;
 	object-fit: cover;
+	object-position: left;
 	width: 100%;
 }
 
@@ -1819,7 +1862,7 @@ html {
 .price__decoration {
 	bottom: 3.4375rem;
 	display: block;
-	left: -3.375rem;
+	left: max(50% - 49vw, -55px);
 	position: absolute;
 	width: 27.3125rem;
 }
@@ -1886,7 +1929,7 @@ html {
 	display: flex;
 	gap: 5rem;
 	position: absolute;
-	right: 10.625rem;
+	right: 0.9375rem;
 	top: 1.5rem;
 	width: 16.1875rem;
 }
