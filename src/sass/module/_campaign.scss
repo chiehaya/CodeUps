@@ -2,7 +2,6 @@
 
 .campaign__inner {
     @include mq(md){
-        padding: 0;
         position: relative; 
     }
 }
@@ -12,6 +11,10 @@
     width: 100vw;
     margin-left: calc(50% - 50vw);
     padding-bottom: rem(5);
+    @include mq(md){
+        padding-right: rem(25);
+        padding-left: rem(25);
+    }
 }
 
 .campaign__list {
