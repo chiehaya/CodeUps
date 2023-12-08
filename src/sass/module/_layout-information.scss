@@ -2,7 +2,9 @@
 
 .layout-information {
     margin-top: rem(73);
+    padding: rem(84) 0 rem(83);
     @include mq(md){
-        margin: rem(75) auto 0;
+        margin-top: rem(166);
+        padding: rem(100) 0 rem(76);
     }
 }

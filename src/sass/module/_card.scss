@@ -5,6 +5,11 @@
     background-color: $base-color;
     padding: rem(16) rem(16) rem(24);
     box-shadow: rem(2) rem(3) rem(3) rem(3) rgba(0, 0, 0, .05);
+    @include mq(md){
+        display: flex;
+        flex-direction: column;
+
+    }
 }
 
 .card__img {
@@ -20,6 +25,12 @@
 
 .card__body {
     margin-top: rem(19);
+    @include mq(md){
+        margin-top: rem(23);
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+    }
 }
 
 .card__date {
@@ -33,6 +44,9 @@
     line-height: 1.5;
     padding-bottom: rem(2.4);
     font-weight: $medium;
+    @include mq(md){
+        flex-grow: 1;
+    }
 }
 
 .card__text {

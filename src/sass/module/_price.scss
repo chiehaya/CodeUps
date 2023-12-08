@@ -5,12 +5,8 @@
 }
 
 .price__inner {
-    padding-top: rem(83);
-    padding-bottom: rem(83);
     @include mq(md){
         position: relative;
-        padding-top: rem(102);
-        padding-bottom: rem(99);
     }
 }
 
@@ -19,7 +15,7 @@
     @include mq(md){
         display: block;
         position: absolute;
-        bottom: rem(55);
+        bottom: rem(-50);
         width: rem(437);
         left: max(50% - 49vw, -55px);
     }

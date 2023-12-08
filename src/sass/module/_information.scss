@@ -5,10 +5,7 @@
 }
 
 .information__inner {
-    padding: rem(84) 0 rem(83);
-    @include mq(md){
-        padding: rem(100) 0 rem(76);
-    }
+
 }
 
 .information__container {
@@ -78,8 +75,4 @@
 .information__btn {
     margin-top: rem(40);
     text-align: center;
-    padding-right: rem(3);
-    @include mq(md){
-        padding-right: rem(11);
-    }
 }

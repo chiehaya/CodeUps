@@ -2,7 +2,6 @@
 
 .contact__inner {
     position: relative;
-    padding: rem(50) 0;
 }
 
 .contact__decoration {
@@ -12,7 +11,7 @@
     width: rem(109);
     @include mq(md){
         width: rem(301);
-        top: rem(15);
+        top: rem(-36);
         right: max(calc(50% - 49vw),-106px);
     }
 }

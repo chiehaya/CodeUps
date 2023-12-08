@@ -28,19 +28,23 @@ jQuery(function ($) {
   function openDrawer() {
     $(".js-drawer").fadeIn();
     $(".js-hamburger").addClass("is-open");
+    $(".js-header").addClass("is-open");
+    $("body").css("position", "fixed");
   }
   function closeDrawer() {
     $(".js-drawer").fadeOut();
     $(".js-hamburger").removeClass("is-open");
+    $(".js-header").removeClass("is-open");
+    $("body").css("position", "");
   }
 
   // swiper
-  var campaign_swiper = new Swiper(".campaign__list .js-campaign-swiper", {
+  var campaign_swiper = new Swiper(".js-campaign-swiper", {
     slidesPerView: 'auto',
     spaceBetween: 16,
     grabCursor: true,
     pagination: {
-      el: '.campaign__list .swiper-pagination',
+      el: '.swiper-pagination',
       clickable: true
     },
     navigation: {
@@ -162,6 +166,12 @@ jQuery(function ($) {
 
   // 画面幅が768pxより大きい場合に実行する関数
   function executeOnLargeScreen() {
+    function fixed() {
+      $("body").css("position", "fixed");
+    }
+    function initial() {
+      $("body").css("position", "");
+    }
     function loadRight() {
       $('.loader__img-right').addClass("is-fade-up");
     }
@@ -193,6 +203,12 @@ jQuery(function ($) {
     }
     $(window).on('load', function () {
       setTimeout(function () {
+        fixed();
+      }, 0);
+      setTimeout(function () {
+        initial();
+      }, 4900);
+      setTimeout(function () {
         loadLeft();
       }, 1000);
       setTimeout(function () {
@@ -209,7 +225,7 @@ jQuery(function ($) {
       }, 5000);
       setTimeout(function () {
         swiper();
-      }, 4000);
+      }, 5000);
     });
   }
 

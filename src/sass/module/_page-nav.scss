@@ -35,14 +35,8 @@
     }
 }
 
-.page-nav__flex {
-    @include mq(md){
-        
-    }
-}
-
 .page-nav__flex .page-nav__item:not(:first-child) {
-    padding-top: rem(42);
+    margin-top: rem(42);
 }
 
 .page-nav__item a {
@@ -77,7 +71,7 @@
 }
 
 .page-nav__link {
-    padding-top: rem(26);
+    margin-top: rem(26);
 }
 
 

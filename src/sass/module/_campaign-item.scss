@@ -7,6 +7,8 @@
     height: 100%;
     @include mq(md){
         width: rem(334);
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -29,6 +31,11 @@
     @include mq(md){
         padding-top: rem(24);
         padding-bottom: rem(33);
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        
     }
 }
 
@@ -37,24 +44,26 @@
     line-height: 1;
     font-weight: $medium;
     font-size: rem(16);
-
+@include mq(md){
+    flex-grow: 1; 
+}
 }
 
 .campaign-item__wrapper {
-    margin-top: rem(10);
-    border-top: 1px solid $accent-color;
-    text-align: center;
-    padding-top: rem(10);
-    @include mq(md){
-        padding-top: rem(16);
-    }
+
 }
 
 .campaign-item__text {
     font-size: rem(14);
+    margin-top: rem(10);
+    border-top: 1px solid $accent-color;
+    text-align: center;
+    padding-top: rem(10);
+    width: 100%;
     @include mq(md){
         font-size: rem(16);
         padding-right: rem(17);
+        padding-top: rem(16);
     }
 }
 
