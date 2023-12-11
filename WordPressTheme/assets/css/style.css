@@ -351,6 +351,7 @@ a {
 	align-items: baseline;
 	display: flex;
 	gap: 1rem;
+	justify-content: center;
 	letter-spacing: 0;
 }
 
@@ -1461,6 +1462,7 @@ html {
 
 .campaign-item__price {
 	gap: 1.5625rem;
+	justify-content: left;
 	margin-top: -0.1875rem;
 }
 

@@ -66,11 +66,13 @@
 .campaign-item__price {
     display: flex;
     align-items: baseline;
+    justify-content: center;
     gap: rem(16);
     letter-spacing: 0;
     @include mq(md){
         gap: rem(25);
         margin-top: rem(-3);
+        justify-content: left;
     }
 }
 
