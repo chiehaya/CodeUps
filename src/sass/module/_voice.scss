@@ -17,7 +17,7 @@
 .voice__decoration1 {
     width: rem(301);
     top: rem(-121);
-    left: max(calc(50% - 49vw),-55px);
+    left: max(calc(50% - 49vw),-3.4375rem);
 }
 
 .voice__decoration2 {
@@ -36,7 +36,6 @@
 .voice__btn {
     text-align: center;
     margin-top: rem(40);
-    padding-right: rem(4);
     @include mq(md){
         margin-top: rem(80);
     }

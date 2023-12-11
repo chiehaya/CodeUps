@@ -204,7 +204,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
             }, 0);
             setTimeout(function () {
                 initial();
-            }, 4900);
+            }, 2000);
             setTimeout(function () {
                 loadLeft();
             }, 1000);

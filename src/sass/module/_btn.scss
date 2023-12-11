@@ -16,10 +16,38 @@
     position: relative;
 }
 
-.btn:hover {
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: $base-color;
+    transform: scale(0,1);
+    transform-origin: left top;
+    transition: .3s;
+    transition-property: transform;
+}
+
+.btn:hover::before {
     @include mq(md){
-        opacity: 1;
+        transform: scale(1,1);
     }
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: transparent;
+    border: 1px solid $accent-color;
+    width: rem(202);
+    height: rem(54);
+    bottom: rem(-5);
+    left: rem(4);
+    z-index: -1;
 }
 
 .btn span {
@@ -28,6 +56,13 @@
     width: 105%;
     padding: rem(19) rem(70) rem(19) rem(11);
     position: relative;
+}
+
+.btn:hover span {
+    @include mq(md){
+        color: $accent-color;
+        opacity: 1;
+    }
 }
 
 .btn span::before {
@@ -44,6 +79,13 @@
     border-radius: 10px;
 }
 
+.btn span:hover::before {
+    @include mq(md){
+        background-color: $accent-color;
+        opacity: 1;
+    }
+}
+
 .btn span::after {
     content: "";
     position: absolute;
@@ -56,55 +98,6 @@
     transform: rotate(45deg);
     transition: .3s;
     border-radius: 10px;
-} 
-
-.btn::after {
-    content: "";
-    position: absolute;
-    display: block;
-    background-color: transparent;
-    border: 1px solid $accent-color;
-    width: rem(202);
-    height: rem(54);
-    bottom: rem(-5);
-    left: rem(4);
-    z-index: -1;
-}
-
-.btn::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: $base-color;
-    transform: scale(0,1);
-    transform-origin: left top;
-    transition: .3s;
-    transition-property: transform;
-}
-
-.btn:hover span {
-    @include mq(md){
-        color: $accent-color;
-        opacity: 1;
-    }
-}
-
-
-.btn:hover::before {
-    @include mq(md){
-        transform: scale(1,1);
-    }
-}
-
-.btn span:hover::before {
-    @include mq(md){
-        background-color: $accent-color;
-        opacity: 1;
-    }
 }
 
 .btn span:hover::after {

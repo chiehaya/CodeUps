@@ -36,7 +36,7 @@
     right: 50%;
     border-radius: 10px;
     @include mq(md){
-    height: rem(40);
+        height: rem(40);
     }
 }
 

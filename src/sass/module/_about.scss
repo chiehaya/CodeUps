@@ -2,7 +2,6 @@
 
 .about__inner {
     @include mq(md){
-        padding: 0 rem(40);
         position: relative;
     }
 }
@@ -21,13 +20,11 @@
 .about__image-1 {
     width: 37.1%;
     max-width: 100%;
-    z-index: -1;
     margin-bottom: rem(18);
     aspect-ratio: 128 /194;
     @include mq(md){
         display: block;
         margin-bottom: rem(55);
-        max-width: 100%;
         aspect-ratio: 400 / 606;
     }
 }
@@ -36,23 +33,19 @@
     object-fit: cover;
     height: 100%;
     width: 100%;
-
 }
 
 .about__image-2 {
     width: 81.4%;
     max-width: 100%;
-    z-index: -10;
     margin-top: rem(26);
     margin-left: rem(-63);
     aspect-ratio: 281 /186;
+    z-index: -1;
     @include mq(md){
         display: block;
         margin-top: rem(82);
         margin-left: rem(-190);
-        width: 81.4%;
-        max-width: 100%;
-        top: rem(80);
         aspect-ratio: 880 / 581;
     }
 }
@@ -67,14 +60,14 @@
     margin-top: rem(40);
     @include mq(md){
         margin-top: 0;
-        position: absolute;
+        max-width: rem(905);
+        width: 100%;
         display: flex;
         justify-content: center;
         gap: rem(40);
         padding-right: rem(65);
-        top: 38%;
-        max-width: rem(905);
-        width: 100%;
+        position: absolute;
+        top: 40%;
         right: 0;
     }
 }
@@ -89,14 +82,12 @@
         font-size: rem(80);
         line-height: 1.25;
         width: 47.6%;
-        padding-top: rem(14);
     }
 }
 
 .about__wrapper {
     @include mq(md){
         width: 47.6%;
-        padding-top: rem(18);
     }
 }
 
@@ -111,10 +102,8 @@
 .about__btn {
     margin-top: rem(50);
     text-align: center;
-    padding-right: rem(17);
     @include mq(md){
         margin-top: rem(39);
-        padding-right: rem(6);
     }
 }
 

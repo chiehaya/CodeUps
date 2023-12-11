@@ -17,7 +17,7 @@
         position: absolute;
         bottom: rem(-50);
         width: rem(437);
-        left: max(50% - 49vw, -55px);
+        left: max(50% - 49vw, -3.4375rem);
     }
 }
 
@@ -112,7 +112,6 @@
     margin-top: rem(39);
     position: relative;
     z-index: 1;
-    padding-right: rem(5);
     @include mq(md){
         margin-top: rem(80);
     }

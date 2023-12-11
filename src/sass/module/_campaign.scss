@@ -11,30 +11,29 @@
     @include mq(md){
         padding-left: rem(20);
     }
-
 }
 
-.campaign__swiper {
+.campaign__list {
     margin-top: rem(31);
     margin-right: calc(50% - 50vw);
-    padding-bottom: rem(5);
-    padding-left: rem(3);
     @include mq(md){
+        display: flex;
         margin-top: rem(42);
-        padding-left: rem(5);
     }
 }
 
-.campaign__item {
-    height: auto;
+.campaign__swiper {
+    padding-bottom: rem(5);
+    padding-left: rem(3);
+    @include mq(md){
+        padding-left: rem(5);
+    }
 }
 
 .campaign__btn {
     margin-top: rem(37);
     text-align: center;
-    padding-right: rem(4);
     @include mq(md){
         margin-top:rem(78) ;
     }
 }
-

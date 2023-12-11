@@ -207,7 +207,7 @@ jQuery(function ($) {
       }, 0);
       setTimeout(function () {
         initial();
-      }, 4900);
+      }, 2000);
       setTimeout(function () {
         loadLeft();
       }, 1000);

@@ -4,10 +4,6 @@
     background-color: $bg-green;
 }
 
-.information__inner {
-
-}
-
 .information__container {
     margin-top: rem(31);
     position: relative;
@@ -26,8 +22,8 @@
     aspect-ratio: 345 / 227;
     position: relative;
     @include mq(md){
-    aspect-ratio: 540 / 356;
-    width: 49.9%;
+        aspect-ratio: 540 / 356;
+        width: 49.9%;
     }
 }
 
