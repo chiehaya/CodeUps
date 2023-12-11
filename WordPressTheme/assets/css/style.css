@@ -669,7 +669,6 @@ a {
 	outline: none;
 	padding: 0;
 	position: relative;
-	transition: 0.3s;
 	width: 2rem;
 	z-index: 999;
 }
@@ -685,7 +684,7 @@ a {
 	left: 50%;
 	position: relative;
 	transform: translateX(-50%);
-	transition: 0.5s;
+	transition: 0.3s;
 	width: 2rem;
 }
 
