@@ -227,10 +227,12 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     }
 
     // 画面幅によって実行する関数を選択
-    if (window.innerWidth > 768) {
-        executeOnLargeScreen();
-    } else {
-        executeOnSmallScreen();
-    }
+    $(function (){
+        if (window.innerWidth > 768) {
+            executeOnLargeScreen();
+        } else {
+            executeOnSmallScreen();
+        }
+    });
 
 });
