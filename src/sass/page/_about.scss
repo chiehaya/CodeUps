@@ -22,6 +22,7 @@
     max-width: 100%;
     margin-bottom: rem(18);
     aspect-ratio: 128 /194;
+    position: relative;
     @include mq(md){
         display: block;
         margin-bottom: rem(55);
@@ -41,7 +42,6 @@
     margin-top: rem(26);
     margin-left: rem(-63);
     aspect-ratio: 281 /186;
-    z-index: -1;
     @include mq(md){
         display: block;
         margin-top: rem(82);
@@ -115,5 +115,6 @@
         bottom: rem(-91);
         right: max(50% - 49vw, -4.5rem);
         width: rem(194);
+        z-index: 10;
     }
 }

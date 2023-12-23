@@ -1,0 +1,86 @@
+@use "global" as *;
+
+.wp-pagenavi {
+	display: flex;
+	justify-content: center;
+    gap: rem(10);
+}
+.wp-pagenavi a, .wp-pagenavi span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(38);
+    height: rem(38);
+    background-color: $base-color;
+    color: $accent-color;
+    font-weight: $bold;
+    font-size: rem(16);
+    border: 1px solid $accent-color;
+    transition: 0.3s ease;
+}
+.wp-pagenavi a:hover{
+    background-color: $accent-color;
+    color: $base-color;
+    opacity: 1;
+    }
+
+    // 現在のページに該当
+.wp-pagenavi span.current{
+    background-color: $accent-color;
+    color: $base-color;
+    }
+
+.wp-pagenavi.campaign-page__pagenavi .page.smaller:nth-child(n+6) {
+    display: none;
+    @include mq(md){
+        display: inline-flex;
+    }
+    }
+
+.wp-pagenavi .previouspostslink {
+    margin-right: rem(40);
+    position: relative;
+}
+
+.wp-pagenavi .nextpostslink {
+    margin-left: rem(40);
+    position: relative;
+}
+
+.wp-pagenavi .previouspostslink::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: rem(15);
+    height: rem(15);
+    border-left: 1px solid $accent-color;
+    border-bottom: 1px solid $accent-color;
+    transform: rotate(45deg);
+    top: 33%;
+    left: 40%;
+}
+
+.wp-pagenavi .previouspostslink:hover::before {
+    border-left: 1px solid $base-color;
+    border-bottom: 1px solid $base-color;
+    color: $base-color;
+}
+
+.wp-pagenavi .nextpostslink::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: rem(15);
+    height: rem(15);
+    border-right: 1px solid $accent-color;
+    border-bottom: 1px solid $accent-color;
+    transform: rotate(-45deg);
+    top: 33%;
+    left: 25%
+}
+
+.wp-pagenavi .nextpostslink:hover::before {
+    border-right: 1px solid $base-color;
+    border-bottom: 1px solid $base-color;
+    color: $base-color;
+}

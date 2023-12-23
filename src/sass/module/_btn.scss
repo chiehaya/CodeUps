@@ -29,6 +29,7 @@
     transform-origin: left top;
     transition: .3s;
     transition-property: transform;
+    z-index: 10;
 }
 
 .btn:hover::before {
@@ -47,7 +48,6 @@
     height: rem(54);
     bottom: rem(-5);
     left: rem(4);
-    z-index: -1;
 }
 
 .btn span {
@@ -59,6 +59,7 @@
 }
 
 .btn:hover span {
+    z-index: 100;
     @include mq(md){
         color: $accent-color;
         opacity: 1;

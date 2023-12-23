@@ -1,5 +1,9 @@
 @use "global" as *;
 
+.campaign {
+    overflow: hidden;
+}
+
 .campaign__inner {
     @include mq(md){
         position: relative; 
@@ -17,7 +21,6 @@
     margin-top: rem(31);
     margin-right: calc(50% - 50vw);
     @include mq(md){
-        display: flex;
         margin-top: rem(42);
     }
 }
@@ -30,9 +33,17 @@
     }
 }
 
+.campaign__item {
+    width: rem(280);
+    @include mq(md){
+        width: rem(334);
+    }
+}
+
 .campaign__btn {
     margin-top: rem(37);
     text-align: center;
+    padding-bottom: rem(5);
     @include mq(md){
         margin-top:rem(78) ;
     }

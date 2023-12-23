@@ -159,6 +159,7 @@ a {
 	aspect-ratio: 128/194;
 	margin-bottom: 1.125rem;
 	max-width: 100%;
+	position: relative;
 	width: 37.1%;
 }
 
@@ -175,7 +176,6 @@ a {
 	margin-top: 1.625rem;
 	max-width: 100%;
 	width: 81.4%;
-	z-index: -1;
 }
 
 .about__image-2 img {
@@ -228,6 +228,38 @@ a {
 	text-align: center;
 }
 
+.camapaign-page__inner {
+	position: relative;
+}
+
+.campaign-page__cards {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+	margin-top: 2.5rem;
+}
+
+.campaign-page__card {
+	width: max(74%, 17.5rem);
+}
+
+.campaign-page__pagenavi {
+	margin-top: 5rem;
+}
+
+.camapaign-page__decoration {
+	display: block;
+	left: max(50% - 49vw, -3.4375rem);
+	position: absolute;
+	top: -2.1875rem;
+	width: 7.5rem;
+}
+
+.campaign {
+	overflow: hidden;
+}
+
 .campaign__inner.inner {
 	padding-left: 0.75rem;
 }
@@ -242,8 +274,13 @@ a {
 	padding-left: 0.1875rem;
 }
 
+.campaign__item {
+	width: 17.5rem;
+}
+
 .campaign__btn {
 	margin-top: 2.3125rem;
+	padding-bottom: 0.3125rem;
 	text-align: center;
 }
 
@@ -589,6 +626,10 @@ a {
 	margin-top: 5.25rem;
 }
 
+.layout-breadcrumb {
+	margin-top: 0.5rem;
+}
+
 .layout-campaign {
 	margin-top: 2.6875rem;
 }
@@ -615,6 +656,10 @@ a {
 	margin-top: 4.5625rem;
 	padding-bottom: 5.1875rem;
 	padding-top: 5.25rem;
+}
+
+.layout-page-top {
+	margin-top: 3.25rem;
 }
 
 .layout-price {
@@ -825,6 +870,11 @@ a {
 	text-align: center;
 }
 
+.breadcrumb {
+	font-size: 0.875rem;
+	letter-spacing: 1;
+}
+
 .btn {
 	background-color: #408F95;
 	border: 1px solid #408F95;
@@ -854,6 +904,7 @@ a {
 	transition: 0.3s;
 	transition-property: transform;
 	width: 100%;
+	z-index: 10;
 }
 
 .btn::after {
@@ -866,7 +917,6 @@ a {
 	left: 0.25rem;
 	position: absolute;
 	width: 12.625rem;
-	z-index: -1;
 }
 
 .btn span {
@@ -875,6 +925,10 @@ a {
 	padding: 1.1875rem 4.375rem 1.1875rem 0.6875rem;
 	position: relative;
 	width: 105%;
+}
+
+.btn:hover span {
+	z-index: 100;
 }
 
 .btn span::before {
@@ -908,8 +962,7 @@ a {
 .campaign-item {
 	background-color: #FFFFFF;
 	box-shadow: 0.125rem 0.1875rem 0.1875rem 0.1875rem rgba(0, 0, 0, 0.05);
-	height: 100%;
-	width: 17.5rem;
+	height: auto;
 }
 
 .campaign-item__img {
@@ -929,17 +982,18 @@ a {
 }
 
 .campaign-item__title {
+	border-bottom: 1px solid #408F95;
 	font-size: 1rem;
 	font-weight: 500;
 	line-height: 1;
 	margin-top: 0.5rem;
+	padding-bottom: 0.625rem;
+	width: 100%;
 }
 
 .campaign-item__text {
-	border-top: 1px solid #408F95;
 	font-size: 0.875rem;
 	margin-top: 0.625rem;
-	padding-top: 0.625rem;
 	text-align: center;
 	width: 100%;
 }
@@ -950,6 +1004,7 @@ a {
 	gap: 1rem;
 	justify-content: center;
 	letter-spacing: 0;
+	margin: 0 auto;
 }
 
 .campaign-item__listing-price {
@@ -975,6 +1030,22 @@ a {
 	font-family: "Lato", sans-serif;
 	font-size: 2rem;
 	font-weight: 700;
+}
+
+.campaign-item__message {
+	display: none;
+}
+
+.campaign-item__date {
+	display: none;
+}
+
+.campaign-item__reservation {
+	display: none;
+}
+
+.campaign-item__btn {
+	display: none;
 }
 
 .card {
@@ -1007,16 +1078,16 @@ a {
 }
 
 .card__title {
+	border-bottom: 1px solid #408F95;
 	font-weight: 500;
 	line-height: 1.5;
+	padding-bottom: 0.15rem;
 }
 
 .card__text {
-	border-top: 1px solid #408F95;
 	letter-spacing: 0.01em;
 	line-height: 1.5;
-	margin-top: 0.15rem;
-	padding-top: 1rem;
+	margin-top: 1rem;
 }
 
 .cards a {
@@ -1235,10 +1306,13 @@ a {
 }
 
 .tab {
+	background-color: #FFFFFF;
 	display: flex;
 	flex-wrap: wrap;
-	gap: 1.3125rem 1rem;
+	gap: 1.3125rem 6%;
 	justify-content: center;
+	position: relative;
+	z-index: 1;
 }
 
 .tab__link {
@@ -1249,11 +1323,18 @@ a {
 	font-size: 0.875rem;
 	font-weight: 300;
 	line-height: 1;
-	max-width: 10.125rem;
-	padding-bottom: 0.625rem;
-	padding-top: 0.625rem;
+	max-width: 47%;
 	text-align: center;
 	transition: 0.3s;
+	width: 100%;
+}
+
+.tab__link a {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-bottom: 0.625rem;
+	padding-top: 0.625rem;
 	width: 100%;
 }
 
@@ -1326,6 +1407,90 @@ a {
 
 .voice-cards__item + .voice-cards__item {
 	margin-top: 2.5rem;
+}
+
+.wp-pagenavi {
+	display: flex;
+	gap: 0.625rem;
+	justify-content: center;
+}
+
+.wp-pagenavi a,
+.wp-pagenavi span {
+	align-items: center;
+	background-color: #FFFFFF;
+	border: 1px solid #408F95;
+	color: #408F95;
+	display: inline-flex;
+	font-size: 1rem;
+	font-weight: 700;
+	height: 2.375rem;
+	justify-content: center;
+	transition: 0.3s ease;
+	width: 2.375rem;
+}
+
+.wp-pagenavi a:hover {
+	background-color: #408F95;
+	color: #FFFFFF;
+	opacity: 1;
+}
+
+.wp-pagenavi span.current {
+	background-color: #408F95;
+	color: #FFFFFF;
+}
+
+.wp-pagenavi.campaign-page__pagenavi .page.smaller:nth-child(n+6) {
+	display: none;
+}
+
+.wp-pagenavi .previouspostslink {
+	margin-right: 2.5rem;
+	position: relative;
+}
+
+.wp-pagenavi .nextpostslink {
+	margin-left: 2.5rem;
+	position: relative;
+}
+
+.wp-pagenavi .previouspostslink::before {
+	border-bottom: 1px solid #408F95;
+	border-left: 1px solid #408F95;
+	content: "";
+	display: block;
+	height: 0.9375rem;
+	left: 40%;
+	position: absolute;
+	top: 33%;
+	transform: rotate(45deg);
+	width: 0.9375rem;
+}
+
+.wp-pagenavi .previouspostslink:hover::before {
+	border-bottom: 1px solid #FFFFFF;
+	border-left: 1px solid #FFFFFF;
+	color: #FFFFFF;
+}
+
+.wp-pagenavi .nextpostslink::before {
+	border-bottom: 1px solid #408F95;
+	border-right: 1px solid #408F95;
+	content: "";
+	display: block;
+	height: 0.9375rem;
+	left: 25%;
+	position: absolute;
+	top: 33%;
+	transform: rotate(-45deg);
+	width: 0.9375rem;
+}
+
+.wp-pagenavi .nextpostslink:hover::before {
+	border-bottom: 1px solid #FFFFFF;
+	border-right: 1px solid #FFFFFF;
+	color: #FFFFFF;
 }
 
 .swiper-button-prev,
@@ -1452,6 +1617,7 @@ html {
 	position: absolute;
 	right: max(50% - 49vw, -4.5rem);
 	width: 12.125rem;
+	z-index: 10;
 }
 
 .blog {
@@ -1496,6 +1662,25 @@ html {
 	margin-top: 5rem;
 }
 
+.campaign-page__cards {
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 5rem 2.5rem;
+}
+
+.campaign-page__card {
+	width: 47.9%;
+}
+
+.campaign-page__card .campaign-item__title {
+	font-size: 1.5rem;
+}
+
+.camapaign-page__decoration {
+	top: -4.25rem;
+	width: 18.8125rem;
+}
+
 .campaign__inner {
 	position: relative;
 }
@@ -1505,12 +1690,15 @@ html {
 }
 
 .campaign__list {
-	display: flex;
 	margin-top: 2.625rem;
 }
 
 .campaign__swiper {
 	padding-left: 0.3125rem;
+}
+
+.campaign__item {
+	width: 20.875rem;
 }
 
 .campaign__btn {
@@ -1553,6 +1741,10 @@ html {
 	padding-top: 0;
 	text-align: left;
 	width: 40%;
+}
+
+.contact__text {
+	font-size: min(1rem, 1.3vw);
 }
 
 .contact__map {
@@ -1685,6 +1877,10 @@ html {
 	margin-top: 10.375rem;
 	padding-bottom: 4.75rem;
 	padding-top: 6.25rem;
+}
+
+.layout-page-top {
+	margin-top: 9.375rem;
 }
 
 .layout-price {
@@ -1844,7 +2040,6 @@ html {
 .campaign-item {
 	display: flex;
 	flex-direction: column;
-	width: 20.875rem;
 }
 
 .campaign-item__img {
@@ -1866,13 +2061,12 @@ html {
 
 .campaign-item__text {
 	font-size: 1rem;
+	margin-top: 1rem;
 	padding-right: 1.0625rem;
-	padding-top: 1rem;
 }
 
 .campaign-item__price {
 	gap: 1.5625rem;
-	justify-content: left;
 	margin-top: -0.1875rem;
 }
 
@@ -1883,6 +2077,34 @@ html {
 
 .campaign-item__discount-price {
 	font-size: 2.5rem;
+}
+
+.campaign-item__message {
+	display: block;
+	margin: 1.5rem auto 0;
+}
+
+.campaign-item__date {
+	color: #408F95;
+	display: block;
+	font-family: "Lato", sans-serif;
+	font-weight: 700;
+	line-height: 1;
+	margin: 2rem auto 0;
+}
+
+.campaign-item__reservation {
+	color: #408F95;
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1;
+	margin: 0.4375rem auto 0;
+}
+
+.campaign-item__btn {
+	display: block;
+	margin: 1rem auto 0;
+	text-align: center;
 }
 
 .card {
@@ -1998,7 +2220,12 @@ html {
 }
 
 .tab {
+	gap: 1.3125rem 1rem;
 	justify-content: left;
+}
+
+.tab__link {
+	max-width: 10.125rem;
 }
 
 .voice-card {
@@ -2045,6 +2272,10 @@ html {
 
 .voice-cards__item + .voice-cards__item {
 	margin-top: 0;
+}
+
+.wp-pagenavi.campaign-page__pagenavi .page.smaller:nth-child(n+6) {
+	display: inline-flex;
 }
 
 .swiper-controller {

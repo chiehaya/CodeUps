@@ -152,12 +152,9 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
                 },
             });
         }
-
-        $(window).on('load', function () {
-            setTimeout(function () {
-                swiper();
-            }, 0);
-        });
+        setTimeout(function () {
+            swiper();
+        }, 0);
     }
 
     // 画面幅が768pxより大きい場合に実行する関数
@@ -197,33 +194,30 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
                 },
             });
         }
-
-        $(window).on('load', function () {
-            setTimeout(function () {
-                fixed();
-            }, 0);
-            setTimeout(function () {
-                initial();
-            }, 2000);
-            setTimeout(function () {
-                loadLeft();
-            }, 1000);
-            setTimeout(function () {
-                loadRight();
-            }, 1200);
-            setTimeout(function () {
-                end_title();
-            }, 1200);
-            setTimeout(function () {
-                end_load();
-            }, 2000);
-            setTimeout(function () {
-                start_header();
-            }, 5000);
-            setTimeout(function () {
-                swiper();
-            }, 5000);
-        });
+        setTimeout(function () {
+            fixed();
+        }, 0);
+        setTimeout(function () {
+            initial();
+        }, 2000);
+        setTimeout(function () {
+            loadLeft();
+        }, 1000);
+        setTimeout(function () {
+            loadRight();
+        }, 1200);
+        setTimeout(function () {
+            end_title();
+        }, 1200);
+        setTimeout(function () {
+            end_load();
+        }, 2000);
+        setTimeout(function () {
+            start_header();
+        }, 5000);
+        setTimeout(function () {
+            swiper();
+        }, 5000);
     }
 
     // 画面幅によって実行する関数を選択

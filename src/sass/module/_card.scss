@@ -41,15 +41,15 @@
 .card__title {
     line-height: 1.5;
     font-weight: $medium;
+    border-bottom: 1px solid $accent-color;
+    padding-bottom: rem(2.4);
     @include mq(md){
         flex-grow: 1;
     }
 }
 
 .card__text {
-    margin-top: rem(2.4);
-    padding-top: rem(16);
-    border-top: 1px solid $accent-color;
+    margin-top: rem(16);
     line-height: 1.5;
     letter-spacing: 0.01em;
 }

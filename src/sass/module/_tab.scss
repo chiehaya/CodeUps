@@ -4,17 +4,19 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: rem(21) rem(16);
+    gap: rem(21) 6%;
+    background-color: $base-color;
+    position: relative;
+    z-index: 1;
     @include mq(md){
         justify-content: left;
+        gap: rem(21) rem(16);
     }
 }
 
 .tab__link {
-    max-width: rem(162);
+    max-width: 47%;
     width: 100%;
-    padding-top: rem(10);
-    padding-bottom: rem(10);
     text-align: center;
     background-color: $base-color;
     color: $accent-color;
@@ -24,6 +26,18 @@
     border: 1px solid $accent-color;
     transition: .3s;
     cursor: pointer;
+    @include mq(md){
+        max-width: rem(162);
+    }
+}
+
+.tab__link a {
+    padding-top: rem(10);
+    padding-bottom: rem(10);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
 }
 
 .tab__link:hover {

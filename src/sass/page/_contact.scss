@@ -68,6 +68,13 @@
     }
 }
 
+.contact__text {
+    @include mq(md){
+        font-size: min(1rem, 1.3vw);
+    }
+}
+
+
 .contact__map {
     max-width: 100%;
     width: 100%;
