@@ -725,6 +725,11 @@ a {
 	width: 100%;
 }
 
+.contact__text a {
+	-webkit-text-decoration: underline;
+	text-decoration: underline;
+}
+
 .contact__map {
 	aspect-ratio: 295/160;
 	margin-top: 0.8125rem;
@@ -1698,18 +1703,18 @@ a {
 	margin-top: 2.625rem;
 }
 
-.price__term {
+.price__menu {
 	border-bottom: 1px solid #408F95;
 	font-weight: 700;
 	line-height: 1.5;
 	padding-bottom: 0.1875rem;
 }
 
-.price__term:not(:first-child) {
+.price__menu:not(:first-child) {
 	margin-top: 2.5rem;
 }
 
-.price__description {
+.price__list {
 	align-items: center;
 	display: flex;
 	font-size: 0.875rem;
@@ -2881,11 +2886,11 @@ html {
 	width: 100%;
 }
 
-.price__term {
+.price__menu {
 	padding-bottom: 0.125rem;
 }
 
-.price__description {
+.price__list {
 	font-size: 1rem;
 	margin-top: 0.525rem;
 }
