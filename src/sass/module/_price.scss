@@ -57,20 +57,6 @@
     height: 100%;
 }
 
-.price__img img:first-of-type {
-    display: block;
-    @include mq(md){
-        display: none;
-    }
-}
-
-.price__img img:last-of-type {
-    display: none;
-    @include mq(md){
-        display: block;
-    }
-}
-
 .price__items {
     margin-top: rem(42);
     @include mq(md){

@@ -1,23 +1,26 @@
 @use "global" as *;
 
 .section-title {
+    text-align: center;
+}
+
+.section-title__en {
     font-family: $gotu-font-family;
     color: $font-color;
     font-size: rem(32);
     font-weight: $normal;
     line-height: 1;
     display: block;
-    text-align: center;
     @include mq(md){
         font-size: rem(40);
     }
 }
 
-.section-title::first-letter {
+.section-title__en::first-letter {
     color: $accent-color;
 }
 
-.section-title span {
+.section-title__ja {
     font-family: $base-font-family;
     color: $accent-color;
     font-weight: $regular;
@@ -30,20 +33,19 @@
     }
 }
 
-.section-title--white,.section-title--white::first-letter,.section-title--white span {
+.section-title__en--white,.section-title__en--white:first-letter,.section-title__ja--white {
     @include mq(md){
         color: $base-color;
     }
 }
 
-.section-title--big {
+.section-title__en--big {
     font-size: rem(80);
     @include mq(md){
-    font-size: rem(80);
-
+        font-size: rem(80);
     }
 }
 
-.section-title.section-title--big span {
+.section-title__ja--big {
     margin-top: rem(-5);
 }

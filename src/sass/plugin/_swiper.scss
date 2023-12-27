@@ -1,14 +1,14 @@
 @use "global" as *;
 
-.swiper-button-prev,.swiper-button-next{
+.campaign .swiper-button-prev,.swiper-button-next{
     border: 1px solid $accent-color;
     border-radius: 50%;
     width: rem(80);
     height: rem(80);
 }
 
-.swiper-button-prev:after,
-.swiper-button-next:after {
+.campaign .swiper-button-prev:after,
+.campaign .swiper-button-next:after {
     top: 50%;
     transform: translateY(-50%);
     content: "";
@@ -16,15 +16,14 @@
     position: absolute;
     width: rem(39);
     border-radius: 30px;
-
 }
 
-.swiper-button-prev::after,.swiper-button-next::after {
+.campaign .swiper-button-prev::after,.swiper-button-next::after {
     border-bottom: 1px solid $accent-color;
 }
 
-.swiper-button-prev:before,
-.swiper-button-next:before {
+.campaign .swiper-button-prev:before,
+.campaign .swiper-button-next:before {
     top: 45%;
     content: "";
     margin: auto;
@@ -33,19 +32,19 @@
     border-radius: 30px;
 }
 
-.swiper-button-prev:before {
+.campaign .swiper-button-prev:before {
     border-bottom: 1px solid $accent-color;
     transform: translateY(-50%) rotate(-45deg);
     left: rem(18);
 }
 
-.swiper-button-next:before {
+.campaign .swiper-button-next:before {
     border-bottom: 1px solid $accent-color;
     transform: translateY(-50%) rotate(45deg);
     right: rem(18);
 }
 
-.swiper-controller {
+.campaign .swiper-controller {
     display: none;
     @include mq(md){
         align-items: center;

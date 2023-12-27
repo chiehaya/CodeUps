@@ -190,35 +190,35 @@
     <main>
       <section class="mv js-mv">
         <div class="mv__inner">
-          <div class="mv__title-wrap">
-            <h2 class="mv__main-title">diving</h2>
-            <p class="mv__sub-title">into the ocean</p>
+          <div class="mv__title-wrap mv-title">
+            <h2 class="mv-title__main">diving</h2>
+            <p class="mv-title__sub">into the ocean</p>
           </div>
           <div class="mv__swiper swiper js-mv-swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <div class="swiper-img">
+                <picture class="mv__img">
+                  <source media="(min-width: 768px)" srcset="./assets/images/common/mv-pc01.jpg">
                   <img src="./assets/images/common/mv-sp01.jpg" alt="メインビュー">
-                  <img src="./assets/images/common/mv-pc01.jpg" alt="メインビュー">
-                </div>
+                </picture>
               </div>
               <div class="swiper-slide">
-                <div class="swiper-img">
+                <picture class="mv__img">
+                  <source media="(min-width: 768px)" srcset="./assets/images/common/mv-pc02.jpg">
                   <img src="./assets/images/common/mv-sp02.jpg" alt="メインビュー">
-                  <img src="./assets/images/common/mv-pc02.jpg" alt="メインビュー">
-                </div>
+                </picture>
               </div>
               <div class="swiper-slide">
-                <div class="swiper-img">
+                <picture class="mv__img">
+                  <source media="(min-width: 768px)" srcset="./assets/images/common/mv-pc03.jpg">
                   <img src="./assets/images/common/mv-sp03.jpg" alt="メインビュー">
-                  <img src="./assets/images/common/mv-pc03.jpg" alt="メインビュー">
-                </div>
+                </picture>
               </div>
               <div class="swiper-slide">
-                <div class="swiper-img">
+                <picture class="mv__img">
+                  <source media="(min-width: 768px)" srcset="./assets/images/common/mv-pc04.jpg">
                   <img src="./assets/images/common/mv-sp04.jpg" alt="メインビュー">
-                  <img src="./assets/images/common/mv-pc04.jpg" alt="メインビュー">
-                </div>
+                </picture>
               </div>
             </div>
           </div>
@@ -227,9 +227,9 @@
 
       <div class="loader">
         <div class="loader__inner">
-          <div class="loader__title-wrap mv__title-wrap mv__title-wrap--green">
-            <h2 class="mv__main-title">diving</h2>
-            <p class="mv__sub-title">into the ocean</p>
+          <div class="loader__title-wrap mv-title mv-title--green">
+            <h2 class="mv-title__main">diving</h2>
+            <p class="mv-title__sub">into the ocean</p>
           </div>
           <div class="loader__imgs">
             <div class="loader__img-left">
@@ -244,9 +244,10 @@
 
       <section class="campaign layout-campaign">
         <div class="campaign__inner inner">
-          <h3 class="campaign__title section-title">Campaign
-            <span>キャンペーン</span>
-          </h3>
+          <div class="campaign__title section-title">
+            <p class="section-title__en">Campaign</p>
+            <h2 class="section-title__ja">キャンペーン</h2>
+          </div>
           <div class="swiper-controller">
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
@@ -356,10 +357,10 @@
           <div class="about__decoration">
             <img src="./assets/images/common/about03.png" alt="装飾">
           </div>
-          <h3 class=" about__title section-title">
-            About us
-            <span>私たちについて</span>
-          </h3>
+          <div class="about__title section-title">
+            <p class="section-title__en">About us</p>
+            <h2 class="section-title__ja">私たちについて</h2>
+          </div>
           <div class="about__images">
             <div class="about__image-1">
               <img src="./assets/images/common/about01.jpg" alt="about us">
@@ -391,10 +392,10 @@
 
       <section class="information layout-information">
         <div class="information__inner  inner">
-          <h3 class="information__title section-title">
-            Information
-            <span>ダイビング情報</span>
-          </h3>
+          <div class="information__title section-title">
+            <p class="section-title__en">Information</p>
+            <h2 class="section-title__ja">ダイビング情報</h2>
+          </div>
           <div class="information__container">
             <div class="information__img js-colorbox">
               <img src="./assets/images/common/information.jpg" alt="information">
@@ -423,9 +424,10 @@
           <div class="blog__decoration">
             <img src="./assets/images/common/blog04.png" alt="装飾">
           </div>
-          <h3 class="blog__title section-title section-title--white">
-            Blog<span>ブログ</span>
-          </h3>
+          <div class="blog__title section-title">
+            <p class="section-title__en section-title__en--white">Blog</p>
+            <h2 class="section-title__ja section-title__ja--white">ブログ</h2>
+          </div>
           <div class="blog__items cards">
             <a href="#" class="cards__item card">
               <figure class="card__img">
@@ -488,10 +490,10 @@
           <div class="voice__decoration2">
             <img src="./assets/images/common/voice04.png" alt="装飾">
           </div>
-          <h3 class="voice__title section-title">
-            Voice
-            <span>お客様の声</span>
-          </h3>
+          <div class="voice__title section-title">
+            <p class="section-title__en">Voice</p>
+            <h2 class="section-title__ja">お客様の声</h2>
+          </div>
           <div class="voice__contents voice-cards">
             <div class="voice-cards__item voice-card">
               <div class="voice-card__head">
@@ -545,15 +547,15 @@
           <div class="price__decoration">
             <img src="./assets/images/common/price-deco.png" alt="装飾">
           </div>
-          <h3 class="price__title section-title">
-            Price
-            <span>料金一覧</span>
-          </h3>
+          <div class="price__title section-title">
+            <p class="section-title__en">Price</p>
+            <h2 class="section-title__ja">料金一覧</h2>
+          </div>
           <div class="price__contents">
-            <div class="price__img js-colorbox">
+            <picture class="price__img js-colorbox">
+              <source media="(min-width: 768px)" srcset="./assets/images/common/price-pc.jpg">
               <img src="./assets/images/common/price-sp.jpg" alt="亀の画像">
-              <img src="./assets/images/common/price-pc.jpg" alt="海の画像">
-            </div>
+            </picture>
             <dl class="price__items">
               <dt class="price__term">ライセンス講習</dt>  
               <dd class="price__description">
@@ -639,13 +641,10 @@
                     沖縄県那覇市1-1
                   </p>
                   <p class="contact__text">
-                    TEL:0120-000-0000
+                    <a href="tel:01200000000">TEL:0120-000-0000</a>
                   </p>
                   <p class="contact__text">
                     営業時間:8:30-19:00
-                  </p>
-                  <p class="contact__text">
-                    TEL:0120-000-0000
                   </p>
                   <p class="contact__text">定休日:毎週火曜日</p>
                 </div>
@@ -655,10 +654,10 @@
               </div>
             </div>
             <div class="contact__wrapper">
-              <h3 class="contact__title section-title section-title--big">
-                Contact
-                <span>お問合せ</span>
-              </h3>
+              <div class="contact__title section-title">
+                <p class="section-title__en section-title__en--big">Contact</p>
+                <h2 class="section-title__ja section-title__ja--big">お問合せ</h2>
+              </div>
               <p class="contact__message">
                 ご予約・お問い合わせはコチラ
               </p>
