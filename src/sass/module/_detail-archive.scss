@@ -1,0 +1,53 @@
+@use "global" as *;
+
+.detail-archive {
+    color: $accent-color;
+    font-size: rem(24);
+    line-height: 1;
+}
+
+.detail-archive__item + .detail-archive__item {
+    margin-top: rem(10);
+}
+
+.detail-archive__year {
+    text-indent: rem(30);
+    position: relative;
+    cursor: pointer;
+}
+
+.detail-archive__month {
+    text-indent: rem(54);
+    position: relative;
+    margin-top: rem(10);
+    display: none;
+}
+
+
+.detail-archive__year::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: rem(11) solid transparent;
+    border-right: rem(11) solid transparent;
+    border-top: rem(19) solid $accent-color;
+    top: 23%;
+    left: 0;
+}
+
+.detail-archive__month::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: rem(11) solid transparent;
+    border-bottom: rem(11) solid transparent;
+    border-left: rem(19) solid $accent-color;
+    top: 13%;
+    left: rem(30);
+}
+
+

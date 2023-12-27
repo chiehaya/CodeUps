@@ -1,0 +1,83 @@
+@use "global" as *;
+
+.detail-campaign__item {
+    text-align: center;
+    box-shadow: rem(2) rem(3) rem(3) rem(3) rgba(0, 0, 0, .05);
+
+}
+
+.detail-campaign__item + .detail-campaign__item {
+    margin-top: rem(40);
+}
+
+.detail-campaign__img {
+    width: 100%;
+    aspect-ratio: 294 / 188;
+}
+    
+.detail-campaign__img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.detail-campaign__content {
+    padding: rem(16) rem(23);
+}
+
+.detail-campaign__title {
+    width: 100%;
+    margin-top: rem(16);
+    line-height: 1;
+    font-weight: $medium;
+    font-size: rem(16);
+    border-bottom: 1px solid $accent-color;
+    padding-bottom: rem(10);
+}
+
+.detail-campaign__text {
+    font-size: rem(14);
+    margin-top: rem(10);
+    text-align: center;
+    width: 100%;
+}
+
+.detail-campaign__price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: rem(16);
+    letter-spacing: 0;
+    margin-top: rem(8);
+}
+
+.detail-campaign__listing-price {
+    font-family: $lato-font-family;
+    font-weight: $bold;
+    font-size: rem(20);
+    position: relative;
+}
+
+.detail-campaign__listing-price::before {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: #C94800;
+    width: 86%;
+    height: rem(3);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.detail-campaign__discount-price {
+    font-family: $lato-font-family;
+    font-weight: $bold;
+    font-size: rem(32);
+    color: $accent-color;
+}
+
+.detail-campaign__btn {
+    margin-top: rem(40);
+    text-align: center;
+}
+

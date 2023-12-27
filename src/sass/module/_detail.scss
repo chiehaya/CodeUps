@@ -1,0 +1,36 @@
+@use "global" as *;
+
+.detail__group {
+
+}
+
+.detail__side-title {
+    font-size: rem(24);
+    line-height: 1;
+    border-left: 8px solid $accent-color;
+    padding-left: rem(16);
+    position: relative;
+    display: flex;
+    gap: rem(8);
+    align-items: center;
+}
+
+.detail__side-title img {
+    width: rem(50);
+}
+
+.detail__popular {
+    margin-top: rem(24);
+}
+
+.detail__voice {
+    margin-top: rem(24);
+}
+
+.detail__campaign {
+    margin-top: rem(24);
+}
+
+.detail__archive {
+    margin-top: rem(24);
+}

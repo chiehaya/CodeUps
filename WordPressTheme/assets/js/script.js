@@ -233,4 +233,74 @@ jQuery(function ($) {
       executeOnSmallScreen();
     }
   });
+
+  // モーダルウインドウ
+  $(function () {
+    $('.gallery__items-1 .js-gallery:first-child').addClass('first-gallery');
+    $('.gallery__items-2 .js-gallery:last-child').addClass('last-gallery');
+    $('.js-gallery').click(function () {
+      // モーダルが表示されるとき
+      var imagePath = $(this).find('img').attr('src');
+      $('.js-modal').fadeIn();
+      $('.js-header').css('display', 'none');
+      $('.js-page-top').css('z-index', '1');
+      $('.js-modal__wrapper img').attr('src', imagePath);
+      $('body').css('overflow', 'hidden');
+      if ($(this).hasClass('first-gallery')) {
+        // 最初の.js-galleryがクリックされた時の処理
+        $('.js-modal__wrapper').css({
+          'aspect-ratio': '492 /746 ',
+          'max-width': '30.7rem'
+        });
+      } else if ($(this).hasClass('last-gallery')) {
+        // 最後の.js-galleryがクリックされた時の処理
+        $('.js-modal__wrapper').css({
+          'aspect-ratio': '492 /746 ',
+          'max-width': '30.7rem'
+        });
+      } else {
+        // 最初でも最後でもない.js-galleryがクリックされた時の処理
+        $('.js-modal__wrapper').css({
+          'aspect-ratio': '920 /586 ',
+          'max-width': '57.5rem'
+        });
+      }
+    });
+    $('.js-background-modal').click(function () {
+      // モーダルが閉じられるとき
+      $('.js-modal').fadeOut();
+      $('.js-header').css('display', 'block');
+      $('.js-page-top a').css('display', 'block');
+      $('body').css('overflow', 'initial');
+    });
+  });
+
+  // info-page__tagの処理
+  $(function () {
+    $('.info-page__tag:first-child').addClass('is-active');
+    $('.info-page__contents:nth-of-type(3),.info-page__contents:last-of-type').hide();
+
+    // info-page__tagがクリックされたときの処理
+    $('.info-page__tag').click(function () {
+      // 選択された.info-page__tagのインデックスを取得
+      var index = $(this).index();
+      // すべての.info-page__contentsを非表示にする
+      $('.info-page__contents').hide();
+      // クリックされた.info-page__tagに対応する.info-page__contentsを表示
+      $('.info-page__contents').eq(index).show();
+      // すべての.info-page__tagからis-activeクラスを削除
+      $('.info-page__tag').removeClass('is-active');
+      // クリックされた.info-page__tagにis-activeクラスを追加
+      $(this).addClass('is-active');
+    });
+  });
+
+  // blog archiveの処理
+  $('.detail-archive__year').click(function () {
+    // 親要素のdetail-archive__itemを取得
+    var parentItem = $(this).closest('.detail-archive__item');
+
+    // 親要素内のdetail-archive__monthを表示する
+    parentItem.find('.detail-archive__month').toggle();
+  });
 });
