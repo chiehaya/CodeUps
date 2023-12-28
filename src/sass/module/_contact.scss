@@ -74,8 +74,12 @@
     }
 }
 
-.contact__text a {
+.contact__text a[href^="tel:"]{
     text-decoration: underline;
+    @include mq(md){
+        pointer-events: none;
+        text-decoration: none;
+    }
 }
 
 .contact__map {

@@ -619,6 +619,56 @@ a {
 	padding-left: 0.1875rem;
 }
 
+.campaign__swiper-controller {
+	display: none;
+}
+
+.campaign .swiper-button-prev,
+.campaign .swiper-button-next {
+	border: 1px solid #408F95;
+	border-radius: 50%;
+	height: 5rem;
+	width: 5rem;
+}
+
+.campaign .swiper-button-prev:after,
+.campaign .swiper-button-next:after {
+	border-radius: 30px;
+	content: "";
+	margin: auto;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 2.4375rem;
+}
+
+.campaign .swiper-button-prev::after,
+.campaign .swiper-button-next::after {
+	border-bottom: 1px solid #408F95;
+}
+
+.campaign .swiper-button-prev:before,
+.campaign .swiper-button-next:before {
+	border-radius: 30px;
+	content: "";
+	margin: auto;
+	position: absolute;
+	top: 45%;
+	width: 0.625rem;
+}
+
+.campaign .swiper-button-prev:before {
+	border-bottom: 1px solid #408F95;
+	left: 1.125rem;
+	transform: translateY(-50%) rotate(-45deg);
+}
+
+.campaign .swiper-button-next:before {
+	border-bottom: 1px solid #408F95;
+	right: 1.125rem;
+	transform: translateY(-50%) rotate(45deg);
+}
+
 .campaign__item {
 	width: 17.5rem;
 }
@@ -725,7 +775,7 @@ a {
 	width: 100%;
 }
 
-.contact__text a {
+.contact__text a[href^="tel:"] {
 	-webkit-text-decoration: underline;
 	text-decoration: underline;
 }
@@ -1714,7 +1764,7 @@ a {
 	margin-top: 2.5rem;
 }
 
-.price__list {
+.price__wrapper {
 	align-items: center;
 	display: flex;
 	font-size: 0.875rem;
@@ -2028,56 +2078,6 @@ a {
 	border-bottom: 1px solid #FFFFFF;
 	border-right: 1px solid #FFFFFF;
 	color: #FFFFFF;
-}
-
-.campaign .swiper-button-prev,
-.swiper-button-next {
-	border: 1px solid #408F95;
-	border-radius: 50%;
-	height: 5rem;
-	width: 5rem;
-}
-
-.campaign .swiper-button-prev:after,
-.campaign .swiper-button-next:after {
-	border-radius: 30px;
-	content: "";
-	margin: auto;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 2.4375rem;
-}
-
-.campaign .swiper-button-prev::after,
-.swiper-button-next::after {
-	border-bottom: 1px solid #408F95;
-}
-
-.campaign .swiper-button-prev:before,
-.campaign .swiper-button-next:before {
-	border-radius: 30px;
-	content: "";
-	margin: auto;
-	position: absolute;
-	top: 45%;
-	width: 0.625rem;
-}
-
-.campaign .swiper-button-prev:before {
-	border-bottom: 1px solid #408F95;
-	left: 1.125rem;
-	transform: translateY(-50%) rotate(-45deg);
-}
-
-.campaign .swiper-button-next:before {
-	border-bottom: 1px solid #408F95;
-	right: 1.125rem;
-	transform: translateY(-50%) rotate(45deg);
-}
-
-.campaign .swiper-controller {
-	display: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -2480,6 +2480,16 @@ html {
 	padding-left: 0.3125rem;
 }
 
+.campaign__swiper-controller {
+	align-items: center;
+	display: flex;
+	gap: 5rem;
+	position: absolute;
+	right: 0.9375rem;
+	top: 1.5rem;
+	width: 16.1875rem;
+}
+
 .campaign__item {
 	width: 20.875rem;
 }
@@ -2562,6 +2572,12 @@ html {
 
 .contact__text {
 	font-size: min(1rem, 1.3vw);
+}
+
+.contact__text a[href^="tel:"] {
+	-webkit-text-decoration: none;
+	pointer-events: none;
+	text-decoration: none;
 }
 
 .contact__map {
@@ -2890,7 +2906,7 @@ html {
 	padding-bottom: 0.125rem;
 }
 
-.price__list {
+.price__wrapper {
 	font-size: 1rem;
 	margin-top: 0.525rem;
 }
@@ -3008,16 +3024,6 @@ html {
 
 .wp-pagenavi.campaign-page__pagenavi .page.smaller:nth-child(n+6) {
 	display: inline-flex;
-}
-
-.campaign .swiper-controller {
-	align-items: center;
-	display: flex;
-	gap: 5rem;
-	position: absolute;
-	right: 0.9375rem;
-	top: 1.5rem;
-	width: 16.1875rem;
 }
 
 }
