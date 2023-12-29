@@ -30,7 +30,7 @@
     color: $base-color;
     }
 
-.wp-pagenavi.campaign-page__pagenavi .page.smaller:nth-child(n+6) {
+.wp-pagenavi .page.smaller:nth-child(n+6) {
     display: none;
     @include mq(md){
         display: inline-flex;

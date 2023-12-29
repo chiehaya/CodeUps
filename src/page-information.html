@@ -35,11 +35,11 @@
 <body>
   <header class="header layout-header js-header is-show">
     <div class="header__inner">
-      <h1 class="header__logo">
+      <div class="header__logo">
         <a href="#">
           <img src="./assets/images/common/logo.png" alt="codeups">
         </a>
-      </h1>
+      </div>
       <nav class="header__nav">
         <ul class="header__nav-items">
           <li class="header__nav-item">
@@ -75,7 +75,7 @@
       </button>
       <div class="header__drawer js-drawer">
         <div class="header__drawer-nav">
-          <div class="header__drawer-nav page-nav">
+          <div class="page-nav">
             <div class="page-nav__flex-sp">
               <div class="page-nav__flex">
                 <div class="page-nav__item">
@@ -190,10 +190,10 @@
   <main>
     <section class="sub-mv js-mv">
       <h1 class="sub-mv__title">Information</h1>
-      <div class="sub-mv__img">
+      <picture class="sub-mv__img">
+        <source media="(min-width: 768px)" srcset="./assets/images/common/info-mv-pc.jpg">
         <img src="./assets/images/common/info-mv-sp.jpg" alt="サブメインビュー">
-        <img src="./assets/images/common/info-mv-pc.jpg" alt="サブメインビュー">
-      </div>
+      </picture>
     </section>
 
     <div class="breadcrumb layout-breadcrumb">
@@ -253,53 +253,55 @@
         </div>
       </div>
     </section>
-
-      
-
   
-      <section class="contact layout-contact">
-        <div class="contact__inner inner">
-          <div class="contact__decoration">
-            <img src="./assets/images/common/price-deco.png" alt="装飾">
-          </div>
-          <div class="contact__contents">
-            <div class="contact__head">
-              <div class="contact__logo">
-                <img src="./assets/images/common/contact-logo.png" alt="CodeUps">
+    <section class="contact layout-contact">
+      <div class="contact__inner inner">
+        <div class="contact__decoration">
+          <img src="./assets/images/common/price-deco.png" alt="装飾">
+        </div>
+        <div class="contact__contents">
+          <div class="contact__head">
+            <div class="contact__logo">
+              <img src="./assets/images/common/contact-logo.png" alt="CodeUps">
+            </div>
+            <div class="contact__guidance">
+              <div class="contact__address">
+                <p class="contact__text">
+                  沖縄県那覇市1-1
+                </p>
+                <p class="contact__text">
+                  TEL:<a href="tel:01200000000">0120-000-0000</a>
+                </p>
+                <p class="contact__text">
+                  営業時間:8:30-19:00
+                </p>
+                <p class="contact__text">定休日:毎週火曜日</p>
               </div>
-              <div class="contact__guidance">
-                <div class="contact__address">
-                  沖縄県那覇市1-1<br>
-                  TEL:0120-000-0000<br>
-                  営業時間:8:30-19:00<br>
-                  定休日:毎週火曜日<br>
-                </div>
-                <div class="contact__map">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d49312.094054889116!2d127.62837066999028!3d26.20002036652809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1700466481953!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+              <div class="contact__map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d49312.094054889116!2d127.62837066999028!3d26.20002036652809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1700466481953!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
             </div>
-            <div class="contact__wrapper">
-              <h3 class="contact__title section-title section-title--big">
-                Contact
-                <span>お問合せ</span>
-              </h3>
-              <p class="contact__message">
-                ご予約・お問い合わせはコチラ
-              </p>
-              <div class="contact__btn">
-                <a href="#" class="btn">
-                  <span>
-                    Contact us
-                  </span>
-                </a>
-              </div>
+          </div>
+          <div class="contact__wrapper">
+            <div class="contact__title section-title">
+              <p class="section-title__en section-title__en--big">Contact</p>
+              <h2 class="section-title__ja section-title__ja--big">お問合せ</h2>
+            </div>
+            <p class="contact__message">
+              ご予約・お問い合わせはコチラ
+            </p>
+            <div class="contact__btn">
+              <a href="#" class="btn">
+                <span>
+                  Contact us
+                </span>
+              </a>
             </div>
           </div>
         </div>
       </div>
-      
-    </section>
+    </div> 
+  </section>
   </main>
 
   <footer class="footer layout-footer">

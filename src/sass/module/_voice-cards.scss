@@ -1,10 +1,11 @@
 @use "global" as *;
 
 .voice-cards {
+    gap: rem(40);
     @include mq(md){
         display: flex;
         flex-wrap: wrap;
-        gap: rem(40);
+        gap: rem(80) rem(40);
     }
 }
 
