@@ -24,12 +24,6 @@
     }
 }
 
-.campaign-page__card .campaign-item__title {
-    @include mq(md){
-        font-size: rem(24);
-    }
-}
-
 .campaign-page__pagenavi {
     margin-top: rem(80);
 }

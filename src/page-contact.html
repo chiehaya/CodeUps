@@ -189,71 +189,98 @@
 
   <main>
     <section class="sub-mv js-mv">
-      <h1 class="sub-mv__title">Information</h1>
+      <h1 class="sub-mv__title">Contact</h1>
       <picture class="sub-mv__img">
-        <source media="(min-width: 768px)" srcset="./assets/images/common/info-mv-pc.jpg">
-        <img src="./assets/images/common/info-mv-sp.jpg" alt="サブメインビュー">
+        <source media="(min-width: 768px)" srcset="./assets/images/common/contact-mv-pc.jpg">
+        <img src="./assets/images/common/contact-mv-sp.jpg" alt="サブメインビュー">
       </picture>
     </section>
 
     <div class="breadcrumb layout-breadcrumb">
       <div class="inner">
         <div>
-          TOP > ダイビング情報
+          TOP > お問い合わせ
         </div>
       </div>
     </div>
 
-    <section class="info-page layout-page-top">
-      <div class="info-page__inner inner">
-        <div class="info-page__decoration">
+    <div class="contact-page layout-page-top">
+      <div class="contact-page__inner inner">
+        <div class="contact-page__decortaion">
           <img src="./assets/images/common/page-deco.png" alt="装飾">
         </div>
-        <ul class="info-page__list">
-          <li class="info-page__tag is-active">
-            <img src="./assets/images/common/tab01.svg" alt="">
-            <img src="./assets/images/common/tab01-white.svg" alt="">
-            <span>ライセンス<br class="u-mobile">講習</span>
-          </li>
-          <li class="info-page__tag">
-            <img src="./assets/images/common/tab02.svg" alt="">
-            <img src="./assets/images/common/tab02-white.svg" alt="">
-            <span>ファン<br class="u-mobile">ダイビング</li></span>
-          <li class="info-page__tag">
-            <img src="./assets/images/common/tab03.svg" alt="">
-            <img src="./assets/images/common/tab03-white.svg" alt="">
-            <span>体験<br class="u-mobile">ダイビング</li></span>
-        </ul>
-        <div class="info-page__contents">
-          <div class="info-page__wrapper">
-            <h2 class="info-page__title">ライセンス講習</h2>
-            <p class="info-page__text">泳げない人も、ちょっと水が苦手な人も、ダイビングを「安全に」楽しんでいただけるよう、スタッフがサポートいたします！スキューバダイビングを楽しむためには最低限の知識とスキルが要求されます。知識やスキルと言ってもそんなに難しい事ではなく、安全に楽しむ事を目的としたものです。プロダイバーの指導のもと知識とスキルを習得しCカードを取得して、ダイバーになろう！</p>
-          </div>
-          <div class="info-page__img">
-            <img src="./assets/images/common/license.jpg" alt="">
-          </div>
-        </div>
-        <div class="info-page__contents">
-          <div class="info-page__wrapper">
-            <h2 class="info-page__title">ファンダイビング</h2>
-            <p class="info-page__text">ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！</p>
-          </div>
-          <div class="info-page__img">
-            <img src="./assets/images/common/fundiving.jpg" alt="">
-          </div>
-        </div>
-        <div class="info-page__contents">
-          <div class="info-page__wrapper">
-            <h2 class="info-page__title">体験ダイビング</h2>
-            <p class="info-page__text">ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！</p>
-          </div>
-          <div class="info-page__img">
-            <img src="./assets/images/common/diving.jpg" alt="">
-          </div>
+        <div class="contact-page__content page-form">
+          <form action="" method="post" id="">
+            <dl class="page-form__item">
+              <dt class="page-form__term">
+                お名前
+                <span>必須</span>
+              </dt>
+              <dd class="page-form__description">
+                <input type="text" name="company" value="" required/>
+              </dd>
+            </dl>
+            <dl class="page-form__item">
+              <dt class="page-form__term">
+                メールアドレス<span>必須</span>
+              </dt>
+              <dd class="page-form__description">
+                <input type="email" name="mail_address" value="" required/>
+              </dd>
+            </dl>
+            <dl class="page-form__item">
+              <dt class="page-form__term">
+                電話番号<span>必須</span>
+              </dt>
+              <dd class="page-form__description">
+                <input type="tel" name="mail_address" value="" required/>
+              </dd>
+            </dl>
+            <dl class="page-form__item">
+              <dt class="page-form__term">
+                お問合せ項目<span>必須</span>
+              </dt>
+              <dd class="page-form__description">
+                <label><input type="checkbox" name="hoge" value="ダイビング講習について"><span>ダイビング講習について</span></label>
+                <label><input type="checkbox" name="hogehoge" value="ファンデイビングについて" ><span>ファンデイビングについて</span></label>
+                <label><input type="checkbox" name="hoge" value="体験ダイビングについて"><span>体験ダイビングについて</span></label>
+              </dd>
+            </dl>
+            <dl class="page-form__item">
+              <dt class="page-form__term">
+                キャンペーン
+              </dt>
+              <dd class="page-form__description page-form__description--select">
+                <select name="hoge">
+                  <option value="">キャンペーン内容を選択</option>
+                  <option value="Twitter">ライセンス取得</option>
+                  <option value="Twitter">貸切体験ダイビング</option>
+                  <option value="口コミ">ナイトダイビング</option>
+                </select>
+              </dd>
+            </dl>
+            <dl class="page-form__item">
+              <dt class="page-form__term">
+                お問合わせ内容
+                <span>必須</span>
+              </dt>
+              <dd class="page-form__description">
+                <textarea name="contents"></textarea>
+              </dd>
+            </dl>
+            <div class="page-form__check">
+              <label><input type="checkbox" name="hoge" value="「個人情報の取り扱いについて」同意する"><span>「個人情報の取り扱いについて」同意する</span></label>
+            </div>
+            <div class="page-form__button btn-input">
+              <span>
+                <input type="button"value="Send">
+              </span>
+            </div>
+          </form>
         </div>
       </div>
-    </section>
-  
+    </div>
+
     <section class="contact layout-contact">
       <div class="contact__inner inner">
         <div class="contact__decoration">

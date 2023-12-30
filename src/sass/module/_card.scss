@@ -11,6 +11,10 @@
     }
 }
 
+.card:hover .card__img {
+    transform: scale(1.02);
+}
+
 .card__img {
     aspect-ratio: 301 / 202;
     width: 100%;

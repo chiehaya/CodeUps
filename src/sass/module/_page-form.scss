@@ -1,0 +1,83 @@
+@use "global" as *;
+
+.page-form__item {
+    border-bottom: 1px dotted $accent-color;
+    padding-bottom: rem(24);
+    @include mq(md){
+        display: flex;
+        gap: 5.7%;
+        padding-bottom: rem(40);
+    }
+}
+
+.page-form__item + .page-form__item {
+    margin-top: rem(24);
+    @include mq(md){
+        margin-top: rem(40);
+    }
+}
+
+.page-form__term {
+    font-weight: $bold;
+    line-height: 1;
+    @include mq(md){
+        width: 25.8%;
+    }
+}
+
+.page-form__term span {
+    color: $base-color;
+    font-size: rem(12);
+    font-weight: $regular;
+    line-height: 1;
+    background-color: #C94800;
+    padding: rem(2) rem(16);
+    margin-left: rem(8);
+}
+
+.page-form__description {
+    margin-top: rem(16);
+    @include mq(md){
+        margin-top: 0;
+        width: 68.5%;
+    }
+}   
+
+.page-form__description label {
+    display: block;
+}
+
+.page-form__description--select {
+    position: relative;
+}
+
+.page-form__description--select::after {
+    content: "";
+    position: absolute;
+    display: block;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 10px solid $accent-color;
+    width: rem(8);
+    height: rem(8);
+    top: 50%;
+    transform: translateY(-50%);
+    right: rem(8);
+}
+
+.page-form__check {
+    text-align: center;
+    margin-top: rem(48);
+    @include mq(md){
+        margin-top: rem(80);
+    }
+}
+
+.page-form__button {
+    display: block;
+    margin: rem(28) auto 0;
+    text-align: center;
+    @include mq(md){
+        margin-top: rem(40);
+    }
+}

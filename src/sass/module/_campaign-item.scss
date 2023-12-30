@@ -49,6 +49,12 @@
     }
 }
 
+.campaign-item__title--another {
+    @include mq(md){
+        font-size: rem(24);
+    }
+}
+
 .campaign-item__text {
     font-size: rem(14);
     margin-top: rem(10);

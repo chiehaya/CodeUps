@@ -1,6 +1,6 @@
 @use "global" as *;
 
-.btn {
+.btn-input {
     font-family: $gotu-font-family;
     font-size: rem(14);
     display: inline-block;
@@ -16,7 +16,7 @@
     position: relative;
 }
 
-.btn::before {
+.btn-input::before {
     content: "";
     position: absolute;
     top: 0;
@@ -32,13 +32,13 @@
     z-index: 10;
 }
 
-.btn:hover::before {
+.btn-input:hover::before {
     @include mq(md){
         transform: scale(1,1);
     }
 }
 
-.btn::after {
+.btn-input::after {
     content: "";
     position: absolute;
     display: block;
@@ -50,15 +50,19 @@
     left: rem(4);
 }
 
-.btn span {
+.btn-input span {
     display: block;
-    height: 110%;
+    height: 105%;
     width: 105%;
-    padding: rem(19) rem(70) rem(19) rem(11);
     position: relative;
 }
 
-.btn:hover span {
+.btn-input span input {
+    height: inherit;
+    color: $base-color;
+}
+
+.btn-input:hover span {
     z-index: 100;
     @include mq(md){
         color: $accent-color;
@@ -66,7 +70,7 @@
     }
 }
 
-.btn span::before {
+.btn-input span::before {
     content: "";
     position: absolute;
     display: block;
@@ -80,14 +84,14 @@
     border-radius: 10px;
 }
 
-.btn span:hover::before {
+.btn-input span:hover::before {
     @include mq(md){
         background-color: $accent-color;
         opacity: 1;
     }
 }
 
-.btn span::after {
+.btn-input span::after {
     content: "";
     position: absolute;
     display: block;
@@ -101,22 +105,22 @@
     border-radius: 10px;
 }
 
-.btn span:hover::after {
+.btn-input span:hover::after {
     @include mq(md){
         background-color: $accent-color;
         opacity: 1;
     }
 }
 
-.btn input {
+.btn-input input {
     display: block;
     height: 110%;
     width: 105%;
-    padding: rem(19) rem(70) rem(19) rem(11);
+    padding: rem(18) rem(70) rem(20) rem(11);
     position: relative;
 }
 
-.btn:hover input {
+.btn-input:hover input {
     z-index: 100;
     @include mq(md){
         color: $accent-color;

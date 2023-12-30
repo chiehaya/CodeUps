@@ -1,0 +1,92 @@
+@use "global" as *;
+
+.price-table {
+    border: 1px solid $accent-color;
+    @include mq(md){
+        display: flex;
+    }
+}
+
+.price-table__title {
+    background-color: $accent-color;
+    font-size: rem(16);
+    color: $base-color;
+    font-weight: $bold;
+    line-height: 1;
+    padding-top: rem(12);
+    padding-bottom: rem(12);
+    @include mq(md){
+        width: 28.5%;
+        padding-top: rem(41);
+        padding-bottom: rem(41);
+    }
+}
+
+.price-table__title span {
+    position: relative;
+    @include mq(md){
+        top: 20%;
+    }
+}
+
+.price-table__title span::before {
+    content: "";
+    background-image: url(../../assets/images/common/tab01-white.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    display: block;
+    width: rem(24);
+    height: rem(24);
+    top: 0;
+    left: rem(-30);
+    @include mq(md){
+        width: rem(64);
+        height: rem(64);
+        top: rem(32);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.price-table__list {
+    @include mq(md){
+        width: 71.5%;
+    }
+}
+
+.price-table__menu {
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+}
+
+.price-table__menu + .price-table__menu {
+    border-top: 1px solid $accent-color;
+}
+
+.price-table__term {
+    width: 69.3%;
+    border-right: 1px solid $accent-color;
+    padding-top: rem(7);
+    padding-bottom: rem(7);
+    @include mq(md){
+        padding-top: rem(18);
+        padding-bottom: rem(18);
+        text-align: left;
+        text-indent: rem(16);
+    }
+}
+
+
+.price-table__description {
+    width: 30.7%;
+    padding-top: rem(7);
+    padding-bottom: rem(7);
+    @include mq(md){
+        padding-top: rem(18);
+        padding-bottom: rem(18);
+        text-align: right;
+        margin-right: rem(15);
+    }
+}

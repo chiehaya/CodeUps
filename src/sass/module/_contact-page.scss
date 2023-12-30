@@ -1,0 +1,26 @@
+@use "global" as *;
+
+.contact-page__inner {
+    position: relative;
+}
+
+.contact-page__decortaion {
+    display: block;
+    position: absolute;
+    width: rem(120);
+    top: rem(-35);
+    left: max(calc(50% - 49vw),-3.4375rem);
+    @include mq(md){
+        width: rem(301);
+        top: rem(-68);
+    }
+}
+
+.contact-page__content {
+    position: relative;
+    z-index: 10;
+    @include mq(md){
+        max-width: rem(700);
+        margin: 0 auto;
+    }
+}

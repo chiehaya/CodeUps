@@ -8,13 +8,13 @@
     }
 }
 
-.cards a {
-    transition: .3s;
-}
+// .cards a {
+//     transition: .3s;
+// }
 
-.cards a:hover {
-    transform: scale(1.02);
-}
+// .cards a:hover {
+//     transform: scale(1.02);
+// }
 
 .cards__item {
     @include mq(md){
