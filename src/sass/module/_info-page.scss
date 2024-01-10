@@ -4,25 +4,15 @@
     position: relative;
 }
 
-.info-page__decoration {
-    display: block;
-    position: absolute;
-    width: rem(120);
-    top: rem(-35);
-    left: max(calc(50% - 49vw),-3.4375rem);
-    @include mq(md){
-        width: rem(301);
-        top: rem(-68);
-    }
-}
-
 .info-page__list {
     display: flex;
     gap: rem(19);
     position: relative;
     z-index: 10;
+    padding-top: rem(67);
     @include mq(md){
         gap: rem(90);
+        padding: 0;
     }
 }
 
@@ -35,7 +25,6 @@
     font-size: rem(14);
     transition: .3s;
     cursor: pointer;
-    box-shadow: rem(2) rem(3) rem(3) rem(3) rgba(0, 0, 0, .05);
     position: relative;
     @include mq(md){
         max-width: rem(300);
@@ -48,9 +37,14 @@
     }
 }
 
+.info-page__tag:hover {
+    box-shadow: rem(2) rem(3) rem(10) rem(3) rgba(80, 80, 80, .5);
+}
+
 .info-page__tag.is-active {
     background-color: $accent-color;
     color: $base-color;
+    box-shadow: rem(2) rem(3) rem(10) rem(3) rgba(80, 80, 80, .5);
 }
 
 .info-page__tag img {

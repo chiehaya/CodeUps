@@ -12,9 +12,18 @@
 
 .campaign-item__img {
     aspect-ratio: 280 / 188;
+    max-height: rem(188);
     width: 100%;
     @include mq(md){
     aspect-ratio: 334 / 223;
+    max-height: rem(223);
+    }
+}
+
+.campaign-item__img--sub {
+    @include mq(md){
+        aspect-ratio: 520 / 347;
+        max-height: rem(347);
     }
 }
 
@@ -36,6 +45,14 @@
     }
 }
 
+.campaign-item__content--sub {
+    @include mq(md){
+        padding-right: rem(24);
+        padding-left: rem(24);
+        padding-bottom: rem(52);
+    }
+}
+
 .campaign-item__title {
     width: 100%;
     margin-top: rem(8);
@@ -49,7 +66,7 @@
     }
 }
 
-.campaign-item__title--another {
+.campaign-item__title--sub {
     @include mq(md){
         font-size: rem(24);
     }
@@ -64,6 +81,12 @@
         font-size: rem(16);
         padding-right: rem(17);
         margin-top: rem(16);
+    }
+}
+
+.campaign-item__text--sub {
+    @include mq(md){
+        margin-top: rem(24);
     }
 }
 
@@ -116,7 +139,14 @@
     display: none;
     @include mq(md){
         display: block;
-        margin: rem(24) auto 0;
+        display: flex;
+        margin: rem(16) auto 0;
+    }
+}
+
+.campaign-item__message--sub {
+    @include mq(md){
+        margin-top: rem(16);
     }
 }
 

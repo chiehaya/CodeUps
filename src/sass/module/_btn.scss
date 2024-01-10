@@ -124,6 +124,42 @@
     }
 }
 
+.btn--green {
+    background-color: $base-color;
+    border: 1px solid $base-color;
+    color: $accent-color;
+}
 
+.btn--green::before {
+    background: $accent-color;
+}
 
+.btn--green::after {
+    border: 1px solid $base-color;
+}
 
+.btn--green:hover span {
+    @include mq(md){
+        color: $base-color;
+    }
+}
+
+.btn--green span::before {
+    background-color: $accent-color;
+}
+
+.btn--green span:hover::before {
+    @include mq(md){
+        background-color: $base-color;
+    }
+}
+
+.btn--green span::after {
+    background-color: $accent-color;
+}
+
+.btn--green span:hover::after {
+    @include mq(md){
+        background-color: $base-color;
+    }
+}

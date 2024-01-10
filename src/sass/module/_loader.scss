@@ -20,6 +20,34 @@
     min-height: inherit;
 }
 
+.loader__img {
+    @include mq(md){
+        display: none;
+        height: inherit;
+        min-height: inherit;
+        transition: .8s;
+    }
+}
+
+.loader__img.is-show {
+    @include mq(md){
+        display: block;
+    }
+}
+
+.loader__img img {
+    @include mq(md){
+        height: inherit;
+        min-height: inherit;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.loader__title {
+    transition: 1s;
+}
+
 .loader__imgs {
     @include mq(md){
         display: flex;

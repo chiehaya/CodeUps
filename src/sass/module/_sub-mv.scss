@@ -23,6 +23,8 @@
     text-align: center;
         @include mq(md){
             font-size: rem(80);
+            top: 52%;
+            transform: translate(-50%, 0);
         }
 }
 

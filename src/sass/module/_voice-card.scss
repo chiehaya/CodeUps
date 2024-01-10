@@ -3,26 +3,36 @@
 .voice-card {
     padding: rem(15) rem(16) rem(24) rem(16);
     box-shadow: rem(2) rem(3) rem(3) rem(3) rgba(0, 0, 0, .05);
+    transition: .3s;
+    cursor: pointer;
     @include mq(md){
         padding: rem(26) rem(24) rem(24) rem(24);
+        display: flex;
+        flex-direction: column;
     }
+}
+
+.voice-card:hover {
+    opacity: .8;
+    box-shadow: rem(2) rem(3) rem(20) rem(5) rgba(221, 240, 241);
 }
 
 .voice-card__head {
     display: flex;
-    gap: rem(13);
-    align-items: flex-end;
+    gap: 4%;
     @include mq(md){
         gap: rem(16);
+        flex-grow: 1;
     }
 }
 
 .voice-card__description {
-    width: 50%;
+    width: 48%;
     border-bottom: 1px solid $accent-color;
     padding-bottom: rem(4);
     @include mq(md){
         width: 58.4%;
+        margin-top: rem(24);
     }
 }
 
@@ -54,9 +64,11 @@
     width: 100%;
     aspect-ratio: 151 / 117;
     position: relative;
+    padding-top: rem(9);
     @include mq(md){
         max-width: rem(180);
         aspect-ratio: 180 / 140;
+        padding-top: 0;
     }
 }
 

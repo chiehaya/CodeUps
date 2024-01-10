@@ -4,13 +4,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: rem(21) 6%;
+    gap: rem(16) 6%;
     background-color: $base-color;
     position: relative;
     z-index: 1;
     @include mq(md){
         justify-content: left;
-        gap: rem(21) rem(16);
+        gap: rem(21) rem(32);
     }
 }
 
@@ -32,8 +32,8 @@
 }
 
 .tab__link a {
-    padding-top: rem(10);
-    padding-bottom: rem(10);
+    padding-top: rem(9);
+    padding-bottom: rem(9);
     display: flex;
     flex-direction: column;
     justify-content: center;

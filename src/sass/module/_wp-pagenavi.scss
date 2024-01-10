@@ -3,7 +3,7 @@
 .wp-pagenavi {
 	display: flex;
 	justify-content: center;
-    gap: rem(10);
+    gap: rem(12);
 }
 .wp-pagenavi a, .wp-pagenavi span {
     display: inline-flex;
@@ -13,6 +13,7 @@
     height: rem(38);
     background-color: $base-color;
     color: $accent-color;
+    font-family: $lato-font-family;
     font-weight: $bold;
     font-size: rem(16);
     border: 1px solid $accent-color;
@@ -38,12 +39,12 @@
     }
 
 .wp-pagenavi .previouspostslink {
-    margin-right: rem(40);
+    margin-right: rem(30);
     position: relative;
 }
 
 .wp-pagenavi .nextpostslink {
-    margin-left: rem(40);
+    margin-left: rem(30);
     position: relative;
 }
 
@@ -51,13 +52,13 @@
     content: "";
     position: absolute;
     display: block;
-    width: rem(15);
-    height: rem(15);
+    width: rem(12);
+    height: rem(12);
     border-left: 1px solid $accent-color;
     border-bottom: 1px solid $accent-color;
     transform: rotate(45deg);
     top: 33%;
-    left: 40%;
+    left: 42%;
 }
 
 .wp-pagenavi .previouspostslink:hover::before {
@@ -70,8 +71,8 @@
     content: "";
     position: absolute;
     display: block;
-    width: rem(15);
-    height: rem(15);
+    width: rem(12);
+    height: rem(12);
     border-right: 1px solid $accent-color;
     border-bottom: 1px solid $accent-color;
     transform: rotate(-45deg);

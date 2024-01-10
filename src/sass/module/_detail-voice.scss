@@ -2,11 +2,19 @@
 
 .detail-voice__item {
     margin-top: rem(24);
+    cursor: pointer;
+    display: block;
+}
+
+.detail-voice__item:hover .detail-voice__img img {
+    transition: transform .6s ease; 
+    transform: scale(1.35);
 }
 
 .detail-voice__img {
     width: 100%;
     aspect-ratio: 294 / 218 ;
+    overflow: hidden;
 }
 
 .detail-voice__img img {
@@ -16,18 +24,19 @@
 }
 
 .detail-voice__kinds {
-    margin-top: rem(16);
+    margin-top: rem(18);
     font-size: rem(12);
     line-height: 1;
 }
 
 .detail-voice__title {
-    margin-top: rem(8);
+    margin-top: rem(14);
     font-size: rem(24);
+    line-height: 1.5;
     font-weight: $medium;
 }
 
 .detail-voice__btn {
-    margin-top: rem(40);
+    margin-top: rem(45);
     text-align: center;
 }

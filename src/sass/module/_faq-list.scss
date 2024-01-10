@@ -14,10 +14,11 @@
 .faq-list__item-question {
     color: $base-color;
     background-color: $accent-color;
-    padding: rem(16);
+    padding: rem(16) rem(60) rem(16) rem(16);
     position: relative;
     @include mq(md){
-        padding: rem(25) rem(40);
+        padding: rem(25) rem(90) rem(25) rem(40);
+        font-size: rem(20);
     }
 }
 
@@ -38,10 +39,11 @@
 
 .faq-list__item-answer {
     background-color: $base-color;
-    padding: rem(24) rem(16);
+    padding: rem(22) rem(16);
     border: 1px solid $accent-color;
+    line-height: 1.45;
     @include mq(md){
         margin-top: rem(16);
-        padding: rem(40);
+        padding: rem(38.5) rem(40);
     }
 }

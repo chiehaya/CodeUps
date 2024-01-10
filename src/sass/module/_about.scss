@@ -72,8 +72,6 @@
     }
 }
 
-
-
 .about__head {
     color: $accent-color;
     font-size: rem(40);
@@ -154,7 +152,7 @@
     }
 }
 
-.about__wrapper-page     {
+.about__wrapper-page {
     @include mq(md){
         width: 47.6%;
     }

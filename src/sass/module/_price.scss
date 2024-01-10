@@ -70,6 +70,7 @@
     font-weight: $bold;
     border-bottom: 1px solid $accent-color;
     line-height: 1.5;
+    font-size: rem(16);
     padding-bottom: rem(3);
     @include mq(md){
         padding-bottom: rem(2);

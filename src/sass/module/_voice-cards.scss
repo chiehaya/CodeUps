@@ -5,12 +5,14 @@
     @include mq(md){
         display: flex;
         flex-wrap: wrap;
-        gap: rem(80) rem(40);
+        gap: rem(75) rem(40);
     }
 }
 
 .voice-cards__item {
+    display: block;
     @include mq(md){
+        display: flex;
         width: calc((100% - 2.5rem) / 2);
     }
 }

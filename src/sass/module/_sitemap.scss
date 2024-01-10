@@ -1,0 +1,126 @@
+@use "global" as *;
+
+.sitemap__inner {
+    position: relative;
+}
+
+.sitemap__inner.inner {
+    padding-left: rem(15);
+    padding-right: rem(15);
+    @include mq(md){
+        padding-left: rem(25);
+        padding-right: rem(25);
+    }
+}
+
+.sitemap__decoration {
+    display: block;
+    position: absolute;
+    width: rem(120);
+    top: rem(-23);
+    left: max(calc(50% - 46vw),-3.4375rem);
+    @include mq(md){
+        display: none;
+    }
+}
+
+.sitemap__nav {
+    display: flex;
+    justify-content: space-evenly;
+    gap: rem(28);
+    @include mq(md){
+        justify-content: space-between;
+        gap: 13%;
+    }
+}
+
+.sitemap__flex-sp {
+    @include mq(md){
+        display: flex;
+    }
+}
+
+.sitemap__flex-sp:nth-child(1) {
+    @include mq(md){
+        width: 43%;
+        gap: 25%;
+    }
+}
+
+.sitemap__flex-sp:nth-child(2) {
+    @include mq(md){
+        width: 44%;
+        gap: 24%;
+    }
+}
+
+.sitemap__item--first {
+    @include mq(md){
+    width: 39%;
+    }
+}
+
+.sitemap__item--second{
+    margin-top: rem(35);
+    @include mq(md){
+    width: 36%;
+    margin-top: 0;
+    }
+}
+
+.sitemap__item--third {
+    @include mq(md){
+    width: 34.5%;
+    }
+}
+
+.sitemap__item--last {
+    margin-top: rem(35);
+    @include mq(md){
+    margin-top: 0;
+    }
+}
+
+.sitemap__item:not(:first-child) {
+    margin-top: rem(35);
+}
+
+.sitemap__item a {
+    display: block;
+    line-height: 1.125;
+    color: $font-color;
+    letter-spacing: 0;
+    transition: .3s;
+    margin-left: rem(22);
+}
+
+.sitemap__item a:hover {
+    opacity: 0.8;
+}
+
+.sitemap__title {
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.01em;
+    font-weight: $bold;
+}
+
+.sitemap__title::before {
+    content: "";
+    background-image: url(../../assets/images/common/page-nav-green.png);
+    background-size: contain;
+    position: absolute;
+    display: block;  
+    top: rem(0);
+    left: 0;
+    width: rem(18);
+    height: rem(18);
+}
+
+.sitemap__link {
+    margin-top: rem(24);
+}
+
+
+
+

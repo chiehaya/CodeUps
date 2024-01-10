@@ -8,15 +8,8 @@
     }
 }
 
-// .cards a {
-//     transition: .3s;
-// }
-
-// .cards a:hover {
-//     transform: scale(1.02);
-// }
-
 .cards__item {
+    display: block;
     @include mq(md){
         width: calc((100% - 2.5rem * 2) / 3);
     }

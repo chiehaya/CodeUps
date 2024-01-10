@@ -3,7 +3,12 @@
 .detail-campaign__item {
     text-align: center;
     box-shadow: rem(2) rem(3) rem(3) rem(3) rgba(0, 0, 0, .05);
+    display: block;
+}
 
+.detail-campaign__item:hover .detail-campaign__img img {
+    transition: transform .6s ease; 
+    transform: scale(1.35);
 }
 
 .detail-campaign__item + .detail-campaign__item {
@@ -13,6 +18,7 @@
 .detail-campaign__img {
     width: 100%;
     aspect-ratio: 294 / 188;
+    overflow: hidden;
 }
     
 .detail-campaign__img img {
@@ -22,7 +28,9 @@
 }
 
 .detail-campaign__content {
-    padding: rem(16) rem(23);
+    padding-left: rem(23);
+    padding-right: rem(23);
+    padding-bottom: rem(18);
 }
 
 .detail-campaign__title {
@@ -32,14 +40,14 @@
     font-weight: $medium;
     font-size: rem(16);
     border-bottom: 1px solid $accent-color;
-    padding-bottom: rem(10);
+    padding-bottom: rem(13);
 }
 
 .detail-campaign__text {
-    font-size: rem(14);
-    margin-top: rem(10);
-    text-align: center;
     width: 100%;
+    margin-top: rem(10);
+    font-size: rem(14);
+    text-align: center;
 }
 
 .detail-campaign__price {
@@ -48,7 +56,6 @@
     justify-content: center;
     gap: rem(16);
     letter-spacing: 0;
-    margin-top: rem(8);
 }
 
 .detail-campaign__listing-price {
@@ -77,7 +84,7 @@
 }
 
 .detail-campaign__btn {
-    margin-top: rem(40);
+    margin-top: rem(45);
     text-align: center;
 }
 

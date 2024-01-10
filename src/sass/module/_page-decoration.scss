@@ -1,0 +1,14 @@
+@use "global" as *;
+
+.page-decoration {
+    display: block;
+    position: absolute;
+    width: rem(120);
+    top: rem(-25);
+    left: rem(15);
+    @include mq(md){
+        width: rem(301);
+        top: rem(-70);
+        left: max(calc(50% - 49vw),-3.5rem);
+    }
+}

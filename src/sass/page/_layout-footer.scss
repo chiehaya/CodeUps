@@ -10,3 +10,17 @@
         padding-bottom: rem(80);
     }
 }
+
+.layout-footer--contact {
+    margin-top: rem(144);
+    @include mq(md){
+        margin-top: rem(120);
+    }
+}
+
+.layout-footer--404 {
+    margin-top: 0;
+    @include mq(md){
+        margin-top: 0;
+    }
+}

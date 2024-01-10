@@ -8,18 +8,6 @@
     position: relative;
 }
 
-.voice-page__decoration {
-    display: block;
-    position: absolute;
-    width: rem(120);
-    top: rem(-35);
-    left: max(calc(50% - 49vw),-3.4375rem);
-    @include mq(md){
-        width: rem(301);
-        top: rem(-68);
-    }
-}
-
 .voice-page__contents {
     margin-top: rem(40);
 }

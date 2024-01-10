@@ -1,0 +1,80 @@
+@use "global" as *;
+
+.page-404 {
+    height: rem(345);
+    color: $base-color;
+        @include mq(md){
+        height: rem(700);
+        }
+}
+
+.page-404__inner {
+    height: inherit;
+    position: relative;
+}
+
+.page-404__inner::after {
+    content: "";
+    background-image: url(../../assets/images/common/page-404-bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    z-index: -10;
+    display: block;
+    width: rem(338);
+    height: rem(338);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    @include mq(md){
+        width: rem(660);
+        height: rem(660);
+        transform: translateX(0);
+        top: 3%;
+        left: 3%;
+    }
+}
+
+.page-404__breadcrumb {
+    margin-top: rem(88);
+    @include mq(md){
+        margin-top: rem(98);
+    }
+}
+
+.page-404__title {
+    font-size: rem(80);
+    font-weight: $regular;
+    letter-spacing: 0.5em;
+    font-family: $lato-font-family;
+    text-align: center;
+    margin-top: rem(60);
+    line-height: 1;
+    text-indent: rem(38);
+    @include mq(md){
+        font-size: rem(160);
+        margin-top: rem(136);
+        text-indent: rem(74);
+    }
+}
+
+.page-404__message {
+    font-weight: $regular;
+    line-height: 1.5;
+    font-family: $lato-font-family;
+    text-align: center;
+    margin-top: rem(3);
+    @include mq(md){
+        margin-top: rem(40);
+    }
+}
+
+.page-404__btn {
+    margin-top: rem(40);
+    text-align: center;
+    @include mq(md){
+        margin-top: rem(80);
+    }
+}
+
+

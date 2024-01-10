@@ -1,8 +1,8 @@
 @use "global" as *;
 
 .page-form__item {
-    border-bottom: 1px dotted $accent-color;
-    padding-bottom: rem(24);
+    border-bottom: 1px dashed $accent-color;
+    padding-bottom: rem(25);
     @include mq(md){
         display: flex;
         gap: 5.7%;
@@ -11,7 +11,7 @@
 }
 
 .page-form__item + .page-form__item {
-    margin-top: rem(24);
+    margin-top: rem(25);
     @include mq(md){
         margin-top: rem(40);
     }
@@ -31,12 +31,13 @@
     font-weight: $regular;
     line-height: 1;
     background-color: #C94800;
-    padding: rem(2) rem(16);
-    margin-left: rem(8);
+    padding: rem(2) rem(14);
+    margin-left: rem(5);
+    letter-spacing: 0.4em;
 }
 
 .page-form__description {
-    margin-top: rem(16);
+    margin-top: rem(20);
     @include mq(md){
         margin-top: 0;
         width: 68.5%;
@@ -55,21 +56,53 @@
     content: "";
     position: absolute;
     display: block;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-top: 10px solid $accent-color;
+    border-left: rem(5) solid transparent;
+    border-right: rem(5) solid transparent;
+    border-top: rem(8) solid $accent-color;
     width: rem(8);
     height: rem(8);
-    top: 50%;
-    transform: translateY(-50%);
+    top: 30%;
     right: rem(8);
 }
 
+.page-form__description--error input[type="text"] {
+    background-color: rgba($color: #C94800, $alpha: .20);
+    border: 1px solid #C94800;
+}
+
+.page-form__description label:not(:first-of-type) {
+    margin-top: rem(3);
+}
+
 .page-form__check {
-    text-align: center;
-    margin-top: rem(48);
+    margin: rem(40) auto 0;
+    max-width: rem(280);
+    width: 100%;
     @include mq(md){
         margin-top: rem(80);
+        max-width: initial;
+        text-align: center;
+    }
+}
+
+.page-form__check span {
+    font-size: rem(14);
+    line-height: 1.5;
+}
+
+.page-form__check span::before {
+    top: 9%;
+    transform: translateY(0);
+    @include mq(md){
+        top: 14%;
+    }
+}
+
+.page-form__check [type=checkbox]:checked + span::after {
+    top: 20%;
+    transform: translateY(0) rotate(-45deg);
+    @include mq(md){
+        top: 35%;
     }
 }
 

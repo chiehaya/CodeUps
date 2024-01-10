@@ -3,49 +3,46 @@
 .page-nav {
     display: flex;
     justify-content: space-evenly;
-    gap: rem(30);
-    padding-left: rem(36);
+    gap: rem(12.8);
     @include mq(md){
         justify-content: center;
-        padding-left: rem(22);
-        gap: rem(53);
+        gap: rem(33);
     }
 }
 
 .page-nav__flex-sp {
-    width: rem(166);
+    width: 50%;
     @include mq(md){
         display: flex;
-        gap: rem(137);
-        width: 50%;
+        gap: rem(120);
     }
 }
 
 .page-nav__flex-sp:nth-child(1) .page-nav__flex:nth-child(2) {
-    margin-top: rem(43);
+    margin-top: rem(35);
     @include mq(md){
         margin-top: 0;
     }
 }
 
 .page-nav__flex-sp:nth-child(2) .page-nav__flex:nth-child(2) {
-    margin-top: rem(43);
+    margin-top: rem(35);
     @include mq(md){
         margin-top: 0;
     }
 }
 
 .page-nav__flex .page-nav__item:not(:first-child) {
-    margin-top: rem(42);
+    margin-top: rem(35);
 }
 
 .page-nav__item a {
     display: block;
-    letter-spacing: 0.05em;
-    line-height: 1;
+    line-height: 1.125;
     color: $base-color;
-    letter-spacing: 0.04em;
+    letter-spacing: 0;
     transition: .3s;
+    margin-left: rem(22);
 }
 
 .page-nav__item a:hover {
@@ -56,22 +53,27 @@
     font-weight: $bold;
 }
 
-.page-nav__title a span{
+.page-nav__title {
     position: relative;
     display: inline-block;
     letter-spacing: 0.01em;
 }
 
-.page-nav__title a span::before {
-    content: url(../../assets/images/common/page-nav01.png);
+.page-nav__title::before {
+    content: "";
+    background-image: url(../../assets/images/common/page-nav01.png);
+    background-size: contain;
     position: absolute;
     display: block;  
-    top: rem(-2);
-    left: rem(-20);
+    top: rem(0);
+    left: 0;
+    width: rem(18);
+    height: rem(18);
 }
 
+
 .page-nav__link {
-    margin-top: rem(26);
+    margin-top: rem(24);
 }
 
 

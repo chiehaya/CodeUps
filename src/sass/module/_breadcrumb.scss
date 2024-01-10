@@ -2,5 +2,30 @@
 
 .breadcrumb {
     font-size: rem(14);
-    letter-spacing: 1;
+}
+
+.breadcrumb__content {
+    display: flex;
+    gap: rem(10);
+}
+
+.breadcrumb__between {
+    position: relative;
+}
+
+.breadcrumb__between::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(-45deg);
+    border-right: 1px solid $font-color;
+    border-bottom: 1px solid $font-color;
+    width: rem(6);
+    height: rem(6);
+}
+
+.breadcrumb__between--white::before {
+    border-right: 1px solid $base-color;
+    border-bottom: 1px solid $base-color;
 }

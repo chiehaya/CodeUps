@@ -4,16 +4,22 @@
     position: relative;
 }
 
-.contact-page__decortaion {
-    display: block;
-    position: absolute;
-    width: rem(120);
-    top: rem(-35);
-    left: max(calc(50% - 49vw),-3.4375rem);
+.contact-page__error {
+        margin: 0 auto;
+        text-align: left;
     @include mq(md){
-        width: rem(301);
-        top: rem(-68);
+        max-width: rem(700);
+        text-align: center;
     }
+}
+
+.contact-page__error-message {
+    color: #C94800;
+    font-size: rem(14);
+    line-height: 1.5;
+    max-width: rem(224);
+    width: 100%;
+    margin: 0 auto;
 }
 
 .contact-page__content {
@@ -23,4 +29,27 @@
         max-width: rem(700);
         margin: 0 auto;
     }
+}
+
+.contact-page__content--error {
+    margin-top: rem(40);
+    @include mq(md){
+        margin: rem(40) auto 0;
+    }
+}
+
+.contact-page__complete {
+    margin: 0 auto;
+    text-align: center;
+    @include mq(md){
+        max-width: rem(622);
+    }
+}
+
+.contact-page__message {
+    line-height: 1.45;
+}
+
+.contact-page__message + .contact-page__message {
+    margin-top: rem(33);
 }
