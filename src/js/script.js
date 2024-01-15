@@ -28,14 +28,14 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         $(".js-drawer").fadeIn();
         $(".js-hamburger").addClass("is-open");
         $(".js-header").addClass("is-open");
-        $("body").css("position", "fixed");
+        $("body").css("overflow", "hidden");
     }
     
     function closeDrawer() {
         $(".js-drawer").fadeOut();
         $(".js-hamburger").removeClass("is-open");
         $(".js-header").removeClass("is-open");
-        $("body").css("position", "");
+        $("body").css("overflow", "initial");
     }
 
 // キャンペーンswiper
