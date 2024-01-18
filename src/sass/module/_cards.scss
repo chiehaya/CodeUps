@@ -3,12 +3,12 @@
 .cards {
     @include mq(md){
         display: grid;
-        flex-wrap: wrap;
         grid-template-columns: repeat(3, 1fr);
+        gap: rem(40);
     }
 }
 
-.cards--blog {
+.cards--2col {
     @include mq(md){
         grid-template-columns: repeat(2, 1fr);
     }

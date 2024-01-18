@@ -273,8 +273,6 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
 // info-page__tagの処理
     $(function() {
-    $('.info-page__tag:first-child').addClass('is-active');
-    $('.info-page__contents:nth-of-type(3),.info-page__contents:last-of-type').hide();
     // info-page__tagがクリックされたときの処理
     $('.info-page__tag').click(function() {
       // 選択された.info-page__tagのインデックスを取得
