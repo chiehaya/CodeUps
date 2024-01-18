@@ -4,6 +4,25 @@
     position: relative;
 }
 
+.contact-page__inner.inner {
+    @include mq(md){
+        max-width: rem(750);
+    }
+}
+
+.contact-page__decoration {
+    display: block;
+    position: absolute;
+    width: rem(120);
+    top: rem(-25);
+    left: rem(15);
+    @include mq(md){
+        width: rem(301);
+        top: rem(-70);
+        left: max(calc(50% - 49vw),-15.5rem);
+    }
+}
+
 .contact-page__error {
         margin: 0 auto;
         text-align: left;
@@ -25,10 +44,6 @@
 .contact-page__content {
     position: relative;
     z-index: 10;
-    @include mq(md){
-        max-width: rem(700);
-        margin: 0 auto;
-    }
 }
 
 .contact-page__content--error {

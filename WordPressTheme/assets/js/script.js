@@ -252,10 +252,21 @@ jQuery(function ($) {
       $('.js-page-top').css('z-index', '1');
       $('.js-modal__wrapper img').attr('src', imagePath);
       $('body').css('overflow', 'hidden');
-      $('.js-modal__wrapper').css({
-        'aspect-ratio': '920 /586 ',
-        'max-width': '57.5rem'
-      });
+      var index = $(this).index() + 1;
+
+      // 1番目、6の倍数、7の倍数の場合、aspect-ratioを648/512に設定
+      if (index === 1 || index % 6 === 0 || index % 7 === 0) {
+        $('.js-modal__wrapper').css({
+          'aspect-ratio': '492 / 746',
+          'max-width': '33rem'
+        });
+      } else {
+        // 上記条件に該当しない場合、元のスタイルを適用
+        $('.js-modal__wrapper').css({
+          'aspect-ratio': '920 / 586',
+          'max-width': '57.5rem'
+        });
+      }
     });
     $('.js-background-modal').click(function () {
       // モーダルが閉じられるとき
@@ -284,14 +295,39 @@ jQuery(function ($) {
       $(this).addClass('is-active');
     });
   });
+  $(function () {
+    $('.info-page__tag:first-child').removeClass('is-active');
+    // URLパラメータからtabの値を取得
+    var urlParams = new URLSearchParams(window.location.search);
+    var selectedTab = urlParams.get('tab');
+    // 対応するinfo-page__tagに'is-active'クラスを追加
+    $('.info-page__tag:nth-child(' + selectedTab + ')').addClass('is-active');
+    // 初期状態で他のinfo-page__contentsを非表示にする
+    $('.info-page__contents').hide();
+    // 選択されたタブに基づいてコンテンツを表示
+    $('.info-page__contents').eq(selectedTab - 1).show();
+    // info-page__tagがクリックされたときの処理
+    $('.info-page__tag').click(function () {
+      // クリックされたinfo-page__tagのインデックスを取得
+      var index = $(this).index();
+      // すべてのinfo-page__contentsを非表示にする
+      $('.info-page__contents').hide();
+      // クリックされたinfo-page__tagに対応するinfo-page__contentsを表示
+      $('.info-page__contents').eq(index).show();
+      // すべてのinfo-page__tagからis-activeクラスを削除
+      $('.info-page__tag').removeClass('is-active');
+      // クリックされたinfo-page__tagにis-activeクラスを追加
+      $(this).addClass('is-active');
+    });
+  });
 
   // blog archiveの処理
-  $('.js-archive-year').click(function () {
+  $('.js-archive-year').on('click', function () {
     $(this).toggleClass('is-active');
     // 親要素のjs-archive-itemを取得
     var parentItem = $(this).closest('.js-archive-item');
     // 親要素内のdetail-archive__monthを表示する
-    parentItem.find('.js-archive-month').toggle();
+    parentItem.find('.js-archive-month').slideToggle(300);
   });
 
   // page-404.htmlのbodyタグにのみ背景色を設定
@@ -311,4 +347,12 @@ jQuery(function ($) {
       $('.js-price-table-title').removeAttr('rowspan');
     }
   }).resize(); // 初回実行
+
+  // faqページのスライドトグル
+  $(function () {
+    $('.js-question').on('click', function () {
+      $(this).next().slideToggle();
+      $(this).toggleClass('is-close');
+    });
+  });
 });

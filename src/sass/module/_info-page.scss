@@ -28,16 +28,73 @@
     position: relative;
     @include mq(md){
         max-width: rem(300);
-        padding: rem(13) 0;
+        padding: rem(26) 0;
         font-size: rem(24);
-        display: flex;
-        gap: rem(8);
-        align-items: center;
-        justify-content: center;
     }
 }
 
+.info-page__tag span {
+    @include mq(md){
+        padding-left: rem(68);
+        position: relative;
+    }
+}
+
+.info-page__tag span::after {
+    @include mq(md){
+        content: "";
+        position: absolute;
+        display: block;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transition: .3s;
+        width: rem(64);
+        height: rem(64);
+        top: rem(-14);
+        left: 0;
+    }
+}
+
+.info-page__tag:first-child span:after {
+    background-image: url(../../assets/images/common/tab01.svg);
+}
+
+.info-page__tag:nth-child(2) span:after {
+    background-image: url(../../assets/images/common/tab02.svg);
+}
+
+.info-page__tag:nth-child(3) span:after {
+    background-image: url(../../assets/images/common/tab03.svg);
+}
+
+
+.info-page__tag:first-child:hover span::after {
+    background-image: url(../../assets/images/common/tab01-white.svg);
+}
+
+.info-page__tag:nth-child(2):hover span::after {
+    background-image: url(../../assets/images/common/tab02-white.svg);
+}
+
+.info-page__tag:nth-child(3):hover span::after {
+    background-image: url(../../assets/images/common/tab03-white.svg);
+}
+
+.info-page__tag.is-active:first-child span:after {
+    background-image: url(../../assets/images/common/tab01-white.svg);
+}
+
+.info-page__tag.is-active:nth-child(2) span:after {
+    background-image: url(../../assets/images/common/tab02-white.svg);
+}
+
+.info-page__tag.is-active:nth-child(3) span:after {
+    background-image: url(../../assets/images/common/tab03-white.svg);
+}
+
 .info-page__tag:hover {
+    background-color: $accent-color;
+    color: $base-color;
     box-shadow: rem(2) rem(3) rem(10) rem(3) rgba(80, 80, 80, .5);
 }
 
@@ -45,33 +102,6 @@
     background-color: $accent-color;
     color: $base-color;
     box-shadow: rem(2) rem(3) rem(10) rem(3) rgba(80, 80, 80, .5);
-}
-
-.info-page__tag img {
-    display: none;
-    @include mq(md){
-        display: block;
-        width: rem(62);
-        height: rem(62);
-    }
-}
-
-.info-page__tag img:last-of-type {
-    @include mq(md){
-        display: none;
-    }
-}
-
-.info-page__tag.is-active img:first-of-type {
-    @include mq(md){
-        display: none;
-    }
-}
-
-.info-page__tag.is-active img:last-of-type {
-    @include mq(md){
-        display: block;
-    }
 }
 
 .info-page__contents {
@@ -89,7 +119,6 @@
         align-items: center;
     }
 }
-
 
 .info-page__wrapper {
     @include mq(md){

@@ -18,6 +18,7 @@
 .detail-campaign__img {
     width: 100%;
     aspect-ratio: 294 / 188;
+    transition: transform .6s ease; 
     overflow: hidden;
 }
     

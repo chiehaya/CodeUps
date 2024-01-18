@@ -5,15 +5,29 @@
 }
 
 .detail__side-title {
+    padding-left: rem(74);
+    padding-top: rem(13);
+    padding-bottom: rem(13);
     font-size: rem(24);
     line-height: 1;
     border-left: 8px solid $accent-color;
-    padding-left: rem(16);
+    font-weight: $regular;
     position: relative;
-    display: flex;
-    gap: rem(8);
-    align-items: center;
 }
+
+.detail__side-title::after {
+    content: "";
+    position: absolute;
+    background-image: url(../../assets/images/common/detail-tag.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    width: rem(50);
+    height: rem(50);
+    top: 0;
+    left: rem(16);
+}
+
 
 .detail__side-title img {
     width: rem(50);

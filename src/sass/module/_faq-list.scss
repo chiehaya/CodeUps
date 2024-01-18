@@ -3,8 +3,6 @@
 .faq-list {
     position: relative;
     z-index: 10;
-    max-width: rem(700);
-    margin: auto;
 }
 
 .faq-list__item + .faq-list__item {
@@ -16,12 +14,14 @@
     background-color: $accent-color;
     padding: rem(16) rem(60) rem(16) rem(16);
     position: relative;
+    cursor: pointer;
     @include mq(md){
         padding: rem(25) rem(90) rem(25) rem(40);
         font-size: rem(20);
     }
 }
 
+.faq-list__item-question::before,
 .faq-list__item-question::after {
     content: "";
     position: absolute;
@@ -32,10 +32,16 @@
     top: 50%;
     transform: translateY(-50%);
     right: rem(16);
+    transition: .3s;
     @include mq(md){
         right: rem(40);
     }
 }
+
+.faq-list__item-question.is-close::after {
+    transform: rotate(-90deg);
+}
+
 
 .faq-list__item-answer {
     background-color: $base-color;

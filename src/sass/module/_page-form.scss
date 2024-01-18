@@ -5,7 +5,7 @@
     padding-bottom: rem(25);
     @include mq(md){
         display: flex;
-        gap: 5.7%;
+        gap: 4.7%;
         padding-bottom: rem(40);
     }
 }
@@ -21,7 +21,7 @@
     font-weight: $bold;
     line-height: 1;
     @include mq(md){
-        width: 25.8%;
+        width: 26.8%;
     }
 }
 
