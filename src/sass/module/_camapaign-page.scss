@@ -11,22 +11,20 @@
     gap: rem(42);
     align-items: center;
     @include mq(md){
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: grid;
         gap: rem(80) rem(40);
-        align-items: initial;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 .campaign-page__card {
     width: max(74%,17.5rem);
     @include mq(md){
-        width: 47.9%;
+        width: inherit;
     }
 }
 
 .campaign-page__pagenavi {
     margin-top: rem(80);
-    
 }
 

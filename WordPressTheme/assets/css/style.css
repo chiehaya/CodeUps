@@ -3348,14 +3348,14 @@ html {
 }
 
 .campaign-page__cards {
-	align-items: initial;
-	flex-direction: row;
-	flex-wrap: wrap;
+	grid-gap: 5rem 2.5rem;
+	display: grid;
 	gap: 5rem 2.5rem;
+	grid-template-columns: repeat(2, 1fr);
 }
 
 .campaign-page__card {
-	width: 47.9%;
+	width: inherit;
 }
 
 .campaign-item {
