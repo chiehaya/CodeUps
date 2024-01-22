@@ -3349,6 +3349,7 @@ html {
 
 .campaign-page__cards {
 	grid-gap: 5rem 2.5rem;
+	align-items: inherit;
 	display: grid;
 	gap: 5rem 2.5rem;
 	grid-template-columns: repeat(2, 1fr);
