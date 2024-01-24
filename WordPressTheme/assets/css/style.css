@@ -411,6 +411,10 @@ a {
 	gap: 0.625rem;
 }
 
+.breadcrumb__content span a:hover {
+	opacity: 0.6;
+}
+
 .breadcrumb__between {
 	position: relative;
 }

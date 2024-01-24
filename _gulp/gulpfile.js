@@ -175,9 +175,9 @@ const jsBabel = () => {
 
 const browserSyncOption = {
   notify: false,
-  server: "../dist/", // ローカルサーバーのルートディレクトリ
+  // server: "../dist/", // ローカルサーバーのルートディレクトリ
   // WordPressの場合は↓を有効にする。その場合、↑(server)はコメントアウトする。
-  // proxy: "", // ローカルサーバーのURL（WordPress）
+  proxy: "http://codeups.local/", // ローカルサーバーのURL（WordPress）
 };
 const browserSyncFunc = () => {
   browserSync.init(browserSyncOption);

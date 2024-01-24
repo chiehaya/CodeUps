@@ -9,6 +9,10 @@
     gap: rem(10);
 }
 
+.breadcrumb__content span a:hover {
+    opacity: .6;
+}
+
 .breadcrumb__between {
     position: relative;
 }
