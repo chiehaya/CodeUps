@@ -11,7 +11,9 @@
     <div class="breadcrumb layout-breadcrumb">
     <div class="breadcrumb__inner inner">
         <div class="breadcrumb__content">
-        <?php get_template_part('parts/breadcrumb'); ?>
+        <span>TOP</span>
+        <span class="breadcrumb__between"></span>
+        <span>お客様の声</span>
         </div>
     </div>
     </div>

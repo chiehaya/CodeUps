@@ -220,7 +220,7 @@
                 <p class="information__text">当店はダイビングライセンス（Cカード）世界最大の教育機関PADIの「正規店」として店舗登録されています。<br>
                 正規登録店として、安心安全に初めての方でも安心安全にライセンス取得をサポート致します。</p>
                 <div class="information__btn">
-                <a href="page-information.html?tab=1" class="btn">
+                <a href="<?php echo esc_url(home_url("/information/?tab=1")) ?>" class="btn">
                     <span>
                     View more
                     </span>

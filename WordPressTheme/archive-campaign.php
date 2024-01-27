@@ -92,8 +92,12 @@
                         <p class="campaign-item__title campaign-item__title--sub"><?php the_title(); ?></p>
                         <p class="campaign-item__text campaign-item__text--sub">全部コミコミ(お一人様)</p>
                         <div class="campaign-item__price">
-                            <p class="campaign-item__listing-price">¥56,000</p>
-                            <p class="campaign-item__discount-price">¥46,000</p>
+                        <?php if(get_field('listing_price')): ?>
+                            <p class="campaign-item__listing-price"><?php the_field('listing_price') ?></p>
+                        <?php endif; ?>
+                        <?php if(get_field('discount_price')): ?>
+                            <p class="campaign-item__discount-price"><?php the_field('discount_price') ?></p>
+                        <?php endif; ?>
                         </div>
                         <p class="campaign-item__message">
                     ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
@@ -106,7 +110,7 @@
                         ご予約・お問い合わせはコチラ
                         </p>
                         <div class="campaign-item__btn">
-                            <a href="page-contact.html" class="btn">
+                            <a href="<?php echo esc_url(home_url("/contact")) ?>" class="btn">
                                 <span>
                                     Contact us
                                 </span>

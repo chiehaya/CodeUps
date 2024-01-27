@@ -10,42 +10,47 @@
 
 <div class="breadcrumb layout-breadcrumb">
     <div class="breadcrumb__inner inner">
-        <div class="breadcrumb__content">
-            <?php get_template_part('parts/breadcrumb'); ?>
-        </div>
+    <div class="breadcrumb__content">
+        <?php get_template_part('parts/breadcrumb'); ?>
+    </div>
     </div>
 </div>
 
-<section class="two-colums layout-two-colums">
+<div class="two-colums layout-two-colums">
     <div class="two-colums__inner inner">
     <div class="two-colums__decoration page-decoration">
         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/page-deco.png" alt="装飾">
     </div>
     <div class="two-colums__contents">
-        <div class="two-colums__content single-blog">
-        <time class="single-blog__date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.n/j'); ?></time>
-        <h2 class="single-blog__title"><?php the_title(); ?></h2>
-        <figure class="single-blog__img">
-        <?php if(get_the_post_thumbnail()): ?>
+        <div class="two-colums__main">
+        <div class="two-colums__items cards cards--2col">
+            <?php if (have_posts()): 
+                while (have_posts()):
+                the_post();?>
+            <a href="<?php the_permalink(); ?>" class="cards__item card">
+            <figure class="card__img">
+                <?php if(get_the_post_thumbnail()): ?>
                 <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャッチ画像">
                 <?php else : ?>
                 <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="">
                 <?php endif ?>
-        </figure>
-        <?php the_content(); ?>
-        <?php 
-		$prev = get_previous_post(); // 直前の投稿の情報を取得
-		$prev_url = get_permalink($prev->ID); // 直前の投稿のパーマリンク（URL）を取得
-		$next = get_next_post(); // 次の投稿の情報を取得
-		$next_url = get_permalink($next->ID); // 次の投稿のパーマリンク（URL）を取得
-        ?>
+            </figure>
+            <div class="card__body">
+                <time class="card__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m.d'); ?></time>
+                <p class="card__title">
+                <?php the_title(); ?>
+                </p>
+                <p class="card__text">
+                <?php $content = get_the_content();
+                echo wp_trim_words($content, 89, '...');
+                ?>
+                </p>
+            </div>
+            </a>
+            <?php endwhile; endif; ?>
+        </div>
         <div class="two-colums__pagenavi wp-pagenavi">
-        <?php if($prev): ?>
-            <a class="previouspostslink" rel="prev" href="<?php echo $prev_url; ?>"></a>
-        <?php endif; ?>
-        <?php if($next): ?>
-            <a class="nextpostslink" rel="prev" href="<?php echo $next_url; ?>"></a>
-        <?php endif; ?>
+            <?php wp_pagenavi(); ?>
         </div>
         </div>
         <aside class="two-colums__sub detail">
@@ -186,7 +191,7 @@
                         $post_count = count($blog); // 投稿数をカウント
                     ?>
                     <p class="detail-archive__month js-archive-month">
-                        <a id="post-<?php the_ID(); ?>" href="<?php echo esc_url(home_url("{$year}/{$month}/")); ?>">
+                        <a id="post-<?php the_ID(); ?>" href="<?php echo esc_url(home_url("/date/{$year}/{$month}/")); ?>">
                             <?php echo esc_html($month); ?>月
                         </a>
                     </p>
@@ -199,5 +204,5 @@
         </aside>
     </div>
     </div>
-</section>
+</div>
 <?php get_footer(); ?>

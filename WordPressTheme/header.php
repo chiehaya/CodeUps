@@ -16,35 +16,35 @@
     <?php endif; ?>    
         <div class="header__inner">
         <h1 class="header__logo">
-            <a href="/">
+            <a href="<?php echo esc_url(home_url("/")) ?>">
             <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo.png" alt="codeups">
             </a>
         </h1>
         <nav class="header__nav">
             <ul class="header__nav-items">
             <li class="header__nav-item">
-                <a href="archive-campaign.html">Campaign<span>キャンペーン</span></a>
+                <a href="<?php echo esc_url(home_url("/campaign")) ?>">Campaign<span>キャンペーン</span></a>
             </li>
             <li class="header__nav-item">
-                <a href="page-about.html">About us<span>私たちについて</span></a>
+                <a href="<?php echo esc_url(home_url("/about-us")) ?>">About us<span>私たちについて</span></a>
             </li>
             <li class="header__nav-item">
-                <a href="page-information.html?tab=1">Information<span>ダイビング情報</span></a>
+                <a href="<?php echo esc_url(home_url("/information/?tab=1")) ?>">Information<span>ダイビング情報</span></a>
             </li>
             <li class="header__nav-item">
-                <a href="home.html">Blog<span>ブログ</span></a>
+                <a href="<?php echo esc_url(home_url("/blog")) ?>">Blog<span>ブログ</span></a>
             </li>
             <li class="header__nav-item">
-                <a href="archive-voice.html">Voice<span>お客様の声</span></a>
+                <a href="<?php echo esc_url(home_url("/voice")) ?>">Voice<span>お客様の声</span></a>
             </li>
             <li class="header__nav-item">
-                <a href="page-price.html">Price<span>料金一覧</span></a>
+                <a href="<?php echo esc_url(home_url("/price")) ?>">Price<span>料金一覧</span></a>
             </li>
             <li class="header__nav-item">
-                <a href="page-faq.html">FAQ<span>よくある質問</span></a>
+                <a href="<?php echo esc_url(home_url("/faq")) ?>">FAQ<span>よくある質問</span></a>
             </li>
             <li class="header__nav-item">
-                <a href="page-contact.html">Contact<span>お問合せ</span></a>
+                <a href="<?php echo esc_url(home_url("/contact")) ?>">Contact<span>お問合せ</span></a>
             </li>
             </ul>
         </nav>
@@ -61,23 +61,23 @@
                     <div class="page-nav__flex">
                     <ul class="page-nav__item">
                         <li class="page-nav__title">
-                        <a href="archive-campaign.html">
+                        <a href="<?php echo esc_url(home_url("/campaign")) ?>">
                             キャンペーン
                         </a>
                         </li>
                         <li class="page-nav__link">
-                        <a href="archive-campaign.html">ライセンス取得</a>
+                        <a href="<?php echo esc_url(home_url("/campaign")) ?>">ライセンス取得</a>
                         </li>
                         <li class="page-nav__link">
-                        <a href="archive-campaign.html">貸切体験ダイビング</a>
+                        <a href="<?php echo esc_url(home_url("/campaign")) ?>">貸切体験ダイビング</a>
                         </li>
                         <li class="page-nav__link">
-                        <a href="archive-campaign.html">ナイトダイビング</a>
+                        <a href="<?php echo esc_url(home_url("/campaign")) ?>">ナイトダイビング</a>
                         </li>
                     </ul>
                     <ul class="page-nav__item">
                         <li class="page-nav__title">
-                        <a href="page-about.html">
+                        <a href="<?php echo esc_url(home_url("/about-us")) ?>">
                             私たちについて
                         </a>
                         </li>
@@ -86,23 +86,23 @@
                     <div class="page-nav__flex">
                     <ul class="page-nav__item">
                         <li class="page-nav__title">
-                        <a href="page-information.html?tab=1">
+                        <a href="<?php echo esc_url(home_url("/information/?tab=1")) ?>">
                             ダイビング情報
                         </a>
                         </li>
                         <li class="page-nav__link">
-                        <a href="page-information.html?tab=1">ライセンス講習</a>
+                        <a href="<?php echo esc_url(home_url("/information/?tab=1")) ?>">ライセンス講習</a>
                         </li>
                         <li class="page-nav__link">
-                        <a href="page-information.html?tab=3">体験ダイビング</a>
+                        <a href="<?php echo esc_url(home_url("/information/?tab=3")) ?>">体験ダイビング</a>
                         </li>
                         <li class="page-nav__link">
-                        <a href="page-information.html?tab=2">ファンダイビング</a>
+                        <a href="<?php echo esc_url(home_url("/information/?tab=2")) ?>">ファンダイビング</a>
                         </li>
                     </ul>
                     <ul class="page-nav__item">
                         <li class="page-nav__title">
-                        <a href="home.html">
+                        <a href="<?php echo esc_url(home_url("/blog")) ?>">
                             ブログ
                         </a>
                         </li>
@@ -113,14 +113,14 @@
                     <div class="page-nav__flex">
                     <ul class="page-nav__item">
                         <li class="page-nav__title">
-                        <a href="archive-voice.html">
+                        <a href="<?php echo esc_url(home_url("/voice")) ?>">
                             お客様の声
                         </a>
                         </li>
                     </ul>
                     <ul class="page-nav__item">
                         <li class="page-nav__title">
-                        <a href="page-price.html">
+                        <a href="<?php echo esc_url(home_url("/price")) ?>">
                             料金一覧
                         </a>
                         </li>
@@ -138,7 +138,7 @@
                     <div class="page-nav__flex">
                     <ul class="page-nav__item">
                         <li class="page-nav__title">
-                        <a href="page-faq.html">
+                        <a href="<?php echo esc_url(home_url("/faq")) ?>">
                             よくある質問
                         </a>
                         </li>
@@ -157,7 +157,7 @@
                     </ul>
                     <ul class="page-nav__item">
                         <li class="page-nav__title">
-                        <a href="page-contact.html">お問合せ</a>
+                        <a href="<?php echo esc_url(home_url("/contact")) ?>">お問合せ</a>
                         </li>
                     </ul>
                     </div>

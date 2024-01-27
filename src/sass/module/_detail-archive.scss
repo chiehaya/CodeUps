@@ -44,6 +44,10 @@
     display: none;
 }
 
+.detail-archive__month a:hover {
+    opacity: .8;
+}
+
 .detail-archive__month::before {
     content: "";
     position: absolute;

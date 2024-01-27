@@ -120,7 +120,7 @@
                         ご予約・お問い合わせはコチラ
                         </p>
                         <div class="campaign-item__btn">
-                            <a href="page-contact.html" class="btn">
+                            <a href="<?php echo esc_url(home_url("/contact")) ?>" class="btn">
                                 <span>
                                     Contact us
                                 </span>

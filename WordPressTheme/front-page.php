@@ -220,7 +220,7 @@
                 <p class="information__text">当店はダイビングライセンス（Cカード）世界最大の教育機関PADIの「正規店」として店舗登録されています。<br>
                 正規登録店として、安心安全に初めての方でも安心安全にライセンス取得をサポート致します。</p>
                 <div class="information__btn">
-                <a href="page-information.html?tab=1" class="btn">
+                <a href="<?php echo esc_url(home_url("/information/?tab=1")) ?>" class="btn">
                     <span>
                     View more
                     </span>
@@ -243,55 +243,37 @@
             <p class="section-title__en section-title__en--white">Blog</p>
             <h2 class="section-title__ja section-title__ja--white">ブログ</h2>
             </div>
-            <div class="blog__items cards">
-            <a href="#" class="cards__item">
-                <div class="card">
-                <figure class="card__img">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog01.jpg" alt="ブログイメージ">
-                </figure>
-                <div class="card__body">
-                    <time class="card__date" datetime="2023-11-17">2023.11/17</time>
-                    <p class="card__title">
-                    ライセンス取得
-                    </p>
-                    <p class="card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                    </p>
-                </div>
-                </div>
-            </a>
-            <a href="#" class="cards__item">
-                <div class="card">
-                <figure class="card__img">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog02.jpg" alt="ブログイメージ">
-                </figure>
-                <div class="card__body">
-                    <time class="card__date" datetime="2023-11-17">2023.11/17</time>
-                    <p class="card__title">
-                    ウミガメと泳ぐ
-                    </p>
-                    <p class="card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                    </p>
-                </div>
-                </div>
-            </a>
-            <a href="#" class="cards__item">
-                <div class="card">
-                <figure class="card__img">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog03.jpg" alt="ブログイメージ">
-                </figure>
-                <div class="card__body">
-                    <time class="card__date" datetime="2023-11-17">2023.11/17</time>
-                    <p class="card__title">
-                    カクレクマノミ
-                    </p>
-                    <p class="card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                    </p>
-                </div>
-                </div>
-            </a>
+            <?php
+$args = array(
+    "post_type" => "post",
+    "posts_per_page" => 3
+);
+$the_query = new WP_Query($args);
+?>
+<div class="blog__items cards">
+    <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+        <a href="<?php the_permalink(); ?>" class="cards__item card">
+            <figure class="card__img">
+                <?php if (get_the_post_thumbnail()) : ?>
+                    <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャッチ画像">
+                <?php else : ?>
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="">
+                <?php endif ?>
+            </figure>
+            <div class="card__body">
+                <time class="card__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.m.d'); ?></time>
+                <p class="card__title">
+                    <?php the_title(); ?>
+                </p>
+                <p class="card__text">
+                    <?php $content = get_the_content();
+                    echo wp_trim_words($content, 89, '...');
+                    ?>
+                </p>
+            </div>
+        </a>
+    <?php endwhile; ?>
+    <?php wp_reset_postdata(); ?>
             </div>
             <div class="blog__btn">
             <a href="home.html" class="btn">
