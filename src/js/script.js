@@ -325,7 +325,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
 // page-404.htmlのbodyタグにのみ背景色を設定
     $(function() {
-        if (window.location.pathname === '/page-404.html') {
+        if (window.location.pathname === '/404') {
             $('body').css('background-color', '#408F95'); // 任意の色を指定
         }
     });
@@ -349,4 +349,45 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         });
     });
 
+
+$(document).ready(function () {
+    // 監視対象の要素
+    var targetElements = $('.wpcf7-form-control-wrap');
+
+    // MutationObserverを使用してDOM変更を監視
+    var observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+            // 追加されたノードがwpcf7-not-valid-tipクラスのspanであれば
+            if ($(mutation.addedNodes).hasClass('wpcf7-not-valid-tip')) {
+                $(mutation.target).find('input').css({
+                    'background-color': 'rgba(201, 72, 0, 0.2)',
+                    'border': '1px solid #C94800'
+                });
+                $(mutation.target).find('textarea').css({
+                    'background-color': 'rgba(201, 72, 0, 0.2)',
+                    'border': '1px solid #C94800'
+                });
+            } else if ($(mutation.removedNodes).hasClass('wpcf7-not-valid-tip')) {
+                // wpcf7-not-valid-tipが削除された場合
+                $(mutation.target).find('input').css({
+                    'background-color': '',
+                    'border': ''
+                }); // 元のbackground-colorに戻す
+                $(mutation.target).find('textarea').css({
+                    'background-color': '',
+                    'border': ''
+                }); // 元のbackground-colorに戻す
+            }
+
+        });
+    });
+
+    // 監視対象の全ての要素にMutationObserverを設定
+    targetElements.each(function () {
+        observer.observe(this, { childList: true, subtree: true });
+    });
 });
+
+});
+
+

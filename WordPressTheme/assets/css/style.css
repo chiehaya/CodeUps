@@ -2115,6 +2115,11 @@ textarea {
 	text-align: center;
 }
 
+.page-404__breadcrumb .breadcrumb__between::before {
+	border-bottom: 1px solid #FFFFFF;
+	border-right: 1px solid #FFFFFF;
+}
+
 .page-decoration {
 	display: block;
 	left: 0.9375rem;
@@ -2207,6 +2212,24 @@ textarea {
 	display: block;
 	margin: 1.75rem auto 0;
 	text-align: center;
+}
+
+.page-form__description span .wpcf7-list-item {
+	display: block;
+	margin-left: 0;
+}
+
+.wpcf7-not-valid-tip {
+	display: none;
+	position: absolute;
+}
+
+.wpcf7-form-control-wrap .wpcf7-not-valid::-moz-placeholder {
+	color: white;
+}
+
+.wpcf7-form-control-wrap .wpcf7-not-valid::placeholder {
+	color: white;
 }
 
 .page-nav {
@@ -2545,7 +2568,11 @@ textarea {
 	font-weight: 500;
 }
 
-.privacy__list li {
+.privacy__content p {
+	margin-top: 1.875rem;
+}
+
+.privacy__content ol li {
 	list-style: auto;
 	margin-left: 1.5rem;
 }
@@ -2642,6 +2669,18 @@ textarea {
 	position: absolute;
 	top: 0.3125rem;
 	width: 1.125rem;
+}
+
+.single-blog figure:not(:first-of-type) {
+	aspect-ratio: 301/201;
+	margin-top: 2.5rem;
+}
+
+.single-blog figure img {
+	-o-object-fit: cover;
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
 }
 
 .sitemap__inner {
@@ -3422,7 +3461,6 @@ html {
 
 .campaign-item__listing-price {
 	font-size: 1.5rem;
-	padding-left: 1.125rem;
 }
 
 .campaign-item__discount-price {
@@ -4167,6 +4205,11 @@ select {
 }
 
 .single-blog ul {
+	margin-top: 2.5rem;
+}
+
+.single-blog figure:not(:first-of-type) {
+	aspect-ratio: 700/468;
 	margin-top: 2.5rem;
 }
 

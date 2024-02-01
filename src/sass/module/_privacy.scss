@@ -38,10 +38,11 @@
     }
 }
 
-.privacy__message {
+.privacy__content p {
+    margin-top: rem(30);
 }
 
-.privacy__list li {
+.privacy__content ol li {
     list-style: auto;
     margin-left: rem(24);
 }

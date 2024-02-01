@@ -1,19 +1,19 @@
 <?php get_header(); ?>
 <main>
     <section class="sub-mv js-mv">
-    <h1 class="sub-mv__title">Campaign</h1>
-    <picture class="sub-mv__img">
-        <source media="(min-width: 768px)" srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/campaign-mv-pc.jpg">
-        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/campaign-mv-sp.jpg" alt="サブメインビュー">
-    </picture>
+        <h1 class="sub-mv__title">Campaign</h1>
+        <picture class="sub-mv__img">
+            <source media="(min-width: 768px)" srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/campaign-mv-pc.jpg">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/campaign-mv-sp.jpg" alt="サブメインビュー">
+        </picture>
     </section>
 
     <div class="breadcrumb layout-breadcrumb">
-    <div class="breadcrumb__inner inner">
-        <div class="breadcrumb__content">
-        <?php get_template_part('parts/breadcrumb'); ?>
+        <div class="breadcrumb__inner inner">
+            <div class="breadcrumb__content">
+                <?php get_template_part('parts/breadcrumb'); ?>
+            </div>
         </div>
-    </div>
     </div>
 
     <div class="camapaign-page layout-page-top">
@@ -22,50 +22,50 @@
                 <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/page-deco.png" alt="装飾">
             </div>
             <ul class="camapaign-page__tab tab">
-            <?php
-    $current_term_id = 0;
-    $terms = get_terms(array(
-		// 表示するタクソノミースラッグを記述
-    'taxonomy' => 'menu',
-    'orderby' => 'name',
-    'order'   => 'ASC',
-    // 表示するタームの数を指定
-    'number'  => 5
-));
+                <?php
+                $current_term_id = 0;
+                $terms = get_terms(array(
+                    // 表示するタクソノミースラッグを記述
+                'taxonomy' => 'menu',
+                'orderby' => 'name',
+                'order'   => 'ASC',
+                // 表示するタームの数を指定
+                'number'  => 5
+                ));
 
-    // カスタム投稿一覧ページへのURL
-    $home_class = (is_post_type_archive()) ? 'is-active' : '';
-    $home_link = sprintf(
-        '<li class="tab__link %s">
-            <a href="%s" class="">ALL</a>
-        </li>',
-        $home_class,
-        esc_url(home_url('/campaign')),
-        esc_attr(__('View all posts', 'textdomain'))
-    );
-    echo sprintf(esc_html__('%s', 'textdomain'), $home_link);
+                // カスタム投稿一覧ページへのURL
+                $home_class = (is_post_type_archive()) ? 'is-active' : '';
+                $home_link = sprintf(
+                    '<li class="tab__link %s">
+                        <a href="%s" class="">ALL</a>
+                    </li>',
+                    $home_class,
+                    esc_url(home_url('/campaign')),
+                    esc_attr(__('View all posts', 'textdomain'))
+                );
+                echo sprintf(esc_html__('%s', 'textdomain'), $home_link);
 
-    // タームのリンク
-    $queried_object = get_queried_object();
-    if ($queried_object instanceof WP_Term) {
-        $current_term_id = $queried_object->term_id;
-    }
+                // タームのリンク
+                $queried_object = get_queried_object();
+                if ($queried_object instanceof WP_Term) {
+                    $current_term_id = $queried_object->term_id;
+                }
 
-    if ($terms) {
-        foreach ($terms as $term) {
-            $term_class = ($current_term_id === $term->term_id) ? 'is-active' : '';
-            $term_link = sprintf(
-                '<li class="tab__link %s">
-                    <a href="%s" class="">%s</a>
-                </li>',
-                $term_class,
-                esc_url(get_term_link($term->term_id)),
-                esc_html($term->name)
-            );
-            echo sprintf(esc_html__('%s', 'textdomain'), $term_link);
-        }
-    }
-    ?>
+                if ($terms) {
+                    foreach ($terms as $term) {
+                        $term_class = ($current_term_id === $term->term_id) ? 'is-active' : '';
+                        $term_link = sprintf(
+                            '<li class="tab__link %s">
+                                <a href="%s" class="">%s</a>
+                            </li>',
+                            $term_class,
+                            esc_url(get_term_link($term->term_id)),
+                            esc_html($term->name)
+                        );
+                        echo sprintf(esc_html__('%s', 'textdomain'), $term_link);
+                    }
+                }
+                ?>
             </ul>
             <div class="campaign-page__cards">
             <?php
@@ -139,4 +139,4 @@
         </div>
     </div>
 
-    <?php get_footer(); ?>
+<?php get_footer(); ?>

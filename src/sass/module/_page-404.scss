@@ -77,4 +77,7 @@
     }
 }
 
-
+.page-404__breadcrumb .breadcrumb__between::before {
+    border-right: 1px solid $base-color;
+    border-bottom: 1px solid $base-color;
+}
