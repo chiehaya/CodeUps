@@ -46,6 +46,14 @@
     z-index: 10;
 }
 
+.contact-page__content .wpcf7-response-output {
+    border: none !important;
+    color: #C94800 !important;
+    text-align: center!important;
+    margin-bottom: rem(40)!important;
+    padding: 0!important;
+}
+
 .contact-page__content--error {
     margin-top: rem(40);
     @include mq(md){

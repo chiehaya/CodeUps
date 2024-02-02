@@ -49,12 +49,8 @@ function change_posts_per_page($query) {
         $query->set('posts_per_page', 4);
     }
 
-    if (is_tax('voice_gender') && $query->is_tax('voice_gender')) {
-        $query->set('posts_per_page', 6);
-    }
-
     if (is_tax('voice_menu') && $query->is_tax('voice_menu')) {
-        $query->set('posts_per_page', 8);
+        $query->set('posts_per_page', 6);
     }
 
     if (is_tax('menu') && $query->is_tax('menu')) {
@@ -91,3 +87,34 @@ add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
 function wpcf7_autop_return_false() {
     return false;
 }
+
+function campaign_selectlist($tag, $unused)
+{
+    //セレクトボックスの名前が'select-campaign'かどうか
+    if ($tag['name'] != 'select-campaign') {
+        return $tag;
+    }
+    //get_posts()でセレクトボックスの中身を作成する
+    //クエリの作成
+    $args = array(
+        'numberposts' => 3,
+        'post_type' => 'campaign', //カスタム投稿タイプを指定
+        //並び順⇒セレクトボックス内の表示順
+        'orderby' => 'ID',
+        'order' => 'ASC'
+    );
+    //クエリをget_posts()に入れる
+    $campaign_posts = get_posts($args);
+    //クエリがなければ戻す
+    if (!$campaign_posts) {
+        return $tag;
+    }
+    //セレクトボックスにforeachで入れる
+    foreach ($campaign_posts as $campaign_post) {
+        $tag['raw_values'][] = $campaign_post->post_title;
+        $tag['values'][] = $campaign_post->post_title;
+        $tag['labels'][] = $campaign_post->post_title;
+    }
+    return $tag;
+}
+add_filter('wpcf7_form_tag', 'campaign_selectlist', 10, 2);

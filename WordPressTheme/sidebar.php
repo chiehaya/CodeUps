@@ -25,7 +25,7 @@
                     <?php endif ?>
                 </figure>
                 <div class="popular__body">
-                    <time class="popular__date" datetime="?php the_time('c'); ?>"><?php the_time('Y.m.d'); ?></time>
+                    <time class="popular__date" datetime="?php the_time('c'); ?>"><?php the_time('Y.n/j'); ?></time>
                     <p class="popular__title">
                         <?php the_title(); ?>
                     </p>
@@ -45,7 +45,9 @@
         <?php
         $args = array(
             "post_type" => "voice", //「カスタム投稿のスラッグ名」
-            "posts_per_page" => 1  //「表示する件数」
+            "posts_per_page" => 1,  //「表示する件数」
+            'orderby' => 'date',
+            'order' => 'DESC'   
         );
         $the_query = new WP_Query($args);
         ?>
@@ -94,7 +96,9 @@
         <?php
         $args = array(
             "post_type" => "campaign", //「カスタム投稿のスラッグ名」
-            "posts_per_page" => 2  //「表示する件数」
+            "posts_per_page" => 2,  //「表示する件数」
+            'orderby' => 'date',
+            'order' => 'DESC'   
         );
         $the_query = new WP_Query($args);
         ?>
@@ -145,41 +149,44 @@
         アーカイブ
         </h3>
         <ul class="detail__archive detail-archive">
-        <?php
-        // 年ごとに分けて月を表示する
-        $blog_by_year = array();
-        $the_query = new WP_Query(array(
-            'post_type' => 'post',
-            'post_status' => 'publish',
-            'posts_per_page' => 5,
-        ));
-        while ($the_query->have_posts()) : $the_query->the_post();
-            $year = get_the_date('Y');
-            $month = get_the_date('n');
-            $blog_by_year[$year][$month][] = $post;
-        endwhile;
-        wp_reset_postdata();
+            <?php
+            $args = array(
+                'post_type' => 'post',
+                'post_status' => 'publish',
+                'posts_per_page' => -1, // すべての記事を取得する
+                'orderby' => 'date',
+                'order' => 'DESC',
+            );
 
-        // 年ごとのループ
-        foreach ($blog_by_year as $year => $months) :
-        ?>
-            <li class="detail-archive__item js-archive-item">
-                <p class="detail-archive__year js-archive-year">
-                    <?php echo esc_html($year); ?>年
-                </p>
-                <?php
-                // 月ごとのループ
-                foreach ($months as $month => $blog) :
-                    $post_count = count($blog); // 投稿数をカウント
-                ?>
-                <p class="detail-archive__month js-archive-month">
-                    <a id="post-<?php the_ID(); ?>" href="<?php echo esc_url(home_url("{$year}/{$month}/")); ?>">
-                        <?php echo esc_html($month); ?>月
-                    </a>
-                </p>
-                <?php endforeach; ?>
-            </li>
-        <?php endforeach; ?>
+            $the_query = new WP_Query($args);
+            $blog_by_year = array();
+
+            while ($the_query->have_posts()) : $the_query->the_post();
+                $year = get_the_date('Y');
+                $month = get_the_date('n');
+                $blog_by_year[$year][$month][] = $post;
+            endwhile;
+
+            wp_reset_postdata();
+
+            foreach ($blog_by_year as $year => $months) :
+            ?>
+                <li class="detail-archive__item js-archive-item">
+                    <p class="detail-archive__year js-archive-year">
+                        <?php echo esc_html($year); ?>年
+                    </p>
+                    <?php
+                    foreach ($months as $month => $blog) :
+                        $post_count = count($blog);
+                    ?>
+                        <p class="detail-archive__month js-archive-month">
+                            <a id="post-<?php the_ID(); ?>" href="<?php echo esc_url(home_url("{$year}/{$month}/")); ?>">
+                                <?php echo esc_html($month); ?>月
+                            </a>
+                        </p>
+                    <?php endforeach; ?>
+                </li>
+            <?php endforeach; ?>
         </ul>
     </div>
 </aside>

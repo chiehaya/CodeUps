@@ -154,6 +154,11 @@
                             <a href="<?php echo esc_url(home_url("/contact")) ?>">お問合せ</a>
                         </li>
                     </ul>
+                    <ul class="page-nav__item">
+                        <li class="page-nav__title">
+                            <a href="<?php echo esc_url(home_url("/sitemap")) ?>">サイトマップ</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

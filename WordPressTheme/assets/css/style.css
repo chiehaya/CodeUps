@@ -939,6 +939,14 @@ a {
 	z-index: 10;
 }
 
+.contact-page__content .wpcf7-response-output {
+	border: none !important;
+	color: #C94800 !important;
+	margin-bottom: 2.5rem !important;
+	padding: 0 !important;
+	text-align: center !important;
+}
+
 .contact-page__content--error {
 	margin-top: 2.5rem;
 }
@@ -2219,16 +2227,16 @@ textarea {
 	margin-left: 0;
 }
 
-.wpcf7-not-valid-tip {
+.page-form__description span .wpcf7-not-valid-tip {
 	display: none;
 	position: absolute;
 }
 
-.wpcf7-form-control-wrap .wpcf7-not-valid::-moz-placeholder {
+.page-form__description span .wpcf7-form-control-wrap .wpcf7-not-valid::-moz-placeholder {
 	color: white;
 }
 
-.wpcf7-form-control-wrap .wpcf7-not-valid::placeholder {
+.page-form__description span .wpcf7-form-control-wrap .wpcf7-not-valid::placeholder {
 	color: white;
 }
 

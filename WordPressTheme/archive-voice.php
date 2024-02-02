@@ -68,7 +68,7 @@
                 <?php if (have_posts()): 
                     while (have_posts()):
                         the_post();?>
-                        <a href="#" class="voice-cards__item">
+                        <a href="<?php echo esc_url(home_url("/voice")) ?>" class="voice-cards__item">
                             <div class="voice-card">
                                 <div class="voice-card__head">
                                     <div class="voice-card__description">

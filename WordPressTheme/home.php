@@ -38,7 +38,7 @@
                                         <?php endif ?>
                                     </figure>
                                     <div class="card__body">
-                                        <time class="card__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.n/d'); ?></time>
+                                        <time class="card__date" datetime="<?php the_time('c'); ?>"><?php the_time('Y.n/j'); ?></time>
                                         <p class="card__title">
                                             <?php the_title(); ?>
                                         </p>

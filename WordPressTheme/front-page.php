@@ -70,7 +70,9 @@
             <?php
             $args = array(
                 "post_type" => "campaign", // カスタム投稿のスラッグ名
-                "posts_per_page" => 10 // 表示する件数
+                "posts_per_page" => 10, // 表示する件数
+                'orderby' => 'date',
+                'order' => 'DESC'  
             );
             $the_query = new WP_Query($args);
             ?>
@@ -294,7 +296,14 @@
                                     ?>
                                     </div>
                                     <p class="voice-card__title">
-                                        <?php the_title(); ?>
+                                        <?php
+                                            $title = get_the_title();
+                                            $limited_title = mb_substr($title, 0, 20, 'UTF-8');
+                                            if (mb_strlen($title, 'UTF-8') > 20) {
+                                                $limited_title .= '...';
+                                            }
+                                            echo $limited_title;
+                                        ?>
                                     </p>
                                 </div>
                                 <figure class="voice-card__img js-colorbox">
@@ -307,7 +316,7 @@
                             </div>
                             <p class="voice-card__text">
                                 <?php $content = get_the_content();
-                                echo wp_trim_words($content, 89, '...');
+                                echo wp_trim_words($content, 200, '...');
                                 ?>
                             </p>
                         </a>
