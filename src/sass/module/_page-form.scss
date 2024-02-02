@@ -120,11 +120,11 @@
     margin-left: 0;
 }
 
-.page-form__description span .wpcf7-not-valid-tip {
+.wpcf7-not-valid-tip {
     position: absolute;
     display: none;
 }
 
-.page-form__description span .wpcf7-form-control-wrap .wpcf7-not-valid::placeholder {
+.wpcf7-form-control-wrap .wpcf7-not-valid::placeholder {
     color: white;
 }
