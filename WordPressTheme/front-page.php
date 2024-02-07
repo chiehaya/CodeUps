@@ -8,30 +8,28 @@
             </div>
             <div class="mv__swiper swiper js-mv-swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <picture class="mv__img">
-                            <source media="(min-width: 768px)" srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv-pc01.jpg">
-                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv-sp01.jpg" alt="メインビュー">
-                        </picture>
-                    </div>
-                    <div class="swiper-slide">
-                        <picture class="mv__img">
-                            <source media="(min-width: 768px)" srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv-pc02.jpg">
-                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv-sp02.jpg" alt="メインビュー">
-                        </picture>
-                    </div>
-                    <div class="swiper-slide">
-                        <picture class="mv__img">
-                            <source media="(min-width: 768px)" srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv-pc03.jpg">
-                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv-sp03.jpg" alt="メインビュー">
-                        </picture>
-                    </div>
-                    <div class="swiper-slide">
-                        <picture class="mv__img">
-                            <source media="(min-width: 768px)" srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv-pc04.jpg">
-                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv-sp04.jpg" alt="メインビュー">
-                        </picture>
-                    </div>
+                <?php
+                    $images = SCF::get('mv_group', 9);
+                    foreach ($images as $fields) :
+                        $mv_pc = SCF::get('mv_pc', 9);
+                        $mv_sp = SCF::get('mv_sp', 9);
+                        
+                        if ($mv_pc && $mv_sp) :
+                            foreach ($mv_pc as $index => $pc_image) :
+                                if (isset($mv_sp[$index])) : 
+                                    $sp_image = $mv_sp[$index];
+                ?>
+                                <div class="swiper-slide">
+                                    <picture class="mv__img">
+                                        <source media="(min-width: 768px)" srcset="<?php echo wp_get_attachment_url($pc_image, 'full'); ?>">
+                                        <img src="<?php echo wp_get_attachment_url($sp_image, 'full') ; ?>" alt="メインビュー">
+                                    </picture>
+                                </div>
+                                <?php endif;
+                            endforeach;
+                        endif;
+                    endforeach; 
+                            ?>
                 </div>
             </div>
         </div>
@@ -90,15 +88,13 @@
                                         <?php endif ?>
                                     </div>
                                     <div class="campaign-item__content">
-                                        <?php
-                                        $taxonomy_terms = get_the_terms($post->ID, 'menu'); //'genre'はスラッグ名
-                                        if (!empty($taxonomy_terms)) {
-                                            foreach ($taxonomy_terms as $taxonomy_term) {
-                                                echo '<p class="campaign-item__category category">' . esc_html($taxonomy_term->name) . '</p>';
-                                                // ここの呼び出しは適宜合わせる
-                                            }
-                                        }
-                                        ?>
+                                    <?php
+                                        $taxonomy_terms = get_the_terms($post->ID, 'campaign_category');
+
+                                        foreach (!empty($taxonomy_terms) ? $taxonomy_terms : [] as $taxonomy_term) :
+                                            echo '<p class="campaign-item__category category">' . esc_html($taxonomy_term->name) . '</p>';
+                                        endforeach;
+                                    ?>
                                         <p class="campaign-item__title">
                                             <?php the_title(); ?>
                                         </p>
@@ -119,7 +115,7 @@
                     </div>
                 </div>
             <?php else : ?>
-                <p>記事が投稿されていません</p>
+                <p class="campaign__message">記事が投稿されていません</p>
             <?php endif; ?>
             <div class="campaign__btn">
                 <a href="<?php echo esc_url(home_url("/campaign")) ?>" class="btn">
@@ -197,7 +193,6 @@
         </div>
     </section>
 
-
     <section class="blog layout-blog">
         <div class="blog__img">
             <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-bg.jpg" alt="ブログ背景">
@@ -217,6 +212,7 @@
             );
             $the_query = new WP_Query($args);
             ?>
+            <?php if ($the_query->have_posts()) : ?>
             <div class="blog__items cards">
                 <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
                     <a href="<?php the_permalink(); ?>" class="cards__item card">
@@ -242,6 +238,9 @@
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             </div>
+            <?php else : ?>
+            <p class="blog__message">記事が投稿されていません</p>
+            <?php endif; ?>
             <div class="blog__btn">
                 <a href="<?php echo esc_url(home_url("/blog")) ?>" class="btn">
                     <span>
@@ -271,6 +270,7 @@
             );
             $the_query = new WP_Query($args);
             ?>
+            <?php if ($the_query->have_posts()) : ?>
             <div class="voice__contents voice-cards">
                 <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
                     <div class="voice-cards__item">
@@ -279,30 +279,26 @@
                                 <div class="voice-card__description">
                                     <div class="voice-card__type">
                                     <?php
-                                        $taxonomy_terms = get_the_terms($post->ID, 'voice_gender');
-                                        if (!empty($taxonomy_terms)) {
-                                            foreach ($taxonomy_terms as $taxonomy_term) {
-                                                echo '<p class="voice-card__gender">' . esc_html($taxonomy_term->name) . '</p>';
-                                            }
-                                        }
-                                    ?>
-                                    <?php
-                                        $taxonomy_terms = get_the_terms($post->ID, 'voice_menu');
-                                        if (!empty($taxonomy_terms)) {
-                                            foreach ($taxonomy_terms as $taxonomy_term) {
-                                                echo '<p class="voice-card__category category">' . esc_html($taxonomy_term->name) . '</p>';
-                                            }
-                                        }
+                                    $taxonomy_terms_gender = get_the_terms($post->ID, 'voice_gender');
+                                    if (!empty($taxonomy_terms_gender)) :
+                                        foreach ($taxonomy_terms_gender as $taxonomy_term_gender) :
+                                            echo '<p class="voice-card__gender">' . esc_html($taxonomy_term_gender->name) . '</p>';
+                                        endforeach;
+                                    endif;
+
+                                    $taxonomy_terms_category = get_the_terms($post->ID, 'voice_category');
+                                    if (!empty($taxonomy_terms_category)) :
+                                        foreach ($taxonomy_terms_category as $taxonomy_term_category) :
+                                            echo '<p class="voice-card__category category">' . esc_html($taxonomy_term_category->name) . '</p>';
+                                        endforeach;
+                                    endif;
                                     ?>
                                     </div>
                                     <p class="voice-card__title">
-                                        <?php
-                                            $title = get_the_title();
-                                            $limited_title = mb_substr($title, 0, 20, 'UTF-8');
-                                            if (mb_strlen($title, 'UTF-8') > 20) {
-                                                $limited_title .= '...';
-                                            }
-                                            echo $limited_title;
+                                    <?php
+                                        $title = get_the_title();
+                                        $limited_title = mb_strlen($title, 'UTF-8') > 20 ? mb_substr($title, 0, 20, 'UTF-8') . '...' : $title;
+                                        echo $limited_title;
                                         ?>
                                     </p>
                                 </div>
@@ -324,6 +320,9 @@
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             </div>
+            <?php else : ?>
+                <p class="voice__message">記事が投稿されていません</p>
+            <?php endif; ?>
             <div class="voice__btn">
                 <a href="<?php echo esc_url(home_url("/voice")) ?>" class="btn">
                     <span>
@@ -350,53 +349,77 @@
                 </picture>
                 <div class="price__items">
                     <h3 class="price__menu">ライセンス講習</h3>
+                    <?php
+                    $free_item = SCF::get('lisence_group', 26);
+                    if (!empty($free_item) && isset($free_item[0]['lisence_menu'], $free_item[0]['lisence_price']) && $free_item[0]['lisence_menu'] !== '' && $free_item[0]['lisence_price'] !== '') : 
+                    ?>
                     <dl class="price__list">
                         <?php
-                        $free_item = SCF::get('lisence_group',26);
-                        foreach ($free_item as $fields) { 
-                        ?>
+                        foreach ($free_item as $fields) : ?>
+                        <?php if (!empty($fields['lisence_menu']) && !empty($fields['lisence_price'])) : ?>
                             <div class="price__wrapper">
-                                <dt class="price__term"><?php echo $fields['lisence_menu']; ?></dt>
-                                <dd class="price__description"><?php echo $fields['lisence_price']; ?></dd>
+                                <dt class="price__term"><?= $fields['lisence_menu']; ?></dt>
+                                <dd class="price__description"><?= $fields['lisence_price']; ?></dd>
                             </div>
-                        <?php } ?>
+                        <?php endif; ?>
+                        <?php endforeach; ?>
                     </dl>
+                    <?php else : ?>
+                        <p>現在メニューはありません</p>
+                    <?php endif; ?>
+                    
                     <h3 class="price__menu">体験ダイビング</h3>
+                    <?php
+                    $free_item = SCF::get('trial_diving', 26);
+                    if (!empty($free_item) && isset($free_item[0]['trial_diving_menu'], $free_item[0]['trial_diving_price']) && $free_item[0]['trial_diving_menu'] !== '' && $free_item[0]['trial_diving_price'] !== '') :
+                    ?>
                     <dl class="price__list">
-                        <?php
-                        $free_item = SCF::get('trial_diving',26);
-                        foreach ($free_item as $fields) { 
-                        ?>
+                    <?php
+                        foreach ($free_item as $fields) : ?>
                             <div class="price__wrapper">
-                                <dt class="price__term"><?php echo $fields['trial_diving_menu']; ?></dt>
-                                <dd class="price__description"><?php echo $fields['trial_diving_price']; ?></dd>
+                                <dt class="price__term"><?= $fields['trial_diving_menu']; ?></dt>
+                                <dd class="price__description"><?= $fields['trial_diving_price']; ?></dd>
                             </div>
-                        <?php } ?>
+                        <?php endforeach; ?>
                     </dl>
+                    <?php else : ?>
+                        <p>現在メニューはありません</p>
+                    <?php endif; ?>
+
                     <h3 class="price__menu">ファンダイビング</h3>
+                    <?php
+                    $free_item = SCF::get('fun_diving', 26);
+                    if (!empty($free_item) && isset($free_item[0]['fun_diving_menu'], $free_item[0]['fun_diving_price']) && $free_item[0]['fun_diving_menu'] !== '' && $free_item[0]['fun_diving_price'] !== '') :
+                    ?>
                     <dl class="price__list">
                         <?php
-                        $free_item = SCF::get('fun_diving',26);
-                        foreach ($free_item as $fields) { 
-                        ?>
+                        foreach ($free_item as $fields) : ?>
                             <div class="price__wrapper">
                                 <dt class="price__term"><?php echo $fields['fun_diving_menu']; ?></dt>
                                 <dd class="price__description"><?php echo $fields['fun_diving_price']; ?></dd>
                             </div>
-                        <?php } ?>
+                        <?php endforeach; ?>
                     </dl>
+                    <?php else : ?>
+                        <p>現在メニューはありません</p>
+                    <?php endif; ?>
+
                     <h3 class="price__menu">スペシャルダイビング</h3>
-                    <dl class="price__list">
-                        <?php
-                        $free_item = SCF::get('special_diving',26);
-                        foreach ($free_item as $fields) { 
-                        ?>
-                            <div class="price__wrapper">
-                                <dt class="price__term"><?php echo $fields['special_diving_menu']; ?></dt>
-                                <dd class="price__description"><?php echo $fields['special_diving_price']; ?></dd>
-                            </div>
-                        <?php } ?>
-                    </dl>
+                    <?php
+                    $free_item = SCF::get('special_diving', 26);
+                    if (!empty($free_item) && isset($free_item[0]['special_diving_menu'], $free_item[0]['special_diving_price']) && $free_item[0]['special_diving_menu'] !== '' && $free_item[0]['special_diving_price'] !== '') :
+                    ?>
+                        <dl class="price__list">
+                            <?php foreach ($free_item as $fields) : ?>
+                                <div class="price__wrapper">
+                                    <dt class="price__term"><?= $fields['special_diving_menu']; ?></dt>
+                                    <dd class="price__description"><?= $fields['special_diving_price']; ?></dd>
+                                </div>
+                            <?php endforeach; ?>
+                        </dl>
+                    <?php else : ?>
+                        <p>現在メニューはありません</p>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="price__btn">

@@ -1,13 +1,10 @@
 <?php if (!is_page(array('contact', 'thanks')) && !is_404()): ?>
-<?php
-    if (is_front_page() || is_page('sitemap')) {
-    // front-page.php と page-sitemap.php の場合
-    echo '<section class="contact layout-contact">';
-        } else {
-        // それ以外のページの場合
-        echo '<section class="contact layout-contact-sub">';
-    }
-?>
+<section class="contact 
+    <?php echo (is_front_page() || is_page('sitemap')) 
+        ? 'layout-contact' 
+        : 'layout-contact-sub'; 
+    ?>"
+>
     <div class="contact__inner inner">
         <div class="contact__decoration">
             <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/price-deco.png" alt="装飾">

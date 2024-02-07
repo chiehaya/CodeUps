@@ -9,12 +9,8 @@
         </picture>
     </section>
 
-    <div class="breadcrumb layout-breadcrumb">
-        <div class="breadcrumb__inner inner">
-            <div class="breadcrumb__content">
-                <?php get_template_part('parts/breadcrumb'); ?>
-            </div>
-        </div>
+    <div class="layout-breadcrumb">
+        <?php get_template_part('parts/breadcrumb'); ?>
     </div>
 
     <div class="faq layout-page-top">
@@ -22,17 +18,21 @@
             <div class="faq__decoration">
                 <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/page-deco.png" alt="装飾">
             </div>
+            <?php
+            $faqItems = SCF::get('faq_group', 22);
+            if (!empty($faqItems)) :
+            ?>
             <ul class="faq__list faq-list">
-                <?php
-                $faqItems = SCF::get('faq_group', 22);
-                foreach ($faqItems as $fields) { 
-                ?>
+            <?php foreach ($faqItems as $fields) : ?>
+                <?php if (!empty($fields['question']) && !empty($fields['answer'])) : ?>
                     <li class="faq-list__item">
                         <p class="faq-list__item-question js-question"><?php echo $fields['question']; ?></p>
                         <p class="faq-list__item-answer"><?php echo nl2br($fields['answer']); ?></p>
                     </li>
-                <?php } ?>
+                <?php endif; ?>
+            <?php endforeach; ?>
             </ul>
+            <?php endif; ?>
         </div>
     </div>
 </main>

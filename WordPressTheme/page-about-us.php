@@ -9,12 +9,8 @@
         </picture>
     </section>
 
-    <div class="breadcrumb layout-breadcrumb">
-        <div class="breadcrumb__inner inner">
-            <div class="breadcrumb__content">
-                <?php get_template_part('parts/breadcrumb'); ?>
-            </div>
-        </div>
+    <div class="layout-breadcrumb">
+        <?php get_template_part('parts/breadcrumb'); ?>
     </div>
 
     <div class="about-page layout-page-top">
@@ -45,30 +41,46 @@
     </div>
 
     <section class="gallery layout-gallery">
-        <div class="gallery__inner inner">
-            <div class="gallery__title section-title">
-                <p class="section-title__en">Gallery</p>
-                <h2 class="section-title__ja">フォト</h2>
-            </div>
-            <ul class="gallery__items">
-                <?php
-                $imgGroup = SCF::get('gallery_imgs');
-                foreach ($imgGroup as $fields) { 
-                    if (!empty($fields['gallery_img'])) {
-                        $img_id = $fields['gallery_img'];
-                        $img_url = wp_get_attachment_image_src($img_id, 'full');
-                        if ($img_url) {
-                ?>
-                            <li class="gallery__item js-gallery">
-                                <img src="<?php echo $img_url[0]; ?>" alt="ギャラリーアイテム">
-                            </li>
-                <?php
-                        }
-                    }
-                }
-                ?>
-            </ul>
+    <div class="gallery__inner inner">
+    <?php
+    $imgGroup = SCF::get('gallery_imgs');
+    $hasImages = false;
+
+    foreach ($imgGroup as $fields) :
+        if (!empty($fields['gallery_img'])) :
+            $img_id = $fields['gallery_img'];
+            $img_url = wp_get_attachment_image_src($img_id, 'full');
+            if ($img_url) :
+                $hasImages = true;
+            endif;
+        endif;
+    endforeach;
+    ?>
+
+    <?php if ($hasImages) : ?>
+        <div class="gallery__title section-title">
+            <p class="section-title__en">Gallery</p>
+            <h2 class="section-title__ja">フォト</h2>
         </div>
+    <?php endif; ?>
+
+    <ul class="gallery__items">
+        <?php foreach ($imgGroup as $fields) :
+            if (!empty($fields['gallery_img'])) :
+                $img_id = $fields['gallery_img'];
+                $img_url = wp_get_attachment_image_src($img_id, 'full');
+                if ($img_url) :
+        ?>
+            <li class="gallery__item js-gallery">
+                <img src="<?php echo $img_url[0]; ?>" alt="ギャラリーアイテム">
+            </li>
+        <?php
+                endif;
+            endif;
+        endforeach;
+        ?>
+    </ul>
+</div>
     </section>
 
     <div class="modal js-modal">

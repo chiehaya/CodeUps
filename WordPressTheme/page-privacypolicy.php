@@ -8,12 +8,8 @@
         </picture>
     </section>
 
-    <div class="breadcrumb layout-breadcrumb">
-        <div class="breadcrumb__inner inner">
-            <div class="breadcrumb__content">
-                <?php get_template_part('parts/breadcrumb'); ?>
-            </div>
-        </div>
+    <div class="layout-breadcrumb">
+        <?php get_template_part('parts/breadcrumb'); ?>
     </div>
 
     <section class="privacy layout-page-top">
@@ -21,14 +17,14 @@
             <div class="privacy__decoration">
                 <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/page-deco.png" alt="装飾">
             </div>
-            <h2 class="privacy__title">プライバシーポリシー</h2>
-            <div class="privacy__content">
-                <?php
-                    $page_obj = get_page_by_path('privacypolicy');
-                    $page = get_post( $page_obj );
-                    echo $page->post_content;   //本文を表示
-                ?>
-            </div>
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                <?php if (trim(get_the_content()) !== '') : ?>
+                <h2 class="privacy__title">プライバシーポリシー</h2>
+                <div class="privacy__content">
+                    <?php the_content(); ?>
+                </div>
+                <?php endif; ?>
+            <?php endwhile; endif; ?>
         </div>
     </section>
 <?php get_footer(); ?>

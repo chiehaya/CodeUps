@@ -8,12 +8,8 @@
         </picture>
     </section>
 
-    <div class="breadcrumb layout-breadcrumb">
-        <div class="breadcrumb__inner inner">
-            <div class="breadcrumb__content">
-                <?php get_template_part('parts/breadcrumb'); ?>
-            </div>
-        </div>
+    <div class="layout-breadcrumb">
+        <?php get_template_part('parts/breadcrumb'); ?>
     </div>
 
     <section class="info-page layout-page-top">

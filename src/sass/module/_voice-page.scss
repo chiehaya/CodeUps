@@ -12,6 +12,10 @@
     margin-top: rem(40);
 }
 
+.voice-page__message {
+    text-align: center;
+}
+
 .voice-page__pagenavi {
     margin-top: rem(80);
     @include mq(md){

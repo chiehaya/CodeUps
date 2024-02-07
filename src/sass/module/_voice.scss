@@ -33,6 +33,14 @@
     }
 }
 
+.voice__message {
+    margin-top: rem(30);
+    text-align: center;
+    @include mq(md){
+        margin-top: rem(50);
+    }
+}
+
 .voice__btn {
     text-align: center;
     margin-top: rem(40);

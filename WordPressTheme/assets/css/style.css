@@ -379,6 +379,11 @@ a {
 	padding-right: 1.5625rem;
 }
 
+.two-colums__message {
+	margin-top: 6.25rem;
+	text-align: center;
+}
+
 .two-colums__pagenavi {
 	margin: 4.9375rem auto 0;
 }
@@ -395,6 +400,11 @@ a {
 	margin-top: 1.8125rem;
 	padding-left: 0.4375rem;
 	padding-right: 0.4375rem;
+}
+
+.blog__message {
+	margin-top: 1.25rem;
+	text-align: center;
 }
 
 .blog__btn {
@@ -670,6 +680,10 @@ a {
 	width: max(74%, 17.5rem);
 }
 
+.campaign-page__message {
+	text-align: center;
+}
+
 .campaign-page__pagenavi {
 	margin-top: 5rem;
 }
@@ -836,6 +850,11 @@ a {
 	width: 17.5rem;
 }
 
+.campaign__message {
+	margin-top: 2.5rem;
+	text-align: center;
+}
+
 .campaign__btn {
 	margin-top: 2.3125rem;
 	padding-bottom: 0.3125rem;
@@ -937,14 +956,6 @@ a {
 .contact-page__content {
 	position: relative;
 	z-index: 10;
-}
-
-.contact-page__content .wpcf7-response-output {
-	border: none !important;
-	color: #C94800 !important;
-	margin-bottom: 2.5rem !important;
-	padding: 0 !important;
-	text-align: center !important;
 }
 
 .contact-page__content--error {
@@ -1091,6 +1102,11 @@ a {
 	position: absolute;
 	top: 13%;
 	width: 0;
+}
+
+.detail-archive__message {
+	color: #0D2936;
+	font-size: 1rem;
 }
 
 .detail-campaign__item {
@@ -2227,17 +2243,28 @@ textarea {
 	margin-left: 0;
 }
 
-.page-form__description span .wpcf7-not-valid-tip {
+.wpcf7-not-valid-tip {
 	display: none;
 	position: absolute;
 }
 
-.page-form__description span .wpcf7-form-control-wrap .wpcf7-not-valid::-moz-placeholder {
+.wpcf7-form-control-wrap .wpcf7-not-valid::-moz-placeholder {
 	color: white;
 }
 
-.page-form__description span .wpcf7-form-control-wrap .wpcf7-not-valid::placeholder {
+.wpcf7-form-control-wrap .wpcf7-not-valid::placeholder {
 	color: white;
+}
+
+.wpcf7-response-output {
+	border: none !important;
+	margin-bottom: 2.5rem !important;
+	padding: 0 !important;
+}
+
+.wpcf7-response-output {
+	color: #C94800;
+	text-align: center;
 }
 
 .page-nav {
@@ -2932,6 +2959,10 @@ textarea {
 	margin-top: 2.5rem;
 }
 
+.voice-page__message {
+	text-align: center;
+}
+
 .voice-page__pagenavi {
 	margin-top: 5rem;
 }
@@ -2955,6 +2986,11 @@ textarea {
 
 .voice__contents {
 	margin-top: 2.875rem;
+}
+
+.voice__message {
+	margin-top: 1.875rem;
+	text-align: center;
 }
 
 .voice__btn {
@@ -3338,6 +3374,11 @@ html {
 	padding: 0;
 }
 
+.blog__message {
+	margin-top: 7.5rem;
+	text-align: center;
+}
+
 .blog__btn {
 	margin-top: 5rem;
 }
@@ -3469,6 +3510,7 @@ html {
 
 .campaign-item__listing-price {
 	font-size: 1.5rem;
+	padding-left: 1.125rem;
 }
 
 .campaign-item__discount-price {
@@ -3536,6 +3578,10 @@ html {
 
 .campaign__item {
 	width: 20.875rem;
+}
+
+.campaign__message {
+	margin-top: 3.125rem;
 }
 
 .campaign__btn {
@@ -4353,6 +4399,10 @@ select {
 
 .voice__contents {
 	margin-top: 1.875rem;
+}
+
+.voice__message {
+	margin-top: 3.125rem;
 }
 
 .voice__btn {

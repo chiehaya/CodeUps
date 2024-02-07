@@ -8,7 +8,7 @@
         </picture>
     </section>
 
-    <div class="layout-breadcrumb">
+        <div class="layout-breadcrumb">
         <?php get_template_part('parts/breadcrumb'); ?>
     </div>
 
@@ -17,27 +17,29 @@
             <div class="voice-page__decoration page-decoration">
                 <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/page-deco.png" alt="装飾">
             </div>
-
             <?php
-            $current_term_id = 0;
-            $terms = get_terms(array(
+                $current_term_id = 0;
+                $terms = get_terms(array(
+                    // 表示するタクソノミースラッグを記述
                 'taxonomy' => 'voice_category',
                 'orderby' => 'name',
                 'order'   => 'ASC',
+                // 表示するタームの数を指定
                 'number'  => 5
-            ));
-            // 現在のターム ID の取得
-            $queried_object = get_queried_object();
-            if ($queried_object instanceof WP_Term) :
-                $current_term_id = $queried_object->term_id;
-            endif;
-            // タームが存在する場合にのみ表示
-            if ($terms) :
-                ?>
+                ));
 
-                <ul class="voice-page__tab tab">
-                <?php
-                // ALL タブの作成
+                // タームのリンク
+                $queried_object = get_queried_object();
+                if ($queried_object instanceof WP_Term) :
+                    $current_term_id = $queried_object->term_id;
+                endif;
+
+                // タームが存在する場合にのみ表示
+                if ($terms) :
+                    ?>
+            <ul class="voice-page__tab tab">
+                <?php 
+                // カスタム投稿一覧ページへのURL
                 $home_class = (is_post_type_archive()) ? 'is-active' : '';
                 $home_link = sprintf(
                     '<li class="tab__link %s">
@@ -49,24 +51,24 @@
                 );
                 echo sprintf(esc_html__('%s', 'textdomain'), $home_link);
 
-                // タームのリンクの作成
-                foreach ($terms as $term) :
-                    $term_class = ($current_term_id === $term->term_id) ? 'is-active' : '';
-                    $term_link = sprintf(
-                        '<li class="tab__link %s">
-                            <a href="%s" class="">%s</a>
-                        </li>',
-                        $term_class,
-                        esc_url(get_term_link($term->term_id)),
-                        esc_html($term->name)
-                    );
-                    echo sprintf(esc_html__('%s', 'textdomain'), $term_link);
-                endforeach ?>
+                    foreach ($terms as $term) {
+                        $term_class = ($current_term_id === $term->term_id) ? 'is-active' : '';
+                        $term_link = sprintf(
+                            '<li class="tab__link %s">
+                                <a href="%s" class="">%s</a>
+                            </li>',
+                            $term_class,
+                            esc_url(get_term_link($term->term_id)),
+                            esc_html($term->name)
+                        );
+                        echo sprintf(esc_html__('%s', 'textdomain'), $term_link);
+                    }
+                ?>
             </ul>
             <?php endif; ?>
 
             <?php if (have_posts()) : ?>
-            <div class="voice-page__contents voice-cards">
+            <div class="voice-page__contents voice-cards ">
                 <?php while (have_posts()) : the_post(); ?>        
                     <a href="<?php echo esc_url(home_url("/voice")) ?>" class="voice-cards__item">
                         <div class="voice-card">
@@ -93,9 +95,9 @@
                                 </div>
                                 <figure class="voice-card__img js-colorbox">
                                     <?php if(get_the_post_thumbnail()): ?>
-                                        <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャッチ画像">
+                                    <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャッチ画像">
                                     <?php else : ?>
-                                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="no image">
+                                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="no image">
                                     <?php endif ?>
                                 </figure>
                             </div>
@@ -106,7 +108,7 @@
                             </p>
                         </div>
                     </a>
-                <?php endwhile; ?>      
+                    <?php endwhile; ?>      
                 </div>
                 <div class="voice-page__pagenavi">
                     <?php wp_pagenavi(); ?>
@@ -117,5 +119,4 @@
             <?php endif; ?>
         </div>
     </div>
-</main>
-<?php get_footer(); ?>
+    <?php get_footer(); ?>

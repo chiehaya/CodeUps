@@ -285,7 +285,7 @@
                                         }
                                     ?>
                                     <?php
-                                        $taxonomy_terms = get_the_terms($post->ID, 'voice_menu');
+                                        $taxonomy_terms = get_the_terms($post->ID, 'voice_category');
                                         if (!empty($taxonomy_terms)) {
                                             foreach ($taxonomy_terms as $taxonomy_term) {
                                                 echo '<p class="voice-card__category category">' . esc_html($taxonomy_term->name) . '</p>';
