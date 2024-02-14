@@ -19,89 +19,30 @@
                 <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/page-deco.png" alt="装飾">
             </div>
             <?php
-            $free_item = SCF::get('lisence_group', 26);
-            if(!empty($free_item) && isset($free_item[0]['lisence_menu']) && isset($free_item[0]['lisence_price']) && $free_item[0]['lisence_menu'] !== '' && $free_item[0]['lisence_price'] !== '') : 
+            $pran_fields = array('pran01', 'pran02', 'pran03', 'pran04');
+            foreach ($pran_fields as $field) :
+                    $price_menu = SCF::get_option_meta('price', $field . '_name');
+                    $free_item = SCF::get_option_meta('price', $field);
+                if (!empty($free_item) && isset($free_item[0][$field . '_menu']) && isset($free_item[0][$field . '_price']) && $free_item[0][$field . '_menu'] !== '' && $free_item[0][$field . '_price'] !== '') :
             ?>
-            <table id="price-lisence" class="page-price__table price-table">
-                <tbody>
-                    <tr>
-                        <th class="price-table__title js-price-table-title" colspan="2">
-                            <p>ライセンス講習</p>
-                        </th>
-                    </tr>
-                    <?php
-            foreach ($free_item as $fields) : ?>
-                <tr>
-                    <td class="price-table__menu"><?= $fields['lisence_menu']; ?></td>
-                    <td class="price-table__price"><?= $fields['lisence_price']; ?></td>
-                </tr>
-            <?php endforeach; ?>
-                </tbody>
-            </table>
-            <?php endif; ?>
-            <?php
-            $free_item = SCF::get('trial_diving', 26);
-            if (!empty($free_item) && isset($free_item[0]['trial_diving_menu'], $free_item[0]['trial_diving_price']) && $free_item[0]['trial_diving_menu'] !== '' && $free_item[0]['trial_diving_price'] !== '') :
-            ?>
-            <table class="page-price__table price-table">
-                <tbody>
-                    <tr>
-                        <th class="price-table__title js-price-table-title" colspan="2">
-                            <p>体験ダイビング</p>
-                        </th>
-                    </tr>
-                    <?php
-                    foreach ($free_item as $fields) : ?>
+                <table id="price-lisence" class="page-price__table price-table">
+                    <tbody>
                         <tr>
-                            <td class="price-table__menu"><?= $fields['trial_diving_menu']; ?></td>
-                            <td class="price-table__price"><?= $fields['trial_diving_price']; ?></td>
+                            <th class="price-table__title js-price-table-title" colspan="2">
+                                <p><?php echo esc_html($price_menu); ?></p>
+                            </th>
                         </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-            <?php endif; ?>
-            <?php
-            $free_item = SCF::get('fun_diving', 26);
-            if (!empty($free_item) && isset($free_item[0]['fun_diving_menu'], $free_item[0]['fun_diving_price']) && $free_item[0]['fun_diving_menu'] !== '' && $free_item[0]['fun_diving_price'] !== '') :
+                        <?php foreach ($free_item as $fields) : ?>
+                            <tr>
+                                <td class="price-table__menu"><?= $fields[$field . '_menu']; ?></td>
+                                <td class="price-table__price"><?= $fields[$field . '_price']; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            <?php endif; 
+            endforeach;
             ?>
-            <table class="page-price__table price-table">
-                <tbody>
-                    <tr>
-                        <th class="price-table__title js-price-table-title" colspan="2">
-                            <p>ファンダイビング</p>
-                        </th>
-                    </tr>
-                    <?php
-                    foreach ($free_item as $fields) : ?>
-                        <tr>
-                            <td class="price-table__menu"><?= $fields['fun_diving_menu']; ?></td>
-                            <td class="price-table__price"><?= $fields['fun_diving_price']; ?></td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-            <?php endif; ?>
-            <?php
-            $free_item = SCF::get('special_diving', 26);
-            if (!empty($free_item) && isset($free_item[0]['special_diving_menu'], $free_item[0]['special_diving_price']) && $free_item[0]['special_diving_menu'] !== '' && $free_item[0]['special_diving_price'] !== '') :
-            ?>
-            <table class="page-price__table price-table">
-                <tbody>
-                    <tr>
-                        <th class="price-table__title js-price-table-title" colspan="2">
-                            <p>スペシャルダイビング</p>
-                        </th>
-                    </tr>
-                    <?php
-                    foreach ($free_item as $fields) : ?>
-                        <tr>
-                            <td class="price-table__menu"><?= $fields['special_diving_menu']; ?></td>
-                            <td class="price-table__price"><?= $fields['special_diving_price']; ?></td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-            <?php endif; ?>
         </div>
     </div>
 </main>

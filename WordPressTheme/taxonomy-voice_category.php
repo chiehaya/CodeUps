@@ -75,14 +75,11 @@
                             <div class="voice-card__head">
                                 <div class="voice-card__description">
                                     <div class="voice-card__type">
+                                    <?php  $voiceCustomer = get_field('voice_customer');
+                                            if ($voiceCustomer) : ?>
+                                            <p class="voice-card__gender"><?php echo $voiceCustomer['voice_age']; ?>(<?php echo $voiceCustomer['voice_gender']; ?>)</p>
+                                    <?php endif; ?>
                                     <?php
-                                        $taxonomy_terms = get_the_terms($post->ID, 'voice_gender');
-                                        echo (!empty($taxonomy_terms))
-                                            ? implode('', array_map(function($term) {
-                                                return '<p class="voice-card__gender">' . esc_html($term->name) . '</p>';
-                                            }, $taxonomy_terms))
-                                            : '';
-
                                         $taxonomy_terms = get_the_terms($post->ID, 'voice_category');
                                         echo (!empty($taxonomy_terms))
                                             ? implode('', array_map(function($term) {

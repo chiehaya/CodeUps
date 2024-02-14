@@ -43,7 +43,7 @@
     <section class="gallery layout-gallery">
     <div class="gallery__inner inner">
     <?php
-    $imgGroup = SCF::get('gallery_imgs');
+    $imgGroup = SCF::get_option_meta('aboutus','gallery_imgs');
     $hasImages = false;
 
     foreach ($imgGroup as $fields) :

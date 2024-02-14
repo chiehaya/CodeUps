@@ -64,15 +64,10 @@
                         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="no image">
                         <?php endif ?>
                     </div>
-                    <?php
-                        $taxonomy_terms = get_the_terms($post->ID, 'voice_gender');//'genre'はスラッグ名
-                        if ( ! empty( $taxonomy_terms ) ) {
-                            foreach( $taxonomy_terms as $taxonomy_term ) {
-                                echo '<p class="detail-voice__kinds">' . esc_html( $taxonomy_term->name ) . '</p>';
-                                            //ここの呼び出しは適宜合わせる　
-                            }
-                        }
-                        ?>
+                    <?php  $voiceCustomer = get_field('voice_customer');
+                            if ($voiceCustomer) : ?>
+                            <p class="detail-voice__kinds"><?php echo $voiceCustomer['voice_age']; ?>(<?php echo $voiceCustomer['voice_gender']; ?>)</p>
+                    <?php endif; ?>
                     <p class="detail-voice__title">
                         <?php the_title(); ?>
                     </p>
@@ -120,17 +115,18 @@
                     <p class="detail-campaign__title">
                         <?php the_title(); ?>
                     </p>
-                    <p class="detail-campaign__text">全部コミコミ(お一人様)</p>
+                    <?php  $campaignPrice= get_field('campaign_price');
+                                if ($campaignPrice) : ?>
+                    <p class="detail-campaign__text"><?php echo $campaignPrice['campaign_text']; ?></p>
                     <div class="detail-campaign__price">
-                        <?php if(get_field('listing_price')): ?>
                         <p class="detail-campaign__listing-price">
-                            <?php the_field('listing_price') ?> 
+                            <?php echo $campaignPrice['listing_price']; ?>
                         </p>
-                        <?php endif; ?>
-                        <?php if(get_field('discount_price')): ?>
-                            <p class="detail-campaign__discount-price"><?php the_field('discount_price') ?></p>
-                        <?php endif; ?>
+                        <p class="detail-campaign__discount-price">
+                            <?php echo $campaignPrice['discount_price']; ?>
+                        </p>
                     </div>
+                    <?php endif; ?>
                 </div>
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>

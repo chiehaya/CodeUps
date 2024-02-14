@@ -8,28 +8,26 @@
             </div>
             <div class="mv__swiper swiper js-mv-swiper">
                 <div class="swiper-wrapper">
-                <?php
-                    $images = SCF::get('mv_group', 9);
-                    foreach ($images as $fields) :
-                        $mv_pc = SCF::get('mv_pc', 9);
-                        $mv_sp = SCF::get('mv_sp', 9);
-                        
-                        if ($mv_pc && $mv_sp) :
-                            foreach ($mv_pc as $index => $pc_image) :
-                                if (isset($mv_sp[$index])) : 
-                                    $sp_image = $mv_sp[$index];
+                <?php foreach (range(1, 4) as $i): 
+                $index = sprintf("%02d", $i); // 01, 02, 03のように0埋めする
+                $mainView = get_field('mv_group' . $index); 
+                
+                // mv_pcとmv_spの両方に値がある場合にのみループを回す
+                if (!empty($mainView['mv_pc' . $index]) && !empty($mainView['mv_sp' . $index])) :
+                    $pcImage = $mainView['mv_pc' . $index]['url'];
+                    $spImage = $mainView['mv_sp' . $index]['url'];
+                    $mvText = $mainView['mv_text' . $index];
                 ?>
-                                <div class="swiper-slide">
-                                    <picture class="mv__img">
-                                        <source media="(min-width: 768px)" srcset="<?php echo wp_get_attachment_url($pc_image, 'full'); ?>">
-                                        <img src="<?php echo wp_get_attachment_url($sp_image, 'full') ; ?>" alt="メインビュー">
-                                    </picture>
-                                </div>
-                                <?php endif;
-                            endforeach;
-                        endif;
-                    endforeach; 
-                            ?>
+                    <div class="swiper-slide">
+                        <picture class="mv__img">
+                            <source media="(min-width: 768px)" srcset="<?php echo $pcImage; ?>">
+                            <img src="<?php echo $spImage; ?>" alt="<?php echo $mvText; ?>">
+                        </picture>
+                    </div>
+                <?php
+                endif;
+                endforeach; 
+                ?>
                 </div>
             </div>
         </div>
@@ -98,15 +96,14 @@
                                         <p class="campaign-item__title">
                                             <?php the_title(); ?>
                                         </p>
-                                        <p class="campaign-item__text">全部コミコミ(お一人様)</p>
+                                        <?php  $campaignPrice= get_field('campaign_price');
+                                        if ($campaignPrice) : ?>
+                                        <p class="campaign-item__text"><?php echo $campaignPrice['campaign_text']; ?></p>
                                         <div class="campaign-item__price">
-                                            <?php if (get_field('listing_price')) : ?>
-                                                <p class="campaign-item__listing-price"><?php the_field('listing_price') ?></p>
-                                            <?php endif; ?>
-                                            <?php if (get_field('discount_price')) : ?>
-                                                <p class="campaign-item__discount-price"><?php the_field('discount_price') ?></p>
-                                            <?php endif; ?>
+                                            <p class="campaign-item__listing-price"><?php echo $campaignPrice['listing_price']; ?></p>
+                                            <p class="campaign-item__discount-price"><?php echo $campaignPrice['discount_price']; ?></p>
                                         </div>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             <?php endwhile; ?>
@@ -278,14 +275,11 @@
                             <div class="voice-card__head">
                                 <div class="voice-card__description">
                                     <div class="voice-card__type">
+                                    <?php  $voiceCustomer = get_field('voice_customer');
+                                            if ($voiceCustomer) : ?>
+                                            <p class="voice-card__gender"><?php echo $voiceCustomer['voice_age']; ?>(<?php echo $voiceCustomer['voice_gender']; ?>)</p>
+                                    <?php endif; ?>
                                     <?php
-                                    $taxonomy_terms_gender = get_the_terms($post->ID, 'voice_gender');
-                                    if (!empty($taxonomy_terms_gender)) :
-                                        foreach ($taxonomy_terms_gender as $taxonomy_term_gender) :
-                                            echo '<p class="voice-card__gender">' . esc_html($taxonomy_term_gender->name) . '</p>';
-                                        endforeach;
-                                    endif;
-
                                     $taxonomy_terms_category = get_the_terms($post->ID, 'voice_category');
                                     if (!empty($taxonomy_terms_category)) :
                                         foreach ($taxonomy_terms_category as $taxonomy_term_category) :

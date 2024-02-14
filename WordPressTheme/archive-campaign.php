@@ -79,23 +79,23 @@
                             endif;
                         ?>
                             <p class="campaign-item__title campaign-item__title--sub"><?php the_title(); ?></p>
-                            <p class="campaign-item__text campaign-item__text--sub">全部コミコミ(お一人様)</p>
+                            <?php  $campaignPrice= get_field('campaign_price');
+                                if ($campaignPrice) : ?>
+                            <p class="campaign-item__text campaign-item__text--sub"><?php echo $campaignPrice['campaign_text']; ?></p>
                             <div class="campaign-item__price">
-                                <?php if(get_field('listing_price')): ?>
-                                    <p class="campaign-item__listing-price"><?php the_field('listing_price') ?></p>
-                                <?php endif; ?>
-                                <?php if(get_field('discount_price')): ?>
-                                    <p class="campaign-item__discount-price"><?php the_field('discount_price') ?></p>
-                                <?php endif; ?>
+                                <p class="campaign-item__listing-price"><?php echo $campaignPrice['listing_price']; ?></p>
+                                <p class="campaign-item__discount-price"><?php echo $campaignPrice['discount_price']; ?></p>
                             </div>
+                            <?php endif; ?>
                             <p class="campaign-item__message">
                                 <?php $content = get_the_content();
                                 echo wp_trim_words($content, 170, '...');
                                 ?>
                             </p>
-                            <?php if(get_field('campaign_date')): ?>
+                            <?php  $campaignTime= get_field('campaign_time');
+                                if ($campaignTime) : ?>
                             <p class="campaign-item__date">
-                                    <?php the_field('campaign_date') ?>
+                                <?php echo $campaignTime['campaign_start_time']; ?>-<?php echo $campaignTime['campaign_end_time']; ?>
                             </p>
                             <?php endif; ?>
                             <p class="campaign-item__reservation">

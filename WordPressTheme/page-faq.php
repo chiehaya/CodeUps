@@ -19,7 +19,7 @@
                 <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/page-deco.png" alt="装飾">
             </div>
             <?php
-            $faqItems = SCF::get('faq_group', 22);
+            $faqItems = SCF::get_option_meta('faq','faq_group');
             if (!empty($faqItems)) :
             ?>
             <ul class="faq__list faq-list">
