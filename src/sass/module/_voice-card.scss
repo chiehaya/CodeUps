@@ -1,22 +1,5 @@
 @use "global" as *;
 
-.voice-card {
-    padding: rem(15) rem(16) rem(24) rem(16);
-    box-shadow: rem(2) rem(3) rem(3) rem(3) rgba(0, 0, 0, .05);
-    transition: .3s;
-    cursor: pointer;
-    @include mq(md){
-        padding: rem(26) rem(24) rem(24) rem(24);
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-.voice-card:hover {
-    opacity: .8;
-    box-shadow: rem(2) rem(3) rem(20) rem(5) rgba(221, 240, 241);
-}
-
 .voice-card__head {
     display: flex;
     gap: 4%;

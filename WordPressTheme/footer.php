@@ -66,20 +66,45 @@
         <div class="footer__nav page-nav">
             <div class="page-nav__flex-sp">
                 <div class="page-nav__flex">
-                    <ul class="page-nav__item">
-                        <li class="page-nav__title">
-                            <a href="<?php echo esc_url(home_url("/campaign")) ?>">キャンペーン</a>
-                        </li>
-                        <li class="page-nav__link">
-                            <a href="<?php echo esc_url(home_url("/campaign")) ?>">ライセンス取得</a>
-                        </li>
-                        <li class="page-nav__link">
-                            <a href="<?php echo esc_url(home_url("/campaign")) ?>">貸切体験ダイビング</a>
-                        </li>
-                        <li class="page-nav__link">
-                            <a href="<?php echo esc_url(home_url("/campaign")) ?>">ナイトダイビング</a>
-                        </li>
+                <?php
+                    $current_term_id = 0;
+
+                    // カテゴリーの取得
+                    $terms = get_terms(array(
+                        'taxonomy' => 'campaign_category',
+                        'orderby' => 'name',
+                        'order'   => 'ASC',
+                        'number'  => 5
+                    ));
+
+                    // 現在のターム ID の取得
+                    $queried_object = get_queried_object();
+                    if ($queried_object instanceof WP_Term) :
+                        $current_term_id = $queried_object->term_id;
+                    endif;
+
+                    // タームが存在する場合にのみ表示
+                    if ($terms) :
+                    ?>
+                        <ul class="page-nav__item">
+                        <?php
+                        $home_class = (is_post_type_archive()) ? 'is-active' : '';
+                        $home_link = sprintf(
+                        '<li class="page-nav__title %s"><a href="%s" class="">キャンペーン</a></li>',
+                        $home_class,
+                        esc_url(home_url('/campaign')),
+                        esc_attr(__('View all posts', 'textdomain'))
+                        );
+                        echo sprintf(esc_html__('%s', 'textdomain'), $home_link);
+
+                        foreach ($terms as $term):
+                        $term_class = ($current_term_id === $term->term_id) ? 'is-active' : '';
+                        $term_link = sprintf('<li class="page-nav__link %s"><a href="%s">%s</a></li>', $term_class, esc_url(get_term_link($term->term_id)), esc_html($term->name));
+                        echo sprintf(esc_html__('%s', 'textdomain'), $term_link);
+                        endforeach;
+                        ?>
                     </ul>
+                    <?php endif; ?>
                     <ul class="page-nav__item">
                         <li class="page-nav__title">
                             <a href="<?php echo esc_url(home_url("/about-us")) ?>">私たちについて</a>

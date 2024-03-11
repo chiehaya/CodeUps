@@ -1,4 +1,16 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying 404 pages (Not Found)
+ *
+ * @package WordPress
+ * @subpackage Your_Theme_Name
+ * @since Your_Theme_Version
+ */
+
+get_header();
+?>
+
+<body <?php body_class('custom-404-class'); ?>>
 <main>
     <section class="page-404">
         <div class="page-404__inner inner">

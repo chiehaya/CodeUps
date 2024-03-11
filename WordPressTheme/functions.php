@@ -9,7 +9,7 @@ function codeups_enqueue_styles_scripts() {
     wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper@8/swiper-bundle.min.css');
     wp_enqueue_style('codeups-style', get_template_directory_uri() . '/assets/css/style.css');
 
-    wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.6.0.js', array(), null, true);
+    wp_enqueue_script('jquery', '//code.jquery.com/jquery-3.6.0.js', array(), null, true);
     wp_enqueue_script('jquery-inview', get_template_directory_uri() . '/assets/js/jquery.inview.min.js', array('jquery'), null, true);
     wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper@8/swiper-bundle.min.js', array(), null, true);
     wp_enqueue_script('codeups-script', get_template_directory_uri() . '/assets/js/script.js', array('jquery', 'jquery-inview', 'swiper-js'), null, true);
@@ -145,14 +145,14 @@ add_filter( 'get_the_archive_title', function ($title) {
 function Change_menulabel() {
 	global $menu;
 	global $submenu;
-	$name = 'お知らせ';
+	$name = 'ブログ';
 	$menu[5][0] = $name;
 	$submenu['edit.php'][5][0] = $name.'一覧';
 	$submenu['edit.php'][10][0] = '新しい'.$name;
 }
 function Change_objectlabel() {
 	global $wp_post_types;
-	$name = 'お知らせ';
+	$name = 'ブログ';
 	$labels = &$wp_post_types['post']->labels;
 	$labels->name = $name;
 	$labels->singular_name = $name;
@@ -204,3 +204,4 @@ SCF::add_options_page(
 	'dashicons-editor-help',
 	11
 );
+

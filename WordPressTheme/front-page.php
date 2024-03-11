@@ -342,79 +342,27 @@
                     <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/price-sp.jpg" alt="亀の画像">
                 </picture>
                 <div class="price__items">
-                    <h3 class="price__menu">ライセンス講習</h3>
                     <?php
-                    $free_item = SCF::get('lisence_group', 26);
-                    if (!empty($free_item) && isset($free_item[0]['lisence_menu'], $free_item[0]['lisence_price']) && $free_item[0]['lisence_menu'] !== '' && $free_item[0]['lisence_price'] !== '') : 
+                    $pran_fields = array('pran01', 'pran02', 'pran03', 'pran04');
+                    foreach ($pran_fields as $field) :
+                            $price_menu = SCF::get_option_meta('price', $field . '_name');
+                            $free_item = SCF::get_option_meta('price', $field);
+                    if (!empty($free_item) && isset($free_item[0][$field . '_menu']) && isset($free_item[0][$field . '_price']) && $free_item[0][$field . '_menu'] !== '' && $free_item[0][$field . '_price'] !== '') :
                     ?>
+                    <h3 class="price__menu"><?php echo esc_html($price_menu); ?></h3>
                     <dl class="price__list">
-                        <?php
-                        foreach ($free_item as $fields) : ?>
-                        <?php if (!empty($fields['lisence_menu']) && !empty($fields['lisence_price'])) : ?>
+                        <?php foreach ($free_item as $fields) : ?>
                             <div class="price__wrapper">
-                                <dt class="price__term"><?= $fields['lisence_menu']; ?></dt>
-                                <dd class="price__description"><?= $fields['lisence_price']; ?></dd>
-                            </div>
-                        <?php endif; ?>
-                        <?php endforeach; ?>
-                    </dl>
-                    <?php else : ?>
-                        <p>現在メニューはありません</p>
-                    <?php endif; ?>
-                    
-                    <h3 class="price__menu">体験ダイビング</h3>
-                    <?php
-                    $free_item = SCF::get('trial_diving', 26);
-                    if (!empty($free_item) && isset($free_item[0]['trial_diving_menu'], $free_item[0]['trial_diving_price']) && $free_item[0]['trial_diving_menu'] !== '' && $free_item[0]['trial_diving_price'] !== '') :
-                    ?>
-                    <dl class="price__list">
-                    <?php
-                        foreach ($free_item as $fields) : ?>
-                            <div class="price__wrapper">
-                                <dt class="price__term"><?= $fields['trial_diving_menu']; ?></dt>
-                                <dd class="price__description"><?= $fields['trial_diving_price']; ?></dd>
+                                <dt class="price__term"><?= $fields[$field . '_menu']; ?></dt>
+                                <dd class="price__description"><?= $fields[$field . '_price']; ?></dd>
                             </div>
                         <?php endforeach; ?>
                     </dl>
                     <?php else : ?>
                         <p>現在メニューはありません</p>
                     <?php endif; ?>
-
-                    <h3 class="price__menu">ファンダイビング</h3>
-                    <?php
-                    $free_item = SCF::get('fun_diving', 26);
-                    if (!empty($free_item) && isset($free_item[0]['fun_diving_menu'], $free_item[0]['fun_diving_price']) && $free_item[0]['fun_diving_menu'] !== '' && $free_item[0]['fun_diving_price'] !== '') :
-                    ?>
-                    <dl class="price__list">
-                        <?php
-                        foreach ($free_item as $fields) : ?>
-                            <div class="price__wrapper">
-                                <dt class="price__term"><?php echo $fields['fun_diving_menu']; ?></dt>
-                                <dd class="price__description"><?php echo $fields['fun_diving_price']; ?></dd>
-                            </div>
-                        <?php endforeach; ?>
-                    </dl>
-                    <?php else : ?>
-                        <p>現在メニューはありません</p>
-                    <?php endif; ?>
-
-                    <h3 class="price__menu">スペシャルダイビング</h3>
-                    <?php
-                    $free_item = SCF::get('special_diving', 26);
-                    if (!empty($free_item) && isset($free_item[0]['special_diving_menu'], $free_item[0]['special_diving_price']) && $free_item[0]['special_diving_menu'] !== '' && $free_item[0]['special_diving_price'] !== '') :
-                    ?>
-                        <dl class="price__list">
-                            <?php foreach ($free_item as $fields) : ?>
-                                <div class="price__wrapper">
-                                    <dt class="price__term"><?= $fields['special_diving_menu']; ?></dt>
-                                    <dd class="price__description"><?= $fields['special_diving_price']; ?></dd>
-                                </div>
-                            <?php endforeach; ?>
-                        </dl>
-                    <?php else : ?>
-                        <p>現在メニューはありません</p>
-                    <?php endif; ?>
-                </div>
+                    <?php endforeach; ?>
+                </div>      
             </div>
             <div class="price__btn">
                 <a href="<?php echo esc_url(home_url("/price")) ?>" class="btn">
